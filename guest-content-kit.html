@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html class="light" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Guest Content Kit - Zero Messaggi Persi</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#112c3f",
+                    "secondary-fixed": "#d0e4ff",
+                    "on-tertiary-fixed-variant": "#75331b",
+                    "inverse-primary": "#b0c9e2",
+                    "primary-container": "#294256",
+                    "tertiary": "#4f1702",
+                    "surface-bright": "#fdf9f3",
+                    "outline": "#73777d",
+                    "inverse-on-surface": "#f4f0ea",
+                    "secondary-container": "#a2cdff",
+                    "surface-dim": "#ddd9d4",
+                    "surface-variant": "#e6e2dc",
+                    "on-surface-variant": "#43474c",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#6c2c15",
+                    "on-tertiary-fixed": "#390c00",
+                    "primary-fixed-dim": "#b0c9e2",
+                    "outline-variant": "#c3c7cd",
+                    "on-secondary-container": "#295782",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#011e30",
+                    "background": "#fdf9f3",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#cbe6ff",
+                    "secondary-fixed-dim": "#9fcafc",
+                    "on-tertiary-container": "#ef9475",
+                    "surface-container": "#f1ede7",
+                    "surface-container-low": "#f7f3ed",
+                    "on-surface": "#1c1c18",
+                    "surface": "#fdf9f3",
+                    "secondary": "#35618d",
+                    "on-secondary-fixed-variant": "#184974",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb59c",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#95aec6",
+                    "on-primary-fixed-variant": "#30495e",
+                    "surface-tint": "#486176",
+                    "on-secondary-fixed": "#001d35",
+                    "surface-container-highest": "#e6e2dc",
+                    "on-background": "#1c1c18",
+                    "tertiary-fixed": "#ffdbd0",
+                    "surface-container-high": "#ebe8e2",
+                    "inverse-surface": "#31302d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "80px",
+                    "container-max": "1280px",
+                    "margin-mobile": "20px",
+                    "base": "8px",
+                    "gutter": "24px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": [
+                            "Libre Caslon Text"
+                    ],
+                    "body-sm": [
+                            "Manrope"
+                    ],
+                    "body-md": [
+                            "Manrope"
+                    ],
+                    "body-lg": [
+                            "Manrope"
+                    ],
+                    "label-sm": [
+                            "Manrope"
+                    ],
+                    "headline-sm": [
+                            "Libre Caslon Text"
+                    ],
+                    "label-md": [
+                            "Manrope"
+                    ],
+                    "display-lg": [
+                            "Libre Caslon Text"
+                    ],
+                    "headline-md": [
+                            "Libre Caslon Text"
+                    ]
+            },
+            "fontSize": {
+                    "display-lg-mobile": [
+                            "36px",
+                            {
+                                    "lineHeight": "44px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.03em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-sm": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            -webkit-font-smoothing: antialiased;
+        }
+        .ambient-shadow {
+            box-shadow: 0 4px 24px -4px rgba(41, 66, 86, 0.06);
+        }
+    </style>
+<meta content="Static export organized for Netlify from Stitch pages" name="generator-note"/></head>
+<body class="min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-surface/90 dark:bg-surface-container-highest/90 fixed top-0 w-full z-50 bg-surface-container-low/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-on-surface cursor-pointer">
+                Zero Messaggi Persi
+            </div>
+<div class="hidden md:flex gap-8 items-center font-body-md text-body-md">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:opacity-90 transition-all duration-200" href="come-funziona.html">Come funziona</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:opacity-90 transition-all duration-200" href="piattaforma.html">Piattaforma</a>
+<a class="text-primary dark:text-inverse-primary border-b-2 border-primary font-bold pb-1 hover:opacity-90 transition-all duration-200" href="servizi.html">Servizi</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:opacity-90 transition-all duration-200" href="integrazioni.html">Integrazioni</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:opacity-90 transition-all duration-200" href="prezzi.html">Piani e prezzi</a>
+</div>
+<div class="flex items-center">
+<a class="bg-primary-container text-on-primary-container font-label-md text-label-md px-6 py-2.5 rounded-lg hover:opacity-90 transition-all duration-200 hidden md:block" href="prova-gratuita.html" role="button">
+                    Prova gratis
+                </a>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="flex-grow pt-[104px]">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="pr-0 lg:pr-12">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-highest rounded-full mb-6">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Guest Content Kit</span>
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary mb-6">
+                        Trasforma le domande dei tuoi ospiti in contenuti utili per il tuo marketing.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                        Ogni FAQ è un'opportunità. Trasforma le richieste ricorrenti in guide locali, post social e aggiornamenti per migliorare l'esperienza e la tua visibilità.
+                    </p>
+<a class="bg-primary-container text-on-primary font-label-md text-label-md px-8 py-4 rounded-lg hover:-translate-y-0.5 ambient-shadow transition-all duration-300" href="prova-gratuita.html" role="button">
+                        Inizia a creare contenuti
+                    </a>
+</div>
+<div class="relative h-[400px] lg:h-[500px] rounded-[24px] overflow-hidden ambient-shadow">
+<img alt="Hotel lobby setup" class="w-full h-full object-cover" data-alt="A bright, airy boutique hotel lobby bathed in morning sunlight, viewed from a slightly low angle. A professional concierge in a navy suit smiles warmly while looking down at a sleek tablet resting on a clean wooden desk. The background features minimalist natural decor, lush green potted plants, and light oak paneling. The overall aesthetic is natural minimalism, communicating composed, welcoming, and reliable high-end hospitality in a light-mode setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiUXgvEBFS0AoPkKFddlYbpf_kG9MJ1dxo_NLddANa82uJl8oqxkBNjemzQeW0SLzIRe7exjDBkYy1dKW_Ndmt__3isQ8ut_AJ5Oi56nmpHj4EUUTgWc5icFxzqgTnDcmdHCxvRZWjnI3Aiv3CqVBpK5MGpxmxmezuBbBugQbxRvoRpdUPygA8b4KoeBM1EfEi-ANAE3maP9L1DY31uiQ2coA0wqoSS_gKUkQhm5PLrn1oluJ-pmiSUOIALs1RNzVQ4WqBeGh8kF0"/>
+</div>
+</div>
+</section>
+<!-- Value Prop (Bento) -->
+<section class="bg-surface-container-low py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Dalle FAQ al Valore</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+                        Il nostro kit analizza le conversazioni ricorrenti e genera formati pronti all'uso per i tuoi canali di comunicazione.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-[24px] p-8 border border-surface-variant ambient-shadow hover:-translate-y-1 transition-transform duration-300">
+<div class="w-12 h-12 bg-secondary-fixed rounded-xl flex items-center justify-center mb-6 text-on-secondary-fixed">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">share</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Post per i Social</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                            Trasforma "Dove si mangia bene?" in caroselli Instagram accattivanti sui migliori ristoranti nei dintorni della tua struttura.
+                        </p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-[24px] p-8 border border-surface-variant ambient-shadow hover:-translate-y-1 transition-transform duration-300">
+<div class="w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center mb-6 text-on-primary-fixed">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">storefront</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Google Business</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                            Alimenta la tua scheda Google con aggiornamenti costanti basati su ciò che i futuri ospiti cercano realmente.
+                        </p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-[24px] p-8 border border-surface-variant ambient-shadow hover:-translate-y-1 transition-transform duration-300">
+<div class="w-12 h-12 bg-tertiary-fixed rounded-xl flex items-center justify-center mb-6 text-on-tertiary-fixed">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">map</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Guide Locali</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                            Crea PDF o pagine web esclusive per i tuoi ospiti, raggruppando consigli su trasporti, spiagge e attrazioni.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Examples (Before/After) -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap">
+<h2 class="font-headline-md text-headline-md text-primary mb-12 text-center">Come funziona nella pratica</h2>
+<!-- Example 1 -->
+<div class="bg-surface-container-lowest rounded-[24px] border border-surface-variant p-8 md:p-12 mb-gutter ambient-shadow flex flex-col lg:flex-row gap-12 items-center">
+<div class="flex-1 w-full">
+<div class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-4">La Domanda (FAQ)</div>
+<div class="bg-surface-container px-6 py-4 rounded-t-2xl rounded-br-2xl inline-block max-w-md">
+<p class="font-body-md text-body-md text-on-surface">"Where can I park my car when I arrive? Is there a safe spot?"</p>
+</div>
+</div>
+<div class="flex-shrink-0 text-outline-variant">
+<span class="material-symbols-outlined text-4xl hidden lg:block" style="font-variation-settings: 'FILL' 0;">arrow_right_alt</span>
+<span class="material-symbols-outlined text-4xl lg:hidden" style="font-variation-settings: 'FILL' 0;">arrow_downward</span>
+</div>
+<div class="flex-1 w-full">
+<div class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-4">Il Contenuto Generato</div>
+<div class="border border-surface-variant rounded-xl overflow-hidden bg-surface flex items-center gap-4 p-4">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Parking view" class="w-full h-full object-cover" data-alt="A clean, well-lit private parking courtyard of an elegant Mediterranean villa. The ground is paved with smooth, warm terracotta tiles. A sleek, modern car is parked neatly near a low stone wall covered in blooming bougainvillea. Soft, natural afternoon sunlight casts gentle, ambient shadows. The image conveys safety, convenience, and premium hospitality in a natural minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1oQFrkFzzcdj5F9CrhUiA1Rqs35SLJZTeqnJwjVp78W--ql4lskMebvFANCrYQwOKcvAG_O4LEPbck-nPXxnPxEyOSC1y7UOTJ2Zarnut6AQ0CQWjgcKCG1PKaqbQm0opa9Nh7FYulipGMM4lY1ISW9CdEGsDR5R3B9ivQ6xR9BWRyfoBbcSVI6wd4gjNqAwYbXJBv189FmAidAy4-_5gRcX2m4eoAxGBZHWWT64xOX10jXJLzmAhz0KTf4AJO5F_lTPzhy4g46U"/>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary text-[20px] mb-1">Practical parking guide for guests</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Articolo Web • 3 min read</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Example 2 -->
+<div class="bg-surface-container-lowest rounded-[24px] border border-surface-variant p-8 md:p-12 ambient-shadow flex flex-col lg:flex-row gap-12 items-center">
+<div class="flex-1 w-full">
+<div class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-4">La Domanda (FAQ)</div>
+<div class="bg-surface-container px-6 py-4 rounded-t-2xl rounded-br-2xl inline-block max-w-md">
+<p class="font-body-md text-body-md text-on-surface">"How far is the beach from the property? Which one is the best?"</p>
+</div>
+</div>
+<div class="flex-shrink-0 text-outline-variant">
+<span class="material-symbols-outlined text-4xl hidden lg:block" style="font-variation-settings: 'FILL' 0;">arrow_right_alt</span>
+<span class="material-symbols-outlined text-4xl lg:hidden" style="font-variation-settings: 'FILL' 0;">arrow_downward</span>
+</div>
+<div class="flex-1 w-full">
+<div class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-4">Il Contenuto Generato</div>
+<div class="border border-surface-variant rounded-xl overflow-hidden bg-surface p-6">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">grid_on</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Carosello Instagram</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary text-[20px] mb-2">3 spiagge raggiungibili in pochi minuti 🌊</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Dalla sabbia finissima alle calette nascoste, ecco dove rilassarsi vicino a noi...</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap pb-24">
+<div class="max-w-[1000px] mx-auto bg-primary-container rounded-[32px] p-12 text-center ambient-shadow overflow-hidden relative">
+<!-- Decorative subtle elements -->
+<div class="absolute top-0 left-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+<div class="absolute bottom-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+<div class="relative z-10">
+<h2 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-primary mb-6">
+                        Inizia a creare contenuti dalle tue FAQ
+                    </h2>
+<p class="font-body-lg text-body-lg text-inverse-primary max-w-2xl mx-auto mb-10">
+                        Ottimizza il tuo tempo e offri valore aggiunto ai tuoi futuri ospiti trasformando l'assistenza in marketing.
+                    </p>
+<a class="bg-surface text-primary font-label-md text-label-md px-8 py-4 rounded-lg hover:bg-surface-container-lowest transition-colors duration-300" href="prova-gratuita.html" role="button">
+                        Richiedi accesso al Kit
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-high dark:bg-inverse-surface w-full border-t border-outline-variant dark:border-outline">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+<div class="md:col-span-1 mb-8 md:mb-0">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-on-surface mb-4">
+                    Zero Messaggi Persi
+                </div>
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-surface-variant">
+                    © 2024 Zero Messaggi Persi. Tecnologia discreta, ospitalità più semplice.
+                </p>
+</div>
+<div class="flex flex-col gap-3 font-body-sm text-body-sm">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:underline decoration-primary transition-all" href="index.html">Home</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:underline decoration-primary transition-all" href="come-funziona.html">Come funziona</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:underline decoration-primary transition-all" href="piattaforma.html">Piattaforma</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:underline decoration-primary transition-all" href="servizi.html">Servizi</a>
+</div>
+<div class="flex flex-col gap-3 font-body-sm text-body-sm">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:underline decoration-primary transition-all" href="integrazioni.html">Integrazioni</a>
+<a class="text-primary dark:text-inverse-primary font-semibold hover:underline decoration-primary transition-all opacity-80" href="guest-content-kit.html">Guest Content Kit</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:underline decoration-primary transition-all" href="prezzi.html">Piani e prezzi</a>
+</div>
+<div class="flex flex-col gap-3 font-body-sm text-body-sm">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:underline decoration-primary transition-all" href="contatti.html">Contatti</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:underline decoration-primary transition-all" href="privacy.html">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</body></html>

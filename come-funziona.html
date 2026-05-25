@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="light" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Come funziona - Zero Messaggi Persi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#112c3f",
+                      "secondary-fixed": "#d0e4ff",
+                      "on-tertiary-fixed-variant": "#75331b",
+                      "inverse-primary": "#b0c9e2",
+                      "primary-container": "#294256",
+                      "tertiary": "#4f1702",
+                      "surface-bright": "#fdf9f3",
+                      "outline": "#73777d",
+                      "inverse-on-surface": "#f4f0ea",
+                      "secondary-container": "#a2cdff",
+                      "surface-dim": "#ddd9d4",
+                      "surface-variant": "#e6e2dc",
+                      "on-surface-variant": "#43474c",
+                      "on-error-container": "#93000a",
+                      "tertiary-container": "#6c2c15",
+                      "on-tertiary-fixed": "#390c00",
+                      "primary-fixed-dim": "#b0c9e2",
+                      "outline-variant": "#c3c7cd",
+                      "on-secondary-container": "#295782",
+                      "error-container": "#ffdad6",
+                      "error": "#ba1a1a",
+                      "on-error": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#011e30",
+                      "background": "#fdf9f3",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed": "#cbe6ff",
+                      "secondary-fixed-dim": "#9fcafc",
+                      "on-tertiary-container": "#ef9475",
+                      "surface-container": "#f1ede7",
+                      "surface-container-low": "#f7f3ed",
+                      "on-surface": "#1c1c18",
+                      "surface": "#fdf9f3",
+                      "secondary": "#35618d",
+                      "on-secondary-fixed-variant": "#184974",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed-dim": "#ffb59c",
+                      "on-primary": "#ffffff",
+                      "on-primary-container": "#95aec6",
+                      "on-primary-fixed-variant": "#30495e",
+                      "surface-tint": "#486176",
+                      "on-secondary-fixed": "#001d35",
+                      "surface-container-highest": "#e6e2dc",
+                      "on-background": "#1c1c18",
+                      "tertiary-fixed": "#ffdbd0",
+                      "surface-container-high": "#ebe8e2",
+                      "inverse-surface": "#31302d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px",
+                      "card": "24px"
+              },
+              "spacing": {
+                      "section-gap": "80px",
+                      "container-max": "1280px",
+                      "margin-mobile": "20px",
+                      "base": "8px",
+                      "gutter": "24px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": [
+                              "Libre Caslon Text"
+                      ],
+                      "body-sm": [
+                              "Manrope"
+                      ],
+                      "body-md": [
+                              "Manrope"
+                      ],
+                      "body-lg": [
+                              "Manrope"
+                      ],
+                      "label-sm": [
+                              "Manrope"
+                      ],
+                      "headline-sm": [
+                              "Libre Caslon Text"
+                      ],
+                      "label-md": [
+                              "Manrope"
+                      ],
+                      "display-lg": [
+                              "Libre Caslon Text"
+                      ],
+                      "headline-md": [
+                              "Libre Caslon Text"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "44px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.03em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(235, 230, 222, 0.8);
+        }
+        
+        .ambient-shadow {
+            box-shadow: 0 10px 40px -10px rgba(41, 66, 86, 0.06);
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -10px rgba(41, 66, 86, 0.1);
+        }
+        
+        /* Thin linear icons */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<meta content="Static export organized for Netlify from Stitch pages" name="generator-note"/></head>
+<body class="antialiased min-h-screen flex flex-col pt-[88px]">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface-container-highest/90 bg-surface-container-low/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<!-- Brand -->
+<a class="font-headline-sm text-headline-sm font-bold text-primary dark:text-on-surface hover:opacity-90 transition-all duration-200" href="index.html">
+                Zero Messaggi Persi
+            </a>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary dark:text-inverse-primary border-b-2 border-primary font-bold pb-1 font-body-md text-body-md hover:opacity-90 transition-all duration-200" href="come-funziona.html">Come funziona</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-body-md text-body-md hover:opacity-90 transition-all duration-200" href="piattaforma.html">Piattaforma</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-body-md text-body-md hover:opacity-90 transition-all duration-200" href="servizi.html">Servizi</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-body-md text-body-md hover:opacity-90 transition-all duration-200" href="integrazioni.html">Integrazioni</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-body-md text-body-md hover:opacity-90 transition-all duration-200" href="prezzi.html">Piani e prezzi</a>
+</div>
+<!-- CTA & Mobile Menu -->
+<div class="flex items-center gap-4">
+<a class="hidden md:inline-flex bg-primary-container text-surface-low px-6 py-2 rounded-lg font-label-md text-label-md hover:bg-primary transition-colors hover:opacity-90 active:scale-95 text-[#F7F3ED]" href="prova-gratuita.html">
+                    Prova gratis
+                </a>
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="max-w-2xl">
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary mb-6">
+                        Tecnologia discreta, ospitalità più semplice.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+                        Ecco come portiamo ordine nei tuoi messaggi. Tu non devi configurare nulla da solo. Ti guidiamo noi in ogni fase del processo.
+                    </p>
+<a class="inline-flex items-center gap-2 text-secondary-container bg-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors text-[#F7F3ED]" href="#process">
+                        Scopri il processo
+                        <span class="material-symbols-outlined text-sm">arrow_downward</span>
+</a>
+</div>
+<div class="relative h-[400px] lg:h-[500px] rounded-[32px] overflow-hidden ambient-shadow">
+<img alt="Warm Mediterranean hospitality setting" class="w-full h-full object-cover" data-alt="A bright, airy Mediterranean boutique hotel lobby or reception area bathed in soft, natural morning sunlight. Warm terracotta tiles, plush cream-colored linen seating, and lush green potted olive trees create an inviting atmosphere. A beautifully designed minimalist wooden reception desk sits in the background. The mood is serene, professional, and welcoming, embodying premium hospitality without feeling sterile or overly modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7YRQ1f6JuIJ1GooNwY1NsARwA-gLymb36aRtZfzUuuLK2vpcNOIGL1EMBNphiFYWnLgoT-OgmoKOqFBL6-LZxi1geCCDzKiUdXiPnzFuONjRJBxGDJyRA0bn9lvNM5LywEvtyBe3ERVyee5qzIPi5f1CFcl-gW0D6rRePPee0aCDkIXsGjSPA1iG9glqgNX8EaZHUL_ske44UK7x-XUbG_pLpsJSn9nNG4D7yNPfHw6neIzbljc2rY2qM8eVZSoUp-WtF48HXxgw"/>
+<!-- Glass badge overlay -->
+<div class="absolute bottom-6 left-6 glass-card px-6 py-4 rounded-xl flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">spa</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Zero stress</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Configurazione guidata</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5 Step Process - Bento Grid Style -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto bg-surface-container-low/50 rounded-[40px] mb-section-gap" id="process">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Il tuo percorso verso l'automazione</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Un approccio strutturato per garantirti un servizio impeccabile fin dal primo giorno.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Step 1: Large Card -->
+<div class="md:col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-card p-8 border border-surface-variant ambient-shadow hover-lift relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary-fixed/30 rounded-full blur-3xl -mr-20 -mt-20 transition-transform group-hover:scale-110"></div>
+<div class="relative z-10 flex flex-col md:flex-row gap-8 items-start">
+<div class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-sm shrink-0">1</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Analizziamo la comunicazione attuale</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Studiamo il tono di voce della tua struttura, le richieste più frequenti dei tuoi ospiti e le inefficienze nei tuoi canali attuali per creare una base solida.</p>
+<div class="flex gap-3">
+<span class="px-3 py-1 bg-surface-container-low rounded-full font-label-sm text-label-sm text-on-surface-variant border border-outline-variant">Audit canali</span>
+<span class="px-3 py-1 bg-surface-container-low rounded-full font-label-sm text-label-sm text-on-surface-variant border border-outline-variant">Tone of Voice</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 2: Tall Card -->
+<div class="md:col-span-6 lg:col-span-4 bg-surface-container-lowest rounded-card p-8 border border-surface-variant ambient-shadow hover-lift">
+<div class="w-16 h-16 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-headline-sm mb-6">2</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Raccogliamo FAQ e informazioni</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Compiliamo un database dettagliato con tutte le informazioni della tua struttura: orari, servizi, regole della casa e raccomandazioni locali.</p>
+<div class="mt-auto pt-6 border-t border-surface-variant">
+<span class="material-symbols-outlined text-secondary-container text-4xl">database</span>
+</div>
+</div>
+<!-- Step 3: Medium Card -->
+<div class="md:col-span-6 lg:col-span-4 bg-surface-container-lowest rounded-card p-8 border border-surface-variant ambient-shadow hover-lift">
+<div class="w-16 h-16 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-headline-sm mb-6">3</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Configuriamo il tuo AI Concierge</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Addestriamo il sistema per rispondere come se fossi tu, integrando i dati raccolti per garantire risposte precise e personalizzate.</p>
+</div>
+<!-- Step 4: Medium Card -->
+<div class="md:col-span-6 lg:col-span-4 bg-surface-container-lowest rounded-card p-8 border border-surface-variant ambient-shadow hover-lift">
+<div class="w-16 h-16 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-headline-sm mb-6">4</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Testiamo e approviamo</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Prima del lancio, eseguiamo simulazioni reali. Tu verifichi le risposte e approvi il comportamento dell'AI per la massima tranquillità.</p>
+</div>
+<!-- Step 5: Wide Card -->
+<div class="md:col-span-12 lg:col-span-4 bg-surface-container-lowest rounded-card p-8 border border-surface-variant ambient-shadow hover-lift flex flex-col justify-center">
+<div class="w-16 h-16 rounded-full bg-surface-tint text-on-primary flex items-center justify-center font-headline-sm mb-6">5</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Attiviamo automazioni e report</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Go-live! Il sistema inizia a gestire i messaggi. Riceverai report periodici e ottimizzeremo costantemente le performance.</p>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap mb-section-gap max-w-container-max mx-auto">
+<div class="bg-primary rounded-[32px] p-10 md:p-16 text-center relative overflow-hidden">
+<!-- Background decorative elements -->
+<div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
+<div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-secondary-fixed blur-3xl"></div>
+<div class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-tertiary-fixed blur-3xl"></div>
+</div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<span class="material-symbols-outlined text-secondary-fixed text-5xl mb-6">send_time_extension</span>
+<h2 class="font-headline-md text-headline-md text-on-primary mb-6">Pronto a trasformare la tua ospitalità?</h2>
+<p class="font-body-lg text-body-lg text-primary-fixed-dim mb-10">Affida a noi la gestione tecnica. Tu concentrati sull'accoglienza dei tuoi ospiti.</p>
+<a class="inline-flex items-center gap-2 bg-surface-container-lowest text-primary px-8 py-4 rounded-lg font-label-md text-label-md hover:bg-surface transition-colors hover-lift" href="prova-gratuita.html">
+                        Inizia ora il tuo percorso di automazione
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-high dark:bg-inverse-surface border-t border-outline-variant dark:border-outline">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+<!-- Brand & Copyright -->
+<div class="col-span-1 md:col-span-1 flex flex-col gap-4">
+<span class="font-headline-sm text-headline-sm text-primary dark:text-on-surface">Zero Messaggi Persi</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-surface-variant mt-auto">
+                    © 2024 Zero Messaggi Persi. Tecnologia discreta, ospitalità più semplice.
+                </p>
+</div>
+<!-- Links Column 1 -->
+<div class="col-span-1 flex flex-col gap-3">
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:underline decoration-primary" href="index.html">Home</a>
+<a class="font-body-sm text-body-sm text-primary dark:text-inverse-primary font-semibold hover:underline decoration-primary transition-all" href="come-funziona.html">Come funziona</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:underline decoration-primary" href="piattaforma.html">Piattaforma</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:underline decoration-primary" href="servizi.html">Servizi</a>
+</div>
+<!-- Links Column 2 -->
+<div class="col-span-1 flex flex-col gap-3">
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:underline decoration-primary" href="integrazioni.html">Integrazioni</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:underline decoration-primary" href="guest-content-kit.html">Guest Content Kit</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:underline decoration-primary" href="prezzi.html">Piani e prezzi</a>
+</div>
+<!-- Links Column 3 -->
+<div class="col-span-1 flex flex-col gap-3">
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:underline decoration-primary" href="contatti.html">Contatti</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:underline decoration-primary" href="privacy.html">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</body></html>

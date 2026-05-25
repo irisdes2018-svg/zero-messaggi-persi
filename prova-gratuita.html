@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html class="light" lang="it">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prova gratuita 7 giorni - Zero Messaggi Persi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#112c3f",
+            "secondary-fixed": "#d0e4ff",
+            "on-tertiary-fixed-variant": "#75331b",
+            "inverse-primary": "#b0c9e2",
+            "primary-container": "#294256",
+            "tertiary": "#4f1702",
+            "surface-bright": "#fdf9f3",
+            "outline": "#73777d",
+            "inverse-on-surface": "#f4f0ea",
+            "secondary-container": "#a2cdff",
+            "surface-dim": "#ddd9d4",
+            "surface-variant": "#e6e2dc",
+            "on-surface-variant": "#43474c",
+            "on-error-container": "#93000a",
+            "tertiary-container": "#6c2c15",
+            "on-tertiary-fixed": "#390c00",
+            "primary-fixed-dim": "#b0c9e2",
+            "outline-variant": "#c3c7cd",
+            "on-secondary-container": "#295782",
+            "error-container": "#ffdad6",
+            "error": "#ba1a1a",
+            "on-error": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed": "#011e30",
+            "background": "#fdf9f3",
+            "on-secondary": "#ffffff",
+            "primary-fixed": "#cbe6ff",
+            "secondary-fixed-dim": "#9fcafc",
+            "on-tertiary-container": "#ef9475",
+            "surface-container": "#f1ede7",
+            "surface-container-low": "#f7f3ed",
+            "on-surface": "#1c1c18",
+            "surface": "#fdf9f3",
+            "secondary": "#35618d",
+            "on-secondary-fixed-variant": "#184974",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-fixed-dim": "#ffb59c",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#95aec6",
+            "on-primary-fixed-variant": "#30495e",
+            "surface-tint": "#486176",
+            "on-secondary-fixed": "#001d35",
+            "surface-container-highest": "#e6e2dc",
+            "on-background": "#1c1c18",
+            "tertiary-fixed": "#ffdbd0",
+            "surface-container-high": "#ebe8e2",
+            "inverse-surface": "#31302d"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "section-gap": "80px",
+            "container-max": "1280px",
+            "margin-mobile": "20px",
+            "base": "8px",
+            "gutter": "24px",
+            "margin-desktop": "64px"
+          },
+          "fontFamily": {
+            "display-lg-mobile": ["Libre Caslon Text"],
+            "body-sm": ["Manrope"],
+            "body-md": ["Manrope"],
+            "body-lg": ["Manrope"],
+            "label-sm": ["Manrope"],
+            "headline-sm": ["Libre Caslon Text"],
+            "label-md": ["Manrope"],
+            "display-lg": ["Libre Caslon Text"],
+            "headline-md": ["Libre Caslon Text"]
+          },
+          "fontSize": {
+            "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "400"}],
+            "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+            "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "400"}],
+            "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+            "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #f7f3ed; color: #1c1c18; }
+    .ambient-shadow { box-shadow: 0 10px 40px -10px rgba(41,66,86,0.08); }
+    .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(41,66,86,0.12); }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col pt-[88px]">
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 bg-surface-container-low/80 backdrop-blur-md shadow-sm">
+  <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+    <a class="font-headline-sm text-headline-sm font-bold text-primary" href="index.html">Zero Messaggi Persi</a>
+    <div class="hidden md:flex gap-gutter items-center">
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="come-funziona.html">Come funziona</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="piattaforma.html">Piattaforma</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="servizi.html">Servizi</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="integrazioni.html">Integrazioni</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="prezzi.html">Piani e prezzi</a>
+    </div>
+    <a class="bg-primary-container text-surface-container-low px-6 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all duration-200" href="prova-gratuita.html" role="button">
+      Prova gratis
+    </a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="flex-grow flex flex-col gap-section-gap pb-section-gap">
+
+  <!-- HERO -->
+  <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mt-16 md:mt-24 text-center">
+    <span class="inline-flex items-center gap-1 px-3 py-1 bg-surface-variant text-on-surface-variant rounded-full font-label-sm text-label-sm mb-6">
+      <span class="material-symbols-outlined text-[16px]">schedule</span>&nbsp;7 giorni, zero impegni, nessuna carta di credito
+    </span>
+    <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary mb-6">
+      Prova gratis Zero Messaggi Persi<br class="hidden md:block"/> per 7 giorni
+    </h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
+      Configura il tuo AI Concierge, testa le risposte automatiche agli ospiti e scopri quanto tempo puoi recuperare ogni settimana. Nessuna carta di credito. Nessun vincolo.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a class="bg-primary-container text-surface-container-low px-8 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all text-center" href="#form-accesso" role="button">
+        Richiedi accesso gratuito
+      </a>
+      <a class="border border-primary-container text-primary-container px-8 py-3 rounded-lg font-label-md text-label-md hover:bg-surface-variant transition-all text-center" href="contatti.html" role="button">
+        Prenota prima una demo
+      </a>
+    </div>
+  </section>
+
+  <!-- COSA INCLUDE -->
+  <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+    <h2 class="font-headline-md text-headline-md text-primary mb-3 text-center">Cosa include la prova gratuita</h2>
+    <p class="font-body-md text-body-md text-on-surface-variant text-center mb-10 max-w-xl mx-auto">Accesso completo alla piattaforma, onboarding guidato e audit gratuito della tua comunicazione attuale.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+      <div class="bg-surface-container-lowest rounded-[24px] p-6 border border-surface-variant ambient-shadow hover-lift">
+        <span class="material-symbols-outlined text-secondary mb-4 text-[32px] block">smart_toy</span>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">AI Concierge configurato</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Il tuo assistente virtuale, addestrato sulle informazioni della tua struttura, pronto a rispondere agli ospiti.</p>
+      </div>
+      <div class="bg-surface-container-lowest rounded-[24px] p-6 border border-surface-variant ambient-shadow hover-lift">
+        <span class="material-symbols-outlined text-secondary mb-4 text-[32px] block">forum</span>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">Gestione FAQ automatica</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Risposte automatiche alle domande frequenti su check-in, parcheggio, colazione e servizi extra.</p>
+      </div>
+      <div class="bg-surface-container-lowest rounded-[24px] p-6 border border-surface-variant ambient-shadow hover-lift">
+        <span class="material-symbols-outlined text-secondary mb-4 text-[32px] block">key</span>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">Check-in digitale</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Istruzioni arrivo, codici di accesso e messaggi di benvenuto inviati automaticamente prima del check-in.</p>
+      </div>
+      <div class="bg-surface-container-lowest rounded-[24px] p-6 border border-surface-variant ambient-shadow hover-lift">
+        <span class="material-symbols-outlined text-secondary mb-4 text-[32px] block">analytics</span>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">Audit comunicazione</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Un report gratuito sulla tua comunicazione attuale con gli ospiti, con aree di miglioramento identificate.</p>
+      </div>
+      <div class="bg-surface-container-lowest rounded-[24px] p-6 border border-surface-variant ambient-shadow hover-lift">
+        <span class="material-symbols-outlined text-secondary mb-4 text-[32px] block">support_agent</span>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">Onboarding dedicato</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Una sessione di setup di 30 minuti con un esperto Zero Messaggi Persi per configurare tutto correttamente.</p>
+      </div>
+      <div class="bg-surface-container-lowest rounded-[24px] p-6 border border-surface-variant ambient-shadow hover-lift">
+        <span class="material-symbols-outlined text-secondary mb-4 text-[32px] block">star</span>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">Follow-up recensioni</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Messaggi automatici post-soggiorno per raccogliere feedback e incoraggiare recensioni positive.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COME FUNZIONA LA PROVA -->
+  <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+    <h2 class="font-headline-md text-headline-md text-primary mb-10 text-center">Come funziona la prova</h2>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+      <div class="flex flex-col items-center text-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-primary-container text-surface-container-low flex items-center justify-center font-headline-sm text-headline-sm flex-shrink-0">1</div>
+        <h3 class="font-headline-sm text-headline-sm text-primary">Compila il modulo</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Due minuti per raccontarci la tua struttura e le tue esigenze comunicative.</p>
+      </div>
+      <div class="flex flex-col items-center text-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-primary-container text-surface-container-low flex items-center justify-center font-headline-sm text-headline-sm flex-shrink-0">2</div>
+        <h3 class="font-headline-sm text-headline-sm text-primary">Sessione onboarding</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">30 minuti per configurare l'AI Concierge sulla tua struttura specifica.</p>
+      </div>
+      <div class="flex flex-col items-center text-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-primary-container text-surface-container-low flex items-center justify-center font-headline-sm text-headline-sm flex-shrink-0">3</div>
+        <h3 class="font-headline-sm text-headline-sm text-primary">Attiva e prova</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">7 giorni di accesso completo. Prova su ospiti reali o in modalità test.</p>
+      </div>
+      <div class="flex flex-col items-center text-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-primary-container text-surface-container-low flex items-center justify-center font-headline-sm text-headline-sm flex-shrink-0">4</div>
+        <h3 class="font-headline-sm text-headline-sm text-primary">Decidi in autonomia</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Dopo 7 giorni, scegli se continuare. Nessun addebito automatico.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COSA PUOI SIMULARE -->
+  <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+    <div class="bg-primary-container rounded-[24px] p-8 md:p-12">
+      <h2 class="font-headline-md text-headline-md text-on-primary mb-3">Cosa puoi simulare durante la prova</h2>
+      <p class="font-body-md text-body-md text-on-primary-container mb-8">Testa scenari reali della tua struttura prima di attivare l'automazione su ospiti reali.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-on-primary-container text-[20px] mt-0.5">check_circle</span>
+            <span class="font-body-md text-body-md text-on-primary">Risposte automatiche a messaggi WhatsApp degli ospiti</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-on-primary-container text-[20px] mt-0.5">check_circle</span>
+            <span class="font-body-md text-body-md text-on-primary">Email di benvenuto personalizzate con i dettagli del soggiorno</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-on-primary-container text-[20px] mt-0.5">check_circle</span>
+            <span class="font-body-md text-body-md text-on-primary">Istruzioni check-in automatiche 24h prima dell'arrivo</span>
+          </li>
+        </ul>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-on-primary-container text-[20px] mt-0.5">check_circle</span>
+            <span class="font-body-md text-body-md text-on-primary">Follow-up automatico post-soggiorno per raccogliere recensioni</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-on-primary-container text-[20px] mt-0.5">check_circle</span>
+            <span class="font-body-md text-body-md text-on-primary">Risposte intelligenti a richieste speciali degli ospiti</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-on-primary-container text-[20px] mt-0.5">check_circle</span>
+            <span class="font-body-md text-body-md text-on-primary">Notifiche interne quando un ospite richiede intervento umano</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM RICHIESTA ACCESSO -->
+  <section id="form-accesso" class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-headline-md text-headline-md text-primary mb-3 text-center">Richiedi il tuo accesso gratuito</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant text-center mb-10">Compila il modulo. Ti ricontatteremo entro 24 ore per pianificare la sessione di onboarding.</p>
+      <form name="prova-gratuita" netlify data-netlify="true" method="POST" action="/grazie.html"
+        class="bg-surface-container-lowest rounded-[24px] p-8 border border-surface-variant ambient-shadow space-y-6">
+        <input type="hidden" name="form-name" value="prova-gratuita"/>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Nome -->
+          <div>
+            <label class="block font-label-md text-label-md text-primary mb-2" for="nome">Nome e cognome *</label>
+            <input type="text" id="nome" name="nome" required placeholder="Mario Rossi"
+              class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-low focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-body-md text-on-surface transition"/>
+          </div>
+          <!-- Email -->
+          <div>
+            <label class="block font-label-md text-label-md text-primary mb-2" for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="mario@struttura.it"
+              class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-low focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-body-md text-on-surface transition"/>
+          </div>
+          <!-- Telefono -->
+          <div>
+            <label class="block font-label-md text-label-md text-primary mb-2" for="telefono">Telefono / WhatsApp *</label>
+            <input type="tel" id="telefono" name="telefono" required placeholder="+39 333 1234567"
+              class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-low focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-body-md text-on-surface transition"/>
+          </div>
+          <!-- Nome struttura -->
+          <div>
+            <label class="block font-label-md text-label-md text-primary mb-2" for="nome-struttura">Nome della struttura *</label>
+            <input type="text" id="nome-struttura" name="nome-struttura" required placeholder="B&B Villa del Lago"
+              class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-low focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-body-md text-on-surface transition"/>
+          </div>
+          <!-- Tipo struttura -->
+          <div>
+            <label class="block font-label-md text-label-md text-primary mb-2" for="tipo-struttura">Tipo di struttura *</label>
+            <select id="tipo-struttura" name="tipo-struttura" required
+              class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-low focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-body-md text-on-surface transition">
+              <option value="" disabled selected>Seleziona...</option>
+              <option>B&amp;B</option>
+              <option>Casa vacanza / Appartamento</option>
+              <option>Piccolo hotel (fino a 20 camere)</option>
+              <option>Agriturismo</option>
+              <option>Glamping / Eco-lodge</option>
+              <option>Affittacamere</option>
+              <option>Altro</option>
+            </select>
+          </div>
+          <!-- Numero camere -->
+          <div>
+            <label class="block font-label-md text-label-md text-primary mb-2" for="num-camere">Numero di camere / unità *</label>
+            <select id="num-camere" name="num-camere" required
+              class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-low focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-body-md text-on-surface transition">
+              <option value="" disabled selected>Seleziona...</option>
+              <option>1–3 unità</option>
+              <option>4–8 unità</option>
+              <option>9–15 camere</option>
+              <option>16–25 camere</option>
+              <option>Più di 25</option>
+            </select>
+          </div>
+          <!-- Località -->
+          <div>
+            <label class="block font-label-md text-label-md text-primary mb-2" for="localita">Località *</label>
+            <input type="text" id="localita" name="localita" required placeholder="Es. Lago di Garda, Sicilia, Roma..."
+              class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-low focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-body-md text-on-surface transition"/>
+          </div>
+          <!-- Channel manager / PMS -->
+          <div>
+            <label class="block font-label-md text-label-md text-primary mb-2" for="pms">Channel manager o PMS usato</label>
+            <input type="text" id="pms" name="pms" placeholder="Es. Lodgify, Smoobu, Beds24, Octorate, nessuno..."
+              class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-low focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-body-md text-on-surface transition"/>
+          </div>
+        </div>
+
+        <!-- Canali usati -->
+        <div>
+          <label class="block font-label-md text-label-md text-primary mb-3">Canali che usi oggi per comunicare con gli ospiti</label>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <label class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface cursor-pointer">
+              <input type="checkbox" name="canali" value="WhatsApp" class="rounded border-outline-variant text-secondary focus:ring-secondary"/> WhatsApp
+            </label>
+            <label class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface cursor-pointer">
+              <input type="checkbox" name="canali" value="Email" class="rounded border-outline-variant text-secondary focus:ring-secondary"/> Email
+            </label>
+            <label class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface cursor-pointer">
+              <input type="checkbox" name="canali" value="Booking.com" class="rounded border-outline-variant text-secondary focus:ring-secondary"/> Booking.com
+            </label>
+            <label class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface cursor-pointer">
+              <input type="checkbox" name="canali" value="Airbnb" class="rounded border-outline-variant text-secondary focus:ring-secondary"/> Airbnb
+            </label>
+            <label class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface cursor-pointer">
+              <input type="checkbox" name="canali" value="Vrbo/HomeAway" class="rounded border-outline-variant text-secondary focus:ring-secondary"/> Vrbo / HomeAway
+            </label>
+            <label class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface cursor-pointer">
+              <input type="checkbox" name="canali" value="SMS" class="rounded border-outline-variant text-secondary focus:ring-secondary"/> SMS
+            </label>
+          </div>
+        </div>
+
+        <!-- Problema principale -->
+        <div>
+          <label class="block font-label-md text-label-md text-primary mb-2" for="problema">Qual è il problema principale nella tua comunicazione con gli ospiti? *</label>
+          <textarea id="problema" name="problema" required rows="4"
+            placeholder="Es. Perdo troppo tempo a rispondere alle stesse domande, ricevo messaggi di notte, troppe richieste pre check-in..."
+            class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-low focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-body-md text-on-surface transition resize-none"></textarea>
+        </div>
+
+        <!-- Submit -->
+        <div class="pt-2">
+          <button type="submit"
+            class="w-full bg-primary-container text-surface-container-low py-4 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all duration-200 text-center">
+            Invia richiesta di accesso gratuito
+          </button>
+          <p class="font-body-sm text-body-sm text-on-surface-variant text-center mt-3">
+            Ti risponderemo entro 24 ore. Nessuna carta di credito richiesta.
+          </p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- CTA FINALE -->
+  <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full text-center py-4">
+    <p class="font-body-lg text-body-lg text-on-surface-variant mb-6">Preferisci prima una demo dal vivo con il team?</p>
+    <a class="border border-primary-container text-primary-container px-8 py-4 rounded-lg font-label-md text-label-md hover:bg-surface-variant transition-all inline-block" href="contatti.html" role="button">
+      Prenota una demo gratuita
+    </a>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="w-full bg-surface-container-high border-t border-outline-variant">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+    <div class="col-span-1">
+      <div class="font-headline-sm text-headline-sm text-primary mb-4">Zero Messaggi Persi</div>
+      <p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 Zero Messaggi Persi. Tecnologia discreta, ospitalità più semplice.</p>
+    </div>
+    <div class="col-span-1">
+      <ul class="space-y-3 font-body-sm text-body-sm">
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary" href="index.html">Home</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary" href="come-funziona.html">Come funziona</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary" href="piattaforma.html">Piattaforma</a></li>
+      </ul>
+    </div>
+    <div class="col-span-1">
+      <ul class="space-y-3 font-body-sm text-body-sm">
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary" href="servizi.html">Servizi</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary" href="integrazioni.html">Integrazioni</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary" href="guest-content-kit.html">Guest Content Kit</a></li>
+      </ul>
+    </div>
+    <div class="col-span-1">
+      <ul class="space-y-3 font-body-sm text-body-sm">
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary" href="prezzi.html">Piani e prezzi</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary" href="contatti.html">Contatti</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary" href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="light" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zero Messaggi Persi - Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#112c3f",
+                    "secondary-fixed": "#d0e4ff",
+                    "on-tertiary-fixed-variant": "#75331b",
+                    "inverse-primary": "#b0c9e2",
+                    "primary-container": "#294256",
+                    "tertiary": "#4f1702",
+                    "surface-bright": "#fdf9f3",
+                    "outline": "#73777d",
+                    "inverse-on-surface": "#f4f0ea",
+                    "secondary-container": "#a2cdff",
+                    "surface-dim": "#ddd9d4",
+                    "surface-variant": "#e6e2dc",
+                    "on-surface-variant": "#43474c",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#6c2c15",
+                    "on-tertiary-fixed": "#390c00",
+                    "primary-fixed-dim": "#b0c9e2",
+                    "outline-variant": "#c3c7cd",
+                    "on-secondary-container": "#295782",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#011e30",
+                    "background": "#fdf9f3",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#cbe6ff",
+                    "secondary-fixed-dim": "#9fcafc",
+                    "on-tertiary-container": "#ef9475",
+                    "surface-container": "#f1ede7",
+                    "surface-container-low": "#f7f3ed",
+                    "on-surface": "#1c1c18",
+                    "surface": "#fdf9f3",
+                    "secondary": "#35618d",
+                    "on-secondary-fixed-variant": "#184974",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb59c",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#95aec6",
+                    "on-primary-fixed-variant": "#30495e",
+                    "surface-tint": "#486176",
+                    "on-secondary-fixed": "#001d35",
+                    "surface-container-highest": "#e6e2dc",
+                    "on-background": "#1c1c18",
+                    "tertiary-fixed": "#ffdbd0",
+                    "surface-container-high": "#ebe8e2",
+                    "inverse-surface": "#31302d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "80px",
+                    "container-max": "1280px",
+                    "margin-mobile": "20px",
+                    "base": "8px",
+                    "gutter": "24px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Libre Caslon Text"],
+                    "body-sm": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "headline-sm": ["Libre Caslon Text"],
+                    "label-md": ["Manrope"],
+                    "display-lg": ["Libre Caslon Text"],
+                    "headline-md": ["Libre Caslon Text"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { background-color: theme('colors.surface-container-low'); color: theme('colors.on-surface'); }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid theme('colors.surface-variant');
+        }
+        .ambient-shadow {
+            box-shadow: 0 10px 40px -10px rgba(41, 66, 86, 0.08);
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -10px rgba(41, 66, 86, 0.12);
+        }
+    </style>
+<meta content="Static export organized for Netlify from Stitch pages" name="generator-note"/></head>
+<body class="antialiased min-h-screen flex flex-col pt-20">
+<!-- TopNavBar -->
+<nav class="bg-surface/90 dark:bg-surface-container-highest/90 text-primary dark:text-inverse-primary font-body-md text-body-md fixed top-0 w-full z-50 bg-surface-container-low/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-on-surface">
+                Zero Messaggi Persi
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors" href="come-funziona.html">Come funziona</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors" href="piattaforma.html">Piattaforma</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors" href="servizi.html">Servizi</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors" href="integrazioni.html">Integrazioni</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors" href="prezzi.html">Piani e prezzi</a>
+</div>
+<div class="hidden md:block">
+<a class="bg-primary-container text-surface-container-low px-6 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all duration-200" href="prova-gratuita.html" role="button">
+                    Prova gratis
+                </a>
+</div>
+<!-- Mobile Menu Toggle (Visual only for mockup) -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- HERO SECTION -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto w-full flex flex-col lg:flex-row items-center gap-12">
+<div class="flex-1 flex flex-col gap-6">
+<div class="flex flex-wrap gap-2 mb-2">
+<span class="inline-flex items-center gap-1 px-3 py-1 bg-surface-variant text-on-surface-variant rounded-full font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">bed</span> Pensato per B&amp;B e case vacanza
+                </span>
+<span class="inline-flex items-center gap-1 px-3 py-1 bg-surface-variant text-on-surface-variant rounded-full font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">support_agent</span> Supporto umano incluso
+                </span>
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile lg:font-display-lg lg:text-display-lg text-primary">
+                Rispondi meglio ai tuoi ospiti, senza passare la giornata tra WhatsApp, email e portali.
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Zero Messaggi Persi è una piattaforma con AI Concierge che aiuta B&amp;B, case vacanza e piccoli hotel a gestire domande frequenti, check-in, follow-up, recensioni e richieste degli ospiti in modo semplice, veloce e ordinato.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-4">
+<a class="bg-primary-container text-surface-container-low px-8 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all text-center" href="prova-gratuita.html" role="button">
+                    Prova gratis per 7 giorni
+                </a>
+<a class="border border-primary-container text-primary-container px-8 py-3 rounded-lg font-label-md text-label-md hover:bg-surface-variant transition-all text-center" href="contatti.html" role="button">
+                    Prenota una demo gratuita
+                </a>
+</div>
+</div>
+<div class="flex-1 relative w-full aspect-square md:aspect-[4/3] rounded-[24px] overflow-hidden ambient-shadow">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A bright, modern bedroom in a high-end coastal retreat bed and breakfast. Sun rays stream through sheer white curtains onto pristine white bedding. A small, elegant wooden bedside table holds a minimalist lamp and a neatly folded towel. The mood is serene, composed, and welcoming, embodying a natural minimalist aesthetic with warm white light and subtle navy blue accents in the decor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaDVVrb7fKNhn8mCtG4IorC26REf6K9mBKqNMBq9pu_-7nNK4rbqoj567CmDeQquR9YE35UP-oz1qnca7WUJP9wCdlsj01bEnSrRrbJ5nZynDM1CllwPLti2Wen_nerqHgc42z8s0LjwwhQyLCOHMvo1LLaiaXskkL5m_pNaTVf6jeldUqsKODt5Zjhd_T_OlGd7Hs7ZwcmK47k_gJHlZrL8PPjQSty7pkwijEBwb8D_K1hcoyuyLBEwUzIZyqg8tPSNLuDoEHHDk"/>
+<!-- Dashboard Overlay Mockup -->
+<div class="absolute bottom-6 right-6 left-6 md:left-auto md:w-[320px] glass-card rounded-[16px] p-5 shadow-lg">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">forum</span>
+<span class="font-label-md text-label-md text-primary">AI Concierge Attivo</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center bg-surface-container-lowest p-3 rounded-lg border border-surface-variant">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Messaggi gestiti (oggi)</span>
+<span class="font-headline-sm text-headline-sm text-primary">42</span>
+</div>
+<div class="flex justify-between items-center bg-surface-container-lowest p-3 rounded-lg border border-surface-variant">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tempo risparmiato</span>
+<span class="font-label-md text-label-md text-secondary">5h 30m</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-high dark:bg-inverse-surface text-primary dark:text-on-surface font-body-sm text-body-sm w-full border-t border-outline-variant dark:border-outline mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-4 mb-8">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-on-surface">
+                    Zero Messaggi Persi
+                </div>
+<p class="mt-2 text-on-surface-variant">© 2024 Zero Messaggi Persi. Tecnologia discreta, ospitalità più semplice.</p>
+</div>
+<div class="flex flex-col gap-2">
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary transition-all" href="index.html">Home</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary transition-all" href="come-funziona.html">Come funziona</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary transition-all" href="piattaforma.html">Piattaforma</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary transition-all" href="servizi.html">Servizi</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary transition-all" href="integrazioni.html">Integrazioni</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary transition-all" href="guest-content-kit.html">Guest Content Kit</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary transition-all" href="prezzi.html">Piani e prezzi</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary transition-all" href="contatti.html">Contatti</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary transition-all" href="privacy.html">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</body></html>
