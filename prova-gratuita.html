@@ -109,21 +109,21 @@
     .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
   </style>
 </head>
-<body class="antialiased min-h-screen flex flex-col pt-[88px]">
+<body class="antialiased min-h-screen flex flex-col pt-[80px]">
 
 <!-- NAV -->
 <nav class="fixed top-0 w-full z-50 bg-surface-container-low/80 backdrop-blur-md shadow-sm">
   <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
-    <a class="font-headline-sm text-headline-sm font-bold text-primary" href="index.html">Zero Messaggi Persi</a>
+    <a class="hover:opacity-90 transition-all duration-200" href="index.html"><img src="logo.svg" alt="Zero Messaggi Persi" class="h-[48px] w-auto"></a>
     <div class="hidden md:flex gap-gutter items-center">
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="come-funziona.html">Come funziona</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="piattaforma.html">Piattaforma</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="servizi.html">Servizi</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="integrazioni.html">Integrazioni</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="prezzi.html">Piani e prezzi</a>
+      <a class="text-on-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="come-funziona.html">Come funziona</a>
+      <a class="text-on-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="piattaforma.html">Piattaforma</a>
+      <a class="text-on-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="servizi.html">Servizi</a>
+      <a class="text-on-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="integrazioni.html">Integrazioni</a>
+      <a class="text-on-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="prezzi.html">Piani e prezzi</a>
     </div>
-    <a class="bg-primary-container text-surface-container-low px-6 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all duration-200" href="prova-gratuita.html" role="button">
-      Prova gratis
+    <a class="bg-primary-container text-surface-container-low px-6 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all duration-200" href="https://tally.so/r/rj2ELR" target="_blank" rel="noopener" role="button">
+      Analisi gratuita
     </a>
   </div>
 </nav>
@@ -143,11 +143,11 @@
       Configura il tuo AI Concierge, testa le risposte automatiche agli ospiti e scopri quanto tempo puoi recuperare ogni settimana. Nessuna carta di credito. Nessun vincolo.
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a class="bg-primary-container text-surface-container-low px-8 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all text-center" href="#form-accesso" role="button">
-        Richiedi accesso gratuito
+      <a class="bg-primary-container text-surface-container-low px-8 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all text-center" href="https://tally.so/r/rj2ELR" target="_blank" rel="noopener" role="button">
+        Inizia la prova gratuita
       </a>
       <a class="border border-primary-container text-primary-container px-8 py-3 rounded-lg font-label-md text-label-md hover:bg-surface-variant transition-all text-center" href="contatti.html" role="button">
-        Prenota prima una demo
+        Hai domande? Scrivici
       </a>
     </div>
   </section>
@@ -196,8 +196,8 @@
     <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
       <div class="flex flex-col items-center text-center gap-4">
         <div class="w-12 h-12 rounded-full bg-primary-container text-surface-container-low flex items-center justify-center font-headline-sm text-headline-sm flex-shrink-0">1</div>
-        <h3 class="font-headline-sm text-headline-sm text-primary">Compila il modulo</h3>
-        <p class="font-body-sm text-body-sm text-on-surface-variant">Due minuti per raccontarci la tua struttura e le tue esigenze comunicative.</p>
+        <h3 class="font-headline-sm text-headline-sm text-primary">Compila il questionario</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Due minuti per raccontarci la tua struttura e le tue esigenze comunicative tramite il form online.</p>
       </div>
       <div class="flex flex-col items-center text-center gap-4">
         <div class="w-12 h-12 rounded-full bg-primary-container text-surface-container-low flex items-center justify-center font-headline-sm text-headline-sm flex-shrink-0">2</div>
@@ -255,134 +255,26 @@
     </div>
   </section>
 
-  <!-- FORM RICHIESTA ACCESSO -->
-  <section id="form-accesso" class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="font-headline-md text-headline-md text-primary mb-3 text-center">Richiedi il tuo accesso gratuito</h2>
-      <p class="font-body-md text-body-md text-on-surface-variant text-center mb-10">Compila il modulo. Ti ricontatteremo entro 24 ore per pianificare la sessione di onboarding.</p>
-      <form name="prova-gratuita" method="POST" data-netlify="true" action="/grazie.html"
-        class="bg-surface-container-lowest rounded-[24px] p-8 border border-surface-variant ambient-shadow space-y-6">
-        <input type="hidden" name="form-name" value="prova-gratuita"/>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- Nome -->
-          <div>
-            <label class="block font-label-md text-label-md text-primary mb-2" for="nome">Nome e cognome *</label>
-            <input type="text" id="nome" name="nome" required placeholder="Mario Rossi"
-              class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-low focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-body-md text-on-surface transition"/>
-          </div>
-          <!-- Email -->
-          <div>
-            <label class="block font-label-md text-label-md text-primary mb-2" for="email">Email *</label>
-            <input type="email" id="email" name="email" required placeholder="mario@struttura.it"
-              class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-low focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-body-md text-on-surface transition"/>
-          </div>
-          <!-- Telefono -->
-          <div>
-            <label class="block font-label-md text-label-md text-primary mb-2" for="telefono">Telefono / WhatsApp *</label>
-            <input type="tel" id="telefono" name="telefono" required placeholder="+39 333 1234567"
-              class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-low focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-body-md text-on-surface transition"/>
-          </div>
-          <!-- Nome struttura -->
-          <div>
-            <label class="block font-label-md text-label-md text-primary mb-2" for="nome-struttura">Nome della struttura *</label>
-            <input type="text" id="nome-struttura" name="nome-struttura" required placeholder="B&B Villa del Lago"
-              class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-low focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-body-md text-on-surface transition"/>
-          </div>
-          <!-- Tipo struttura -->
-          <div>
-            <label class="block font-label-md text-label-md text-primary mb-2" for="tipo-struttura">Tipo di struttura *</label>
-            <select id="tipo-struttura" name="tipo-struttura" required
-              class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-low focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-body-md text-on-surface transition">
-              <option value="" disabled selected>Seleziona...</option>
-              <option>B&amp;B</option>
-              <option>Casa vacanza / Appartamento</option>
-              <option>Piccolo hotel (fino a 20 camere)</option>
-              <option>Agriturismo</option>
-              <option>Glamping / Eco-lodge</option>
-              <option>Affittacamere</option>
-              <option>Altro</option>
-            </select>
-          </div>
-          <!-- Numero camere -->
-          <div>
-            <label class="block font-label-md text-label-md text-primary mb-2" for="num-camere">Numero di camere / unità *</label>
-            <select id="num-camere" name="num-camere" required
-              class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-low focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-body-md text-on-surface transition">
-              <option value="" disabled selected>Seleziona...</option>
-              <option>1–3 unità</option>
-              <option>4–8 unità</option>
-              <option>9–15 camere</option>
-              <option>16–25 camere</option>
-              <option>Più di 25</option>
-            </select>
-          </div>
-          <!-- Località -->
-          <div>
-            <label class="block font-label-md text-label-md text-primary mb-2" for="localita">Località *</label>
-            <input type="text" id="localita" name="localita" required placeholder="Es. Lago di Garda, Sicilia, Roma..."
-              class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-low focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-body-md text-on-surface transition"/>
-          </div>
-          <!-- Channel manager / PMS -->
-          <div>
-            <label class="block font-label-md text-label-md text-primary mb-2" for="pms">Channel manager o PMS usato</label>
-            <input type="text" id="pms" name="pms" placeholder="Es. Lodgify, Smoobu, Beds24, Octorate, nessuno..."
-              class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-low focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-body-md text-on-surface transition"/>
-          </div>
-        </div>
-
-        <!-- Canali usati -->
-        <div>
-          <label class="block font-label-md text-label-md text-primary mb-3">Canali che usi oggi per comunicare con gli ospiti</label>
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            <label class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface cursor-pointer">
-              <input type="checkbox" name="canali" value="WhatsApp" class="rounded border-outline-variant text-secondary focus:ring-secondary"/> WhatsApp
-            </label>
-            <label class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface cursor-pointer">
-              <input type="checkbox" name="canali" value="Email" class="rounded border-outline-variant text-secondary focus:ring-secondary"/> Email
-            </label>
-            <label class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface cursor-pointer">
-              <input type="checkbox" name="canali" value="Booking.com" class="rounded border-outline-variant text-secondary focus:ring-secondary"/> Booking.com
-            </label>
-            <label class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface cursor-pointer">
-              <input type="checkbox" name="canali" value="Airbnb" class="rounded border-outline-variant text-secondary focus:ring-secondary"/> Airbnb
-            </label>
-            <label class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface cursor-pointer">
-              <input type="checkbox" name="canali" value="Vrbo/HomeAway" class="rounded border-outline-variant text-secondary focus:ring-secondary"/> Vrbo / HomeAway
-            </label>
-            <label class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface cursor-pointer">
-              <input type="checkbox" name="canali" value="SMS" class="rounded border-outline-variant text-secondary focus:ring-secondary"/> SMS
-            </label>
-          </div>
-        </div>
-
-        <!-- Problema principale -->
-        <div>
-          <label class="block font-label-md text-label-md text-primary mb-2" for="problema">Qual è il problema principale nella tua comunicazione con gli ospiti? *</label>
-          <textarea id="problema" name="problema" required rows="4"
-            placeholder="Es. Perdo troppo tempo a rispondere alle stesse domande, ricevo messaggi di notte, troppe richieste pre check-in..."
-            class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-low focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-body-md text-on-surface transition resize-none"></textarea>
-        </div>
-
-        <!-- Submit -->
-        <div class="pt-2">
-          <button type="submit"
-            class="w-full bg-primary-container text-surface-container-low py-4 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all duration-200 text-center">
-            Invia richiesta di accesso gratuito
-          </button>
-          <p class="font-body-sm text-body-sm text-on-surface-variant text-center mt-3">
-            Ti risponderemo entro 24 ore. Nessuna carta di credito richiesta.
-          </p>
-        </div>
-      </form>
+  <!-- RICHIEDI ACCESSO -->
+  <section id="form-accesso" class="bg-surface-container-low py-section-gap">
+    <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="font-headline-md text-headline-md text-primary mb-4">Pronto a iniziare la tua prova?</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl mx-auto">Compila il breve questionario. Ti ricontatteremo entro 24 ore per pianificare la sessione di onboarding gratuita.</p>
+        <a class="inline-flex items-center gap-2 bg-primary-container text-surface-container-low px-10 py-4 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all" href="https://tally.so/r/rj2ELR" target="_blank" rel="noopener" role="button">
+          Inizia la prova gratuita
+          <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+        </a>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-4">Nessuna carta di credito. Nessun impegno. 7 giorni di accesso completo.</p>
+      </div>
     </div>
   </section>
 
   <!-- CTA FINALE -->
   <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full text-center py-4">
-    <p class="font-body-lg text-body-lg text-on-surface-variant mb-6">Preferisci prima una demo dal vivo con il team?</p>
+    <p class="font-body-lg text-body-lg text-on-surface-variant mb-6">Vuoi prima ricevere un'analisi della tua situazione?</p>
     <a class="border border-primary-container text-primary-container px-8 py-4 rounded-lg font-label-md text-label-md hover:bg-surface-variant transition-all inline-block" href="contatti.html" role="button">
-      Prenota una demo gratuita
+      Richiedi l'analisi gratuita
     </a>
   </section>
 
@@ -392,8 +284,8 @@
 <footer class="w-full bg-surface-container-high border-t border-outline-variant">
   <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
     <div class="col-span-1">
-      <div class="font-headline-sm text-headline-sm text-primary mb-4">Zero Messaggi Persi</div>
-      <p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 Zero Messaggi Persi. Tecnologia discreta, ospitalità più semplice.</p>
+      <a href="index.html" class="mb-4 hover:opacity-90 transition-all duration-200"><img src="logo.svg" alt="Zero Messaggi Persi" class="h-[36px] w-auto"></a>
+      <p class="font-body-sm text-body-sm text-on-surface-variant">Zero messaggi persi. Più tempo per l'ospitalità.</p>
     </div>
     <div class="col-span-1">
       <ul class="space-y-3 font-body-sm text-body-sm">
@@ -417,6 +309,7 @@
       </ul>
     </div>
   </div>
+<div class="w-full border-t border-outline-variant py-4 text-center font-body-sm text-body-sm text-on-surface-variant">© 2026 Zero Messaggi Persi | Tutti i diritti riservati.</div>
 </footer>
 
 </body>
