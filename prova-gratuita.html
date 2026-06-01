@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html class="light" lang="it">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Analisi gratuita della tua comunicazione ospiti - Zero Messaggi Persi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#112c3f",
+            "secondary-fixed": "#d0e4ff",
+            "on-tertiary-fixed-variant": "#75331b",
+            "inverse-primary": "#b0c9e2",
+            "primary-container": "#294256",
+            "tertiary": "#4f1702",
+            "surface-bright": "#fdf9f3",
+            "outline": "#73777d",
+            "inverse-on-surface": "#f4f0ea",
+            "secondary-container": "#a2cdff",
+            "surface-dim": "#ddd9d4",
+            "surface-variant": "#e6e2dc",
+            "on-surface-variant": "#43474c",
+            "on-error-container": "#93000a",
+            "tertiary-container": "#6c2c15",
+            "on-tertiary-fixed": "#390c00",
+            "primary-fixed-dim": "#b0c9e2",
+            "outline-variant": "#c3c7cd",
+            "on-secondary-container": "#295782",
+            "error-container": "#ffdad6",
+            "error": "#ba1a1a",
+            "on-error": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed": "#011e30",
+            "background": "#fdf9f3",
+            "on-secondary": "#ffffff",
+            "primary-fixed": "#cbe6ff",
+            "secondary-fixed-dim": "#9fcafc",
+            "on-tertiary-container": "#ef9475",
+            "surface-container": "#f1ede7",
+            "surface-container-low": "#f7f3ed",
+            "on-surface": "#1c1c18",
+            "surface": "#fdf9f3",
+            "secondary": "#35618d",
+            "on-secondary-fixed-variant": "#184974",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-fixed-dim": "#ffb59c",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#95aec6",
+            "on-primary-fixed-variant": "#30495e",
+            "surface-tint": "#486176",
+            "on-secondary-fixed": "#001d35",
+            "surface-container-highest": "#e6e2dc",
+            "on-background": "#1c1c18",
+            "tertiary-fixed": "#ffdbd0",
+            "surface-container-high": "#ebe8e2",
+            "inverse-surface": "#31302d"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "section-gap": "80px",
+            "container-max": "1280px",
+            "margin-mobile": "20px",
+            "base": "8px",
+            "gutter": "24px",
+            "margin-desktop": "64px"
+          },
+          "fontFamily": {
+            "display-lg-mobile": ["Libre Caslon Text"],
+            "body-sm": ["Manrope"],
+            "body-md": ["Manrope"],
+            "body-lg": ["Manrope"],
+            "label-sm": ["Manrope"],
+            "headline-sm": ["Libre Caslon Text"],
+            "label-md": ["Manrope"],
+            "display-lg": ["Libre Caslon Text"],
+            "headline-md": ["Libre Caslon Text"]
+          },
+          "fontSize": {
+            "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "400"}],
+            "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+            "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "400"}],
+            "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+            "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #f7f3ed; color: #1c1c18; }
+    .ambient-shadow { box-shadow: 0 10px 40px -10px rgba(41,66,86,0.08); }
+    .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(41,66,86,0.12); }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    .pilot-gradient { background: linear-gradient(135deg, #112c3f 0%, #294256 60%, #35618d 100%); }
+  </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col pt-[80px]">
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 bg-surface-container-low/80 backdrop-blur-md shadow-sm">
+  <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+    <a class="hover:opacity-90 transition-all duration-200" href="index.html">
+      <img src="logo.svg" alt="Zero Messaggi Persi" class="h-[48px] w-auto">
+    </a>
+    <div class="hidden md:flex gap-8 items-center">
+      <a class="text-on-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="come-funziona.html">Come funziona</a>
+      <a class="text-on-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="index.html#per-chi-e">Per chi è</a>
+      <a class="text-on-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="prezzi.html">Piani e prezzi</a>
+      <a class="text-primary border-b-2 border-primary font-bold pb-1 hover:opacity-90 transition-all duration-200 font-body-lg text-body-lg" href="prova-gratuita.html">Pilot gratuito</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <a class="hidden md:inline-flex bg-primary-container text-surface-container-low px-6 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all duration-200" href="#analisi">
+        Inizia l'analisi →
+      </a>
+      <button class="md:hidden text-primary p-2">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="flex-grow flex flex-col gap-section-gap pb-section-gap">
+
+  <!-- HERO -->
+  <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mt-12 md:mt-20 text-center">
+    <div class="max-w-3xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-surface-variant text-on-surface-variant rounded-full font-label-sm text-label-sm mb-6">
+        <span class="material-symbols-outlined text-[16px]">analytics</span>
+        Analisi gratuita · 3 minuti · Risultato immediato
+      </div>
+      <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary mb-6">
+        Scopri quanto tempo stai perdendo ogni settimana sui messaggi dei tuoi ospiti.
+      </h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-2xl mx-auto">
+        Rispondi a 10 domande sulla tua struttura. Ricevi subito un'analisi personalizzata: quante ore perdi, dove intervenire per primo, e quale soluzione si adatta a te. Gratis, senza impegno.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a class="bg-primary-container text-surface-container-low px-8 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all text-center" href="#analisi">
+          Inizia l'analisi gratuita →
+        </a>
+        <a class="border border-primary-container text-primary-container px-8 py-3 rounded-lg font-label-md text-label-md hover:bg-surface-variant transition-all text-center" href="#pilot">
+          Vuoi attivare direttamente il Pilot?
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COSA SCOPRI -->
+  <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+    <div class="text-center mb-10">
+      <h2 class="font-headline-md text-headline-md text-primary mb-3">Cosa trovi nel tuo report</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">Non un risultato generico. Un'analisi basata sulle tue risposte, sulla tua struttura, sulla tua situazione reale.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow flex flex-col gap-3 hover-lift">
+        <span class="material-symbols-outlined text-primary-container text-[36px]">schedule</span>
+        <h3 class="font-label-md text-label-md text-primary">Ore perse ogni settimana</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Una stima concreta di quanto tempo dedichi ogni settimana ai messaggi — e quanto potresti recuperarne.</p>
+      </div>
+      <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow flex flex-col gap-3 hover-lift">
+        <span class="material-symbols-outlined text-primary-container text-[36px]">savings</span>
+        <h3 class="font-label-md text-label-md text-primary">Il costo in tempo</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Quanto vale il tuo tempo? Il report calcola il costo mensile della gestione manuale rispetto a una soluzione automatizzata.</p>
+      </div>
+      <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow flex flex-col gap-3 hover-lift">
+        <span class="material-symbols-outlined text-primary-container text-[36px]">priority_high</span>
+        <h3 class="font-label-md text-label-md text-primary">Le tue 3 priorità</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Quali automazioni hanno più impatto per la tua struttura specifica. Non un elenco generico — le tue priorità, in ordine.</p>
+      </div>
+      <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow flex flex-col gap-3 hover-lift">
+        <span class="material-symbols-outlined text-primary-container text-[36px]">recommend</span>
+        <h3 class="font-label-md text-label-md text-primary">Il piano consigliato</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Quale piano di Zero Messaggi Persi si adatta alla tua dimensione e ai tuoi obiettivi — con stima del risparmio mensile.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM ANALISI -->
+  <section id="analisi" class="bg-surface-container-low py-section-gap scroll-mt-24">
+    <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+      <div class="max-w-2xl mx-auto">
+
+        <!-- Header -->
+        <div class="text-center mb-10">
+          <p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-3">La tua analisi gratuita</p>
+          <h2 class="font-headline-md text-headline-md text-primary mb-3">10 domande. Risultato immediato.</h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant">Nessun dato tecnico richiesto. Nessun impegno. Al termine vedi subito il tuo report personalizzato — con la possibilità di prenotare una chiamata gratuita con Irene o attivare direttamente il Pilot.</p>
+        </div>
+
+        <!-- Form embed Tally -->
+        <div class="bg-surface-container-lowest rounded-[24px] p-2 border border-surface-variant ambient-shadow overflow-hidden">
+          <iframe
+            data-tally-src="https://tally.so/embed/rj2ELR?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy"
+            width="100%"
+            height="500"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="Analisi gratuita — Zero Messaggi Persi"
+            style="min-height:480px; border-radius: 20px;"
+          ></iframe>
+          <script>
+            var d=document,w="https://tally.so/widgets/embed.js",
+            v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){e.src=e.dataset.tallySrc})};
+            if("undefined"!=typeof Tally)v();
+            else if(d.querySelector('script[src="'+w+'"]')==null){
+              var s=d.createElement("script");s.src=w;s.onload=v;s.onerror=v;d.body.appendChild(s);
+            }
+          </script>
+        </div>
+
+        <p class="font-body-sm text-body-sm text-on-surface-variant text-center mt-4">
+          Il form non si carica? <a href="https://tally.so/r/rj2ELR" target="_blank" rel="noopener noreferrer" class="text-primary-container underline">Aprilo in una nuova finestra →</a>
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COSA SUCCEDE DOPO L'ANALISI -->
+  <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+    <div class="text-center mb-10">
+      <h2 class="font-headline-md text-headline-md text-primary mb-3">Dopo il report, hai due strade.</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">Nessun obbligo in nessun caso. Scegli quello che ti sembra più giusto per te.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+
+      <!-- Strada A: Chiamata -->
+      <div class="bg-surface-container-lowest rounded-[24px] p-8 border-2 border-secondary-container flex flex-col gap-5 ambient-shadow">
+        <div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center">
+          <span class="material-symbols-outlined text-on-secondary-container text-[28px]">calendar_month</span>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-primary">Vuoi parlarne prima</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant flex-grow">Prenota 30 minuti con Irene. Risponde a tutte le tue domande, approfondisce i risultati del report e capisce con te cosa ha senso fare. Nessuna vendita forzata.</p>
+        <ul class="space-y-2">
+          <li class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary-container text-[16px]">check_circle</span>
+            30 minuti, online
+          </li>
+          <li class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary-container text-[16px]">check_circle</span>
+            Gratis, senza impegno
+          </li>
+          <li class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary-container text-[16px]">check_circle</span>
+            Scegli tu giorno e orario
+          </li>
+        </ul>
+        <a class="w-full block border-2 border-primary-container text-primary-container py-3 px-4 rounded-lg font-label-md text-label-md hover:bg-surface-container transition-all text-center" href="https://cal.com/zero-messaggi-persi/30min" target="_blank" rel="noopener noreferrer">
+          📅 Prenota una chiamata gratuita
+        </a>
+        <!-- NOTA: sostituisci [IL-TUO-LINK-CAL] con il tuo link Cal.com dopo averlo creato -->
+      </div>
+
+      <!-- Strada B: Pilot diretto -->
+      <div class="pilot-gradient rounded-[24px] p-8 flex flex-col gap-5 ambient-shadow relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -mr-10 -mt-10 pointer-events-none"></div>
+        <div class="relative z-10 flex flex-col gap-5 h-full">
+          <div class="w-14 h-14 rounded-2xl bg-white/15 flex items-center justify-center">
+            <span class="material-symbols-outlined text-white text-[28px]">rocket_launch</span>
+          </div>
+          <h3 class="font-headline-sm text-headline-sm text-on-primary">Sei già convinto</h3>
+          <p class="font-body-md text-body-md text-on-primary-container flex-grow">Attiva il Pilot a €29. Irene configura tutto in 7 giorni. Se entro 14 giorni non sei soddisfatto, rimborso garantito senza domande.</p>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 font-body-sm text-body-sm text-on-primary-container">
+              <span class="material-symbols-outlined text-inverse-primary text-[16px]">check_circle</span>
+              Setup completo incluso
+            </li>
+            <li class="flex items-center gap-2 font-body-sm text-body-sm text-on-primary-container">
+              <span class="material-symbols-outlined text-inverse-primary text-[16px]">check_circle</span>
+              Operativo in 7 giorni
+            </li>
+            <li class="flex items-center gap-2 font-body-sm text-body-sm text-on-primary-container">
+              <span class="material-symbols-outlined text-inverse-primary text-[16px]">check_circle</span>
+              Rimborso garantito 14 giorni
+            </li>
+          </ul>
+          <a class="w-full block bg-white text-primary-container py-3 px-4 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all text-center" href="#pilot">
+            🚀 Attiva il Pilot — €29
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PIANO PILOT — DETTAGLIO -->
+  <section id="pilot" class="bg-surface-container-low py-section-gap scroll-mt-24">
+    <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+      <div class="text-center mb-10">
+        <p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-3">Piano Pilot</p>
+        <h2 class="font-headline-md text-headline-md text-primary mb-3">Attiva direttamente senza passare dall'analisi.</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">Se sai già quello che vuoi, puoi partire subito. €29 per 14 giorni reali sulla tua struttura.</p>
+      </div>
+
+      <div class="max-w-3xl mx-auto">
+        <div class="pilot-gradient rounded-[28px] p-8 md:p-12 relative overflow-hidden ambient-shadow">
+          <div class="absolute top-0 right-0 w-72 h-72 bg-white/5 rounded-full -mr-20 -mt-20 pointer-events-none"></div>
+          <div class="relative z-10 flex flex-col lg:flex-row gap-8 items-start lg:items-center justify-between">
+            <div class="flex-1">
+              <p class="font-label-sm text-label-sm text-white/60 uppercase tracking-wider mb-2">Piano Pilot</p>
+              <h3 class="font-headline-md text-headline-md text-white mb-6">14 giorni reali. €29. Rimborso garantito.</h3>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <li class="flex items-center gap-2 text-white/90 font-body-sm text-body-sm">
+                  <span class="material-symbols-outlined text-secondary-fixed text-[16px]">check_circle</span>
+                  1 struttura
+                </li>
+                <li class="flex items-center gap-2 text-white/90 font-body-sm text-body-sm">
+                  <span class="material-symbols-outlined text-secondary-fixed text-[16px]">check_circle</span>
+                  Setup completo incluso
+                </li>
+                <li class="flex items-center gap-2 text-white/90 font-body-sm text-body-sm">
+                  <span class="material-symbols-outlined text-secondary-fixed text-[16px]">check_circle</span>
+                  WhatsApp automatico H24
+                </li>
+                <li class="flex items-center gap-2 text-white/90 font-body-sm text-body-sm">
+                  <span class="material-symbols-outlined text-secondary-fixed text-[16px]">check_circle</span>
+                  5 workflow automatici
+                </li>
+                <li class="flex items-center gap-2 text-white/90 font-body-sm text-body-sm">
+                  <span class="material-symbols-outlined text-secondary-fixed text-[16px]">check_circle</span>
+                  Multilingua incluso
+                </li>
+                <li class="flex items-center gap-2 text-white/90 font-body-sm text-body-sm">
+                  <span class="material-symbols-outlined text-secondary-fixed text-[16px]">check_circle</span>
+                  Operativo in 7 giorni
+                </li>
+              </ul>
+              <p class="font-body-sm text-body-sm text-white/50 mt-6">Dopo il Pilot, si converte in piano Starter a €149/mese — solo se sei soddisfatto.</p>
+            </div>
+            <div class="flex flex-col items-center gap-4 bg-white/10 rounded-2xl p-8 min-w-[200px] text-center shrink-0">
+              <p class="font-body-sm text-body-sm text-white/70">Solo per i primi 14 giorni</p>
+              <span class="font-display-lg text-display-lg text-white">€29</span>
+              <a class="w-full bg-white text-primary-container px-6 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all text-center" href="https://tally.so/r/rj2ELR" target="_blank" rel="noopener noreferrer">
+                Attiva il Pilot →
+              </a>
+              <p class="font-body-sm text-body-sm text-white/50 text-center">Nessun contratto · Rimborso garantito</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DUBBI DELL'ULTIMO MINUTO -->
+  <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-headline-md text-headline-md text-primary mb-8 text-center">Hai ancora un dubbio?</h2>
+      <div class="flex flex-col gap-4">
+        <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow flex gap-5 items-start">
+          <span class="material-symbols-outlined text-primary-container text-[28px] shrink-0">help</span>
+          <div>
+            <h3 class="font-label-md text-label-md text-primary mb-2">"E se il sistema risponde male ai miei ospiti?"</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">Prima di andare live, facciamo una sessione di test: tu fai le domande più difficili, vedi come risponde, e correggiamo tutto quello che non ti convince. Il sistema parte solo quando sei al 100% tranquillo.</p>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow flex gap-5 items-start">
+          <span class="material-symbols-outlined text-primary-container text-[28px] shrink-0">help</span>
+          <div>
+            <h3 class="font-label-md text-label-md text-primary mb-2">"Sono troppo piccolo — ho solo 2 appartamenti"</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">Zero Messaggi Persi nasce esattamente per strutture da 1 a 4 unità. È lì che il risparmio di tempo è più evidente, perché spesso sei da solo a gestire tutto. Il Pilot costa €29 — se non fa per te, li riprendi indietro.</p>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow flex gap-5 items-start">
+          <span class="material-symbols-outlined text-primary-container text-[28px] shrink-0">help</span>
+          <div>
+            <h3 class="font-label-md text-label-md text-primary mb-2">"Non voglio che i miei ospiti si accorgano che non sono io"</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">Il sistema viene addestrato sul tuo tono, le tue espressioni, il tuo stile. I messaggi possono essere firmati con il tuo nome. La maggior parte degli ospiti non si accorge di nulla — e quelli che lo scoprono rimangono impressionati.</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <p class="font-body-md text-body-md text-on-surface-variant mb-4">Hai una domanda che non trovi qui?</p>
+        <a class="inline-flex items-center gap-2 border border-primary-container text-primary-container px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-surface-container transition-all" href="https://wa.me/393425259174?text=Ciao%20Irene%2C%20ho%20una%20domanda" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 shrink-0">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Scrivimi su WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINALE -->
+  <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+    <div class="bg-primary rounded-[32px] p-10 md:p-16 text-center relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
+        <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-secondary-fixed blur-3xl"></div>
+        <div class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-tertiary-fixed blur-3xl"></div>
+      </div>
+      <div class="relative z-10 max-w-xl mx-auto">
+        <h2 class="font-headline-md text-headline-md text-on-primary mb-4">Inizia da dove ti senti più a tuo agio.</h2>
+        <p class="font-body-lg text-body-lg text-primary-fixed-dim mb-8">
+          L'analisi è gratuita e non impegna a nulla. La chiamata è gratuita e non impegna a nulla. Il Pilot costa €29 e ha rimborso garantito. Non c'è una mossa sbagliata.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+          <a class="bg-surface-container-lowest text-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all text-center" href="#analisi">
+            Fai l'analisi gratuita →
+          </a>
+          <a class="border border-white/30 text-white px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-white/10 transition-all text-center" href="https://cal.com/zero-messaggi-persi/30min" target="_blank" rel="noopener noreferrer">
+            📅 Prenota una chiamata
+          </a>
+        </div>
+        <a class="inline-flex items-center gap-1 text-primary-fixed-dim font-body-sm text-body-sm hover:text-white transition-all" href="#pilot">
+          Oppure attiva direttamente il Pilot — €29 →
+        </a>
+        <p class="font-body-sm text-body-sm text-primary-fixed-dim mt-6 opacity-60">Nessun contratto · Setup incluso · Rimborso garantito 14 giorni</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-surface-container-high dark:bg-inverse-surface font-body-md text-body-md w-full border-t border-outline-variant dark:border-outline">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+    <div class="flex flex-col gap-4 items-center text-center">
+      <a href="index.html" class="hover:opacity-90 transition-all duration-200"><img src="logo.svg" alt="Zero Messaggi Persi" class="h-[40px] w-auto"></a>
+      <p class="font-body-md text-body-md font-semibold text-on-surface-variant dark:text-surface-variant">Zero messaggi persi.<br>Più tempo per l'ospitalità.</p>
+    </div>
+    <div class="flex flex-col gap-3">
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="index.html">Home</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="come-funziona.html">Come funziona</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="servizi.html">Servizi</a>
+    </div>
+    <div class="flex flex-col gap-3">
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="prezzi.html">Piani e prezzi</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="contatti.html">Contatti</a>
+    </div>
+  </div>
+  <div class="w-full border-t border-outline-variant py-4 text-center font-body-sm text-body-sm text-on-surface-variant">
+    © 2026 Zero Messaggi Persi | Tutti i diritti riservati. | P.Iva ESY3328229M |
+    <a href="privacy.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Privacy Policy</a>
+  </div>
+</footer>
+
+</body>
+</html>

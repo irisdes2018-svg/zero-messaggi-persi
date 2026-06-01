@@ -18,15 +18,6 @@
   to = "/servizi.html"
   status = 200
 
-[[redirects]]
-  from = "/integrazioni"
-  to = "/integrazioni.html"
-  status = 200
-
-[[redirects]]
-  from = "/guest-content-kit"
-  to = "/guest-content-kit.html"
-  status = 200
 
 [[redirects]]
   from = "/prezzi"

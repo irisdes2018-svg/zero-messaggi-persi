@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html class="light" lang="it"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -8,7 +7,6 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
@@ -80,101 +78,26 @@
                       "margin-desktop": "64px"
               },
               "fontFamily": {
-                      "display-lg-mobile": [
-                              "Libre Caslon Text"
-                      ],
-                      "body-sm": [
-                              "Manrope"
-                      ],
-                      "body-md": [
-                              "Manrope"
-                      ],
-                      "body-lg": [
-                              "Manrope"
-                      ],
-                      "label-sm": [
-                              "Manrope"
-                      ],
-                      "headline-sm": [
-                              "Libre Caslon Text"
-                      ],
-                      "label-md": [
-                              "Manrope"
-                      ],
-                      "display-lg": [
-                              "Libre Caslon Text"
-                      ],
-                      "headline-md": [
-                              "Libre Caslon Text"
-                      ]
+                      "display-lg-mobile": ["Libre Caslon Text"],
+                      "body-sm": ["Manrope"],
+                      "body-md": ["Manrope"],
+                      "body-lg": ["Manrope"],
+                      "label-sm": ["Manrope"],
+                      "headline-sm": ["Libre Caslon Text"],
+                      "label-md": ["Manrope"],
+                      "display-lg": ["Libre Caslon Text"],
+                      "headline-md": ["Libre Caslon Text"]
               },
               "fontSize": {
-                      "display-lg-mobile": [
-                              "36px",
-                              {
-                                      "lineHeight": "44px",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "body-sm": [
-                              "14px",
-                              {
-                                      "lineHeight": "20px",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "body-md": [
-                              "16px",
-                              {
-                                      "lineHeight": "24px",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "body-lg": [
-                              "18px",
-                              {
-                                      "lineHeight": "28px",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "label-sm": [
-                              "12px",
-                              {
-                                      "lineHeight": "16px",
-                                      "letterSpacing": "0.03em",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "headline-sm": [
-                              "24px",
-                              {
-                                      "lineHeight": "32px",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "label-md": [
-                              "14px",
-                              {
-                                      "lineHeight": "20px",
-                                      "letterSpacing": "0.05em",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "display-lg": [
-                              "48px",
-                              {
-                                      "lineHeight": "56px",
-                                      "letterSpacing": "-0.02em",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "headline-md": [
-                              "32px",
-                              {
-                                      "lineHeight": "40px",
-                                      "fontWeight": "400"
-                              }
-                      ]
+                      "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "400"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+                      "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}]
               }
             }
           }
@@ -185,168 +108,382 @@
             background-color: theme('colors.background');
             color: theme('colors.on-background');
         }
-        
         .glass-card {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(235, 230, 222, 0.8);
         }
-        
         .ambient-shadow {
             box-shadow: 0 10px 40px -10px rgba(41, 66, 86, 0.06);
         }
-        
         .hover-lift {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
         .hover-lift:hover {
             transform: translateY(-4px);
             box-shadow: 0 20px 40px -10px rgba(41, 66, 86, 0.1);
         }
-        
-        /* Thin linear icons */
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
         }
+        /* FAQ Accordion */
+        details summary {
+            list-style: none;
+            cursor: pointer;
+        }
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] .faq-icon {
+            transform: rotate(45deg);
+        }
+        .faq-icon {
+            transition: transform 0.25s ease;
+        }
+        details[open] summary {
+            color: theme('colors.primary');
+        }
     </style>
-<meta content="Static export organized for Netlify from Stitch pages" name="generator-note"/></head>
+<meta content="Static export organized for Netlify from Stitch pages" name="generator-note"/>
+</head>
 <body class="antialiased min-h-screen flex flex-col pt-[80px]">
-<!-- TopNavBar -->
+
+<!-- NAV -->
 <nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface-container-highest/90 bg-surface-container-low/80 backdrop-blur-md shadow-sm">
-<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
-<!-- Brand -->
-<a class="hover:opacity-90 transition-all duration-200" href="index.html"><img src="logo.svg" alt="Zero Messaggi Persi" class="h-[48px] w-auto"></a>
-<!-- Desktop Nav -->
-<div class="hidden md:flex items-center gap-8">
-<a class="text-primary dark:text-inverse-primary border-b-2 border-primary font-bold pb-1 font-body-md text-body-md hover:opacity-90 transition-all duration-200" href="come-funziona.html">Come funziona</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="servizi.html">Servizi</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="prezzi.html">Piani e prezzi</a>
-</div>
-<!-- CTA & Mobile Menu -->
-<div class="flex items-center gap-4">
-<a class="hidden md:inline-flex bg-primary-container text-surface-low px-6 py-2 rounded-lg font-label-md text-label-md hover:bg-primary transition-colors hover:opacity-90 active:scale-95 text-[#F7F3ED]" href="https://tally.so/r/rj2ELR" target="_blank" rel="noopener">
-                    Contattaci
-                </a>
-<button class="md:hidden text-primary p-2">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</div>
+  <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+    <a class="hover:opacity-90 transition-all duration-200" href="index.html"><img src="logo.svg" alt="Zero Messaggi Persi" class="h-[48px] w-auto"></a>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-primary border-b-2 border-primary font-bold pb-1 font-body-md text-body-md hover:opacity-90 transition-all duration-200" href="come-funziona.html">Come funziona</a>
+      <a class="text-on-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="index.html#per-chi-e">Per chi è</a>
+      <a class="text-on-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="prezzi.html">Piani e prezzi</a>
+      <a class="text-secondary font-semibold hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="prova-gratuita.html">Pilot gratuito</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <a class="hidden md:inline-flex bg-primary-container text-surface-container-low px-6 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all text-[#F7F3ED]" href="prova-gratuita.html">
+        Prova 14 giorni →
+      </a>
+      <button class="md:hidden text-primary p-2">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
 </nav>
-<!-- Main Content -->
+
 <main class="flex-grow">
-<!-- Hero Section -->
-<section class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
-<div class="max-w-2xl">
-<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary mb-6">
-                        Tecnologia discreta, ospitalità più semplice.
-                    </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
-                        Siamo noi a fare tutto il lavoro. Dall'intervista iniziale fino al primo messaggio inviato al tuo ospite: ecco come attiviamo il tuo assistente in pochi giorni, senza farti impazzire con configurazioni tecniche.
-</p>
-<a class="inline-flex items-center gap-2 text-secondary-container bg-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors text-[#F7F3ED]" href="#process">
-                        Scopri i nostri 5 passi
-                        <span class="material-symbols-outlined text-sm">arrow_downward</span>
-</a>
-</div>
-<div class="relative h-[400px] lg:h-[500px] rounded-[32px] overflow-hidden ambient-shadow">
-<img alt="Warm Mediterranean hospitality setting" class="w-full h-full object-cover" data-alt="A bright, airy Mediterranean boutique hotel lobby or reception area bathed in soft, natural morning sunlight. Warm terracotta tiles, plush cream-colored linen seating, and lush green potted olive trees create an inviting atmosphere. A beautifully designed minimalist wooden reception desk sits in the background. The mood is serene, professional, and welcoming, embodying premium hospitality without feeling sterile or overly modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7YRQ1f6JuIJ1GooNwY1NsARwA-gLymb36aRtZfzUuuLK2vpcNOIGL1EMBNphiFYWnLgoT-OgmoKOqFBL6-LZxi1geCCDzKiUdXiPnzFuONjRJBxGDJyRA0bn9lvNM5LywEvtyBe3ERVyee5qzIPi5f1CFcl-gW0D6rRePPee0aCDkIXsGjSPA1iG9glqgNX8EaZHUL_ske44UK7x-XUbG_pLpsJSn9nNG4D7yNPfHw6neIzbljc2rY2qM8eVZSoUp-WtF48HXxgw"/>
-<!-- Glass badge overlay -->
-<div class="absolute bottom-6 left-6 glass-card px-6 py-4 rounded-xl flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center text-secondary">
-<span class="material-symbols-outlined">spa</span>
-</div>
-<div>
-<p class="font-label-md text-label-md text-primary">Zero stress</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Configurazione guidata</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- 5 Step Process - Bento Grid Style -->
-<section class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto bg-surface-container-low/50 rounded-[40px] mb-section-gap" id="process">
-<div class="text-center max-w-3xl mx-auto mb-16">
-<h2 class="font-headline-md text-headline-md text-primary mb-4">Come ti togliamo il pensiero dei messaggi.</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">Nessun manuale da leggere, nessuna schermata da imparare. Facciamo noi.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-<!-- Step 1: Large Card -->
-<div class="md:col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-card p-8 border border-surface-variant ambient-shadow hover-lift relative overflow-hidden group">
-<div class="absolute top-0 right-0 w-64 h-64 bg-secondary-fixed/30 rounded-full blur-3xl -mr-20 -mt-20 transition-transform group-hover:scale-110"></div>
-<div class="relative z-10 flex flex-col md:flex-row gap-8 items-start">
-<div class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-sm shrink-0">1</div>
-<div>
-<h3 class="font-headline-sm text-headline-sm text-primary mb-3">1. Facciamo una chiacchierata</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Partiamo da una breve chiamata o da un modulo semplicissimo. Vogliamo capire come accogli i tuoi ospiti oggi e quali sono le domande che ti rubano più tempo ogni giorno.</p>
-</div>
-</div>
-</div>
-<!-- Step 2: Tall Card -->
-<div class="md:col-span-6 lg:col-span-4 bg-surface-container-lowest rounded-card p-8 border border-surface-variant ambient-shadow hover-lift">
-<div class="w-16 h-16 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-headline-sm mb-6">2</div>
-<h3 class="font-headline-sm text-headline-sm text-primary mb-3">2. Raccogliamo le regole della tua casa</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Ci fornisci le tue informazioni essenziali: password del Wi-Fi, istruzioni per i bidoni della spazzatura, codice del cancello o i tuoi ristoranti preferiti in zona. A ordinarle e organizzarle ci pensiamo noi.</p>
-</div>
-<!-- Step 3: Medium Card -->
-<div class="md:col-span-6 lg:col-span-4 bg-surface-container-lowest rounded-card p-8 border border-surface-variant ambient-shadow hover-lift">
-<div class="w-16 h-16 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-headline-sm mb-6">3</div>
-<h3 class="font-headline-sm text-headline-sm text-primary mb-3">3. Istruiamo il tuo nuovo aiutante</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Prendiamo tutto quello che ci hai raccontato e lo trasformiamo nel manuale segreto del tuo assistente. Impara il tuo stile, le tue regole, i tuoi orari. Risponde come risponderesti tu, non come un robot.</p>
-</div>
-<!-- Step 4: Medium Card -->
-<div class="md:col-span-6 lg:col-span-4 bg-surface-container-lowest rounded-card p-8 border border-surface-variant ambient-shadow hover-lift">
-<div class="w-16 h-16 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-headline-sm mb-6">4</div>
-<h3 class="font-headline-sm text-headline-sm text-primary mb-3">4. Facciamo una prova generale</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Prima di attivarlo, ti inviamo un messaggio WhatsApp di prova. Potrai fingere di essere un ospite e fare tutte le domande "scomode" che vuoi, per vedere come se la cava. Lo accendiamo solo quando ti senti sicuro al 100%.</p>
-</div>
-<!-- Step 5: Wide Card -->
-<div class="md:col-span-12 lg:col-span-4 bg-surface-container-lowest rounded-card p-8 border border-surface-variant ambient-shadow hover-lift flex flex-col justify-center">
-<div class="w-16 h-16 rounded-full bg-surface-tint text-on-primary flex items-center justify-center font-headline-sm mb-6">5</div>
-<h3 class="font-headline-sm text-headline-sm text-primary mb-3">5. Ti godi le tue serate</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Da questo momento, ogni messaggio degli ospiti trova risposta in pochi secondi, giorno e notte, in qualsiasi lingua. Tu ricevi una notifica solo quando c'è davvero bisogno di te. Per tutto il resto, ci pensa lui.</p>
-</div>
-</div>
-</section>
-<!-- Final CTA Section -->
-<section class="px-margin-mobile md:px-margin-desktop py-section-gap mb-section-gap max-w-container-max mx-auto">
-<div class="bg-primary rounded-[32px] p-10 md:p-16 text-center relative overflow-hidden">
-<!-- Background decorative elements -->
-<div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
-<div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-secondary-fixed blur-3xl"></div>
-<div class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-tertiary-fixed blur-3xl"></div>
-</div>
-<div class="relative z-10 max-w-2xl mx-auto">
-<span class="material-symbols-outlined text-secondary-fixed text-5xl mb-6">send_time_extension</span>
-<h2 class="font-headline-md text-headline-md text-on-primary mb-6">Iniziamo a farti risparmiare tempo?</h2>
-<p class="font-body-lg text-body-lg text-primary-fixed-dim mb-10">Affida a noi la gestione. Tu torna ad occuparti dei tuoi ospiti.</p>
-<a class="inline-flex items-center gap-2 bg-surface-container-lowest text-primary px-8 py-4 rounded-lg font-label-md text-label-md hover:bg-surface transition-colors hover-lift" href="https://tally.so/r/rj2ELR" target="_blank" rel="noopener">
-                        Rispondi a 4 domande veloci
-                    </a>
-</div>
-</div>
-</section>
+
+  <!-- HERO -->
+  <section class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="max-w-2xl">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-surface-variant text-on-surface-variant rounded-full font-label-sm text-label-sm mb-6 w-fit">
+          <span class="text-secondary">✦</span>
+          <span>Operativo in 7 giorni</span>
+          <span class="text-outline-variant">·</span>
+          <span>100% done-for-you</span>
+        </div>
+        <!-- H1 -->
+        <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary mb-6">
+          Smetti di gestire ogni comunicazione con i tuoi ospiti a mano. Ci pensiamo noi.
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+          Dal momento in cui ci chiami, in 7 giorni il tuo sistema è già operativo. Gestisce ogni comunicazione — benvenuto alla prenotazione, istruzioni pre-arrivo, assistenza durante il soggiorno, reminder al check-out, richiesta recensioni — su WhatsApp, email, Booking e Airbnb, giorno e notte, in qualsiasi lingua. Senza che tu tocchi un solo tasto di configurazione.
+        </p>
+        <a class="inline-flex items-center gap-2 bg-primary-container text-surface-container-low px-6 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all" href="#processo">
+          Vedi come funziona
+          <span class="material-symbols-outlined text-sm">arrow_downward</span>
+        </a>
+      </div>
+      <!-- Immagine hero -->
+      <div class="relative h-[400px] lg:h-[500px] rounded-[32px] overflow-hidden ambient-shadow">
+        <img alt="Lobby accogliente di un boutique hotel mediterraneo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7YRQ1f6JuIJ1GooNwY1NsARwA-gLymb36aRtZfzUuuLK2vpcNOIGL1EMBNphiFYWnLgoT-OgmoKOqFBL6-LZxi1geCCDzKiUdXiPnzFuONjRJBxGDJyRA0bn9lvNM5LywEvtyBe3ERVyee5qzIPi5f1CFcl-gW0D6rRePPee0aCDkIXsGjSPA1iG9glqgNX8EaZHUL_ske44UK7x-XUbG_pLpsJSn9nNG4D7yNPfHw6neIzbljc2rY2qM8eVZSoUp-WtF48HXxgw"/>
+        <!-- Badge overlay -->
+        <div class="absolute bottom-6 left-6 glass-card px-6 py-4 rounded-xl flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center text-secondary">
+            <span class="material-symbols-outlined">bolt</span>
+          </div>
+          <div>
+            <p class="font-label-md text-label-md text-primary">Operativo in 7 giorni</p>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Nessuna configurazione da parte tua</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO PROCESSO + BANNER -->
+  <section id="processo" class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <h2 class="font-headline-md text-headline-md text-primary mb-4">Come ti togliamo il pensiero dei messaggi.</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant">
+        Nessun manuale da leggere. Nessuna schermata da imparare. Nessuna configurazione tecnica. Dalla tua prima risposta al nostro modulo al momento in cui il tuo sistema è vivo e operativo: ci vogliono 7 giorni. Tutto il lavoro lo facciamo noi.
+      </p>
+    </div>
+
+    <!-- Banner timeline "Sei live in 7 giorni" -->
+    <div class="bg-primary-container rounded-2xl px-6 py-5 mb-16">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-0">
+        <!-- Step A -->
+        <div class="flex items-center gap-3 text-white flex-1 justify-center">
+          <div class="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-white text-[20px]">phone_in_talk</span>
+          </div>
+          <span class="font-label-md text-label-md text-white">Chiamata iniziale</span>
+        </div>
+        <!-- Arrow -->
+        <span class="material-symbols-outlined text-white/40 text-[24px] rotate-90 sm:rotate-0">arrow_forward</span>
+        <!-- Step B -->
+        <div class="flex items-center gap-3 flex-1 justify-center">
+          <div class="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-white text-[20px]">settings</span>
+          </div>
+          <span class="font-label-md text-label-md text-white">Noi configuriamo tutto</span>
+        </div>
+        <!-- Arrow -->
+        <span class="material-symbols-outlined text-white/40 text-[24px] rotate-90 sm:rotate-0">arrow_forward</span>
+        <!-- Step C -->
+        <div class="flex items-center gap-3 flex-1 justify-center">
+          <div class="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-white text-[20px]">bolt</span>
+          </div>
+          <span class="font-label-md text-label-md text-white font-bold">Il tuo sistema è live — in 7 giorni</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 STEP BENTO GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+      <!-- Step 1: Large Card -->
+      <div class="md:col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-card p-8 border border-surface-variant ambient-shadow hover-lift relative overflow-hidden group">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-secondary-fixed/30 rounded-full blur-3xl -mr-20 -mt-20 transition-transform group-hover:scale-110"></div>
+        <div class="relative z-10 flex flex-col md:flex-row gap-8 items-start">
+          <div class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-sm shrink-0 text-2xl font-bold">1</div>
+          <div>
+            <h3 class="font-headline-sm text-headline-sm text-primary mb-3">Facciamo una chiacchierata</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">Partiamo da una breve chiamata — o da un modulo di 10 minuti se preferisci. Ti facciamo le domande giuste per capire come comunichi con i tuoi ospiti oggi: quali sono le domande che ti arrivano più spesso, come vuoi essere percepito, cosa ti fa impazzire di più. Tu parli, noi prendiamo nota.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="md:col-span-6 lg:col-span-4 bg-surface-container-lowest rounded-card p-8 border border-surface-variant ambient-shadow hover-lift">
+        <div class="w-16 h-16 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-headline-sm mb-6 text-2xl font-bold">2</div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-3">Ci dai le chiavi di casa (quella digitale)</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">Ci invii le informazioni base della tua struttura: password WiFi, istruzioni per l'accesso, orari di check-in e check-out, i posti che consiglieresti a un amico nelle vicinanze, le regole della casa. Non serve un documento perfetto — anche una serie di vocali WhatsApp va benissimo. A organizzare tutto ci pensiamo noi.</p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="md:col-span-6 lg:col-span-4 bg-surface-container-lowest rounded-card p-8 border border-surface-variant ambient-shadow hover-lift">
+        <div class="w-16 h-16 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-headline-sm mb-6 text-2xl font-bold">3</div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-3">Istruiamo il tuo nuovo aiutante</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">Prendiamo tutto quello che ci hai raccontato e costruiamo il manuale segreto del tuo sistema. Impara il tuo stile di comunicazione, le tue regole, i tuoi orari. Impara a rispondere in italiano, inglese, tedesco, francese — nella lingua madre di chi scrive. E impara a suonare come te: non come un robot, non come un centralino aziendale.</p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="md:col-span-6 lg:col-span-4 bg-surface-container-lowest rounded-card p-8 border border-surface-variant ambient-shadow hover-lift">
+        <div class="w-16 h-16 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-headline-sm mb-6 text-2xl font-bold">4</div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-3">Facciamo una prova generale insieme</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">Prima di accendere tutto, ti inviamo un messaggio di prova. Fai finta di essere un ospite. Fai le domande più strane, più imbarazzanti, più improbabili che ti vengono in mente. Se qualcosa non ti convince — una parola, un tono, una risposta — lo correggiamo subito. Accendiamo il sistema solo quando sei tranquillo al 100%. Non un secondo prima.</p>
+      </div>
+
+      <!-- Step 5: Wide Card -->
+      <div class="md:col-span-6 lg:col-span-4 bg-surface-container-lowest rounded-card p-8 border border-surface-variant ambient-shadow hover-lift flex flex-col justify-center">
+        <div class="w-16 h-16 rounded-full bg-surface-tint text-on-primary flex items-center justify-center font-headline-sm mb-6 text-2xl font-bold">5</div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-3">Ti godi le tue serate</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">Da questo momento, ogni messaggio degli ospiti trova risposta in pochi secondi, a qualsiasi ora, in qualsiasi lingua. Tu ricevi una notifica solo quando c'è davvero bisogno di te — un'emergenza reale, una situazione che richiede la tua voce. Per tutto il resto, ci pensa lui. Puoi spegnere il telefono dopo cena. <strong>Senza sensi di colpa.</strong></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COSA SUCCEDE OGNI GIORNO -->
+  <section class="bg-surface-container-low py-section-gap">
+    <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+      <div class="text-center mb-12">
+        <p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-3">Dopo l'attivazione</p>
+        <h2 class="font-headline-md text-headline-md text-primary mb-4">Cosa fa il tuo sistema ogni giorno — senza che tu faccia niente.</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+          Una volta acceso, il sistema lavora in autonomia su 5 momenti chiave del soggiorno di ogni ospite. Ecco cosa succede in automatico, dalla prenotazione alla recensione.
+        </p>
+      </div>
+
+      <!-- 5 Cards workflow -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+
+        <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow hover-lift flex flex-col gap-4 relative">
+          <div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[20px]">calendar_add_on</span>
+          </div>
+          <h3 class="font-label-md text-label-md text-primary">Appena prenota</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Il tuo ospite riceve un messaggio di benvenuto personalizzato nel giro di pochi minuti dalla prenotazione. Contiene il suo nome, la data di arrivo, un'anticipazione calorosa del soggiorno. Il tono? Il tuo.</p>
+          <div class="absolute top-4 right-4 w-6 h-6 rounded-full bg-secondary-container/40 flex items-center justify-center">
+            <span class="font-label-sm text-label-sm text-secondary">1</span>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow hover-lift flex flex-col gap-4 relative">
+          <div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[20px]">key</span>
+          </div>
+          <h3 class="font-label-md text-label-md text-primary">2–3 giorni prima dell'arrivo</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">L'ospite riceve un messaggio pre-arrivo completo: come arrivare, dove parcheggiare, il codice di accesso, la password WiFi, l'orario esatto di check-in. Tutto quello che ti chiedono ogni volta, inviato in automatico nella loro lingua.</p>
+          <div class="absolute top-4 right-4 w-6 h-6 rounded-full bg-secondary-container/40 flex items-center justify-center">
+            <span class="font-label-sm text-label-sm text-secondary">2</span>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow hover-lift flex flex-col gap-4 relative">
+          <div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[20px]">chat</span>
+          </div>
+          <h3 class="font-label-md text-label-md text-primary">Durante il soggiorno — H24</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Se l'ospite ha una domanda — alle 14 come alle 2 di notte — il tuo sistema risponde in pochi secondi nella sua lingua madre. Dove mangiare, come funziona il condizionatore, dov'è il supermercato. Tu non vieni disturbato, a meno che non sia un'emergenza reale.</p>
+          <div class="absolute top-4 right-4 w-6 h-6 rounded-full bg-secondary-container/40 flex items-center justify-center">
+            <span class="font-label-sm text-label-sm text-secondary">3</span>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow hover-lift flex flex-col gap-4 relative">
+          <div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[20px]">luggage</span>
+          </div>
+          <h3 class="font-label-md text-label-md text-primary">Il giorno del check-out</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">La mattina del check-out, l'ospite riceve un reminder gentile con l'orario di uscita e le istruzioni finali: dove lasciare le chiavi, come smaltire i rifiuti, cosa fare con gli asciugamani. Meno incomprensioni, più fluidità nell'operatività del giorno.</p>
+          <div class="absolute top-4 right-4 w-6 h-6 rounded-full bg-secondary-container/40 flex items-center justify-center">
+            <span class="font-label-sm text-label-sm text-secondary">4</span>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow hover-lift flex flex-col gap-4 relative">
+          <div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[20px]">star</span>
+          </div>
+          <h3 class="font-label-md text-label-md text-primary">24–48 ore dopo la partenza</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Il tuo sistema invia un messaggio di follow-up personalizzato per ringraziare l'ospite e invitarlo a lasciare una recensione — con il link diretto a Booking.com o Google, già pronto. Nessuna recensione persa per dimenticanza.</p>
+          <div class="absolute top-4 right-4 w-6 h-6 rounded-full bg-secondary-container/40 flex items-center justify-center">
+            <span class="font-label-sm text-label-sm text-secondary">5</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-3">Domande frequenti</p>
+        <h2 class="font-headline-md text-headline-md text-primary mb-3">Le domande che ti stai facendo in questo momento.</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant">Risposte dirette, senza giri di parole.</p>
+      </div>
+
+      <div class="flex flex-col gap-4">
+
+        <details class="bg-surface-container-lowest rounded-2xl border border-surface-variant ambient-shadow group">
+          <summary class="flex justify-between items-center p-6 font-label-md text-label-md text-on-surface hover:text-primary transition-colors">
+            <span>"E se risponde una cosa sbagliata ai miei ospiti?"</span>
+            <span class="material-symbols-outlined faq-icon text-on-surface-variant shrink-0 ml-4">add</span>
+          </summary>
+          <div class="px-6 pb-6">
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">È la domanda che ci fanno tutti. Prima di attivare il sistema, facciamo una sessione di test insieme: tu fai le domande più difficili che ti vengono in mente, vedi come risponde, e correggiamo ogni risposta che non ti convince. Il sistema va live solo quando tu dai il via libera. E dopo? Irene monitora i messaggi in uscita nelle prime settimane e interviene se nota qualcosa fuori tono. Tu puoi sempre leggere ogni conversazione nel pannello e intervenire in qualsiasi momento.</p>
+          </div>
+        </details>
+
+        <details class="bg-surface-container-lowest rounded-2xl border border-surface-variant ambient-shadow group">
+          <summary class="flex justify-between items-center p-6 font-label-md text-label-md text-on-surface hover:text-primary transition-colors">
+            <span>"I miei ospiti si accorgeranno che non sono io a rispondere?"</span>
+            <span class="material-symbols-outlined faq-icon text-on-surface-variant shrink-0 ml-4">add</span>
+          </summary>
+          <div class="px-6 pb-6">
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Il tuo sistema non usa un tono generico da centralino — viene addestrato specificamente sul tuo stile: le tue espressioni, il tuo modo di accogliere, il tono che usi di solito su WhatsApp. Gli ospiti percepiscono calore e personalizzazione, non una risposta automatica. Se vuoi, puoi anche far firmare i messaggi con il tuo nome. La grande maggioranza degli ospiti non si accorge di nulla — e quelli che lo scoprono, di solito rimangono impressionati positivamente.</p>
+          </div>
+        </details>
+
+        <details class="bg-surface-container-lowest rounded-2xl border border-surface-variant ambient-shadow group">
+          <summary class="flex justify-between items-center p-6 font-label-md text-label-md text-on-surface hover:text-primary transition-colors">
+            <span>"Funziona anche con gli ospiti stranieri — inglesi, tedeschi, francesi?"</span>
+            <span class="material-symbols-outlined faq-icon text-on-surface-variant shrink-0 ml-4">add</span>
+          </summary>
+          <div class="px-6 pb-6">
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Sì, è uno dei vantaggi principali. Il sistema rileva automaticamente la lingua in cui scrive l'ospite e risponde nella sua lingua madre — senza che tu faccia nulla. Inglese, tedesco, francese, spagnolo, olandese. Non devi più cercare Google Translate alle 23:00 per rispondere a un ospite tedesco. Lui scrive in tedesco, il tuo sistema risponde in tedesco. Tu non vedi neanche la conversazione, a meno che non sia necessaria la tua presenza.</p>
+          </div>
+        </details>
+
+        <details class="bg-surface-container-lowest rounded-2xl border border-surface-variant ambient-shadow group">
+          <summary class="flex justify-between items-center p-6 font-label-md text-label-md text-on-surface hover:text-primary transition-colors">
+            <span>"E se c'è un'emergenza — un guasto, un problema serio?"</span>
+            <span class="material-symbols-outlined faq-icon text-on-surface-variant shrink-0 ml-4">add</span>
+          </summary>
+          <div class="px-6 pb-6">
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Il sistema è addestrato a riconoscere la differenza tra una domanda normale ("dove posso comprare il pane?") e una situazione urgente ("c'è un'infiltrazione d'acqua nel bagno"). Quando rileva un'emergenza, ti invia una notifica prioritaria immediata — tu intervieni, risolvi direttamente. Il resto del tempo, il tuo sistema gestisce in autonomia e tu non vieni disturbato per nulla che non lo meriti.</p>
+          </div>
+        </details>
+
+        <details class="bg-surface-container-lowest rounded-2xl border border-surface-variant ambient-shadow group">
+          <summary class="flex justify-between items-center p-6 font-label-md text-label-md text-on-surface hover:text-primary transition-colors">
+            <span>"Quanto tempo ci vuole prima di essere operativo?"</span>
+            <span class="material-symbols-outlined faq-icon text-on-surface-variant shrink-0 ml-4">add</span>
+          </summary>
+          <div class="px-6 pb-6">
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">7 giorni dalla chiamata iniziale. Non settimane, non "ci mettiamo in contatto per un preventivo". Parli con noi oggi, ci dai le informazioni della tua struttura, e in una settimana il tuo sistema sta già gestendo le comunicazioni con i tuoi ospiti. Noi facciamo tutto il lavoro tecnico — tu aspetti che sia pronto e controlli il test finale.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINALE -->
+  <section class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+    <div class="bg-primary rounded-[32px] p-10 md:p-16 text-center relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
+        <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-secondary-fixed blur-3xl"></div>
+        <div class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-tertiary-fixed blur-3xl"></div>
+      </div>
+      <div class="relative z-10 max-w-2xl mx-auto">
+        <!-- Badge Pilot -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 text-white rounded-full font-label-sm text-label-sm mb-6">
+          🚀 Piano Pilot — €29 / primo mese
+        </div>
+        <h2 class="font-headline-md text-headline-md text-on-primary mb-4">Prova senza rischio per 14 giorni.</h2>
+        <p class="font-body-lg text-body-lg text-primary-fixed-dim mb-3 max-w-xl mx-auto">
+          Attiva il piano Pilot a €29 — struttura reale, ospiti reali, risultati reali. Se entro 14 giorni non sei convinto, ti rimborsiamo senza fare domande. Irene configura tutto in 7 giorni: tu non tocchi nulla.
+        </p>
+        <p class="font-label-sm text-label-sm text-white/70 mb-8">Setup incluso · Struttura reale · Rimborso garantito entro 14 giorni</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+          <a class="bg-surface-container-lowest text-primary px-8 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all text-center" href="prova-gratuita.html">Attiva il Pilot — €29</a>
+        </div>
+        <a class="inline-flex items-center gap-1 text-primary-fixed-dim font-body-md text-body-md hover:text-white transition-all" href="https://wa.me/393425259174" target="_blank" rel="noopener noreferrer">
+          Hai domande? Scrivici su WhatsApp →
+        </a>
+        <p class="font-body-sm text-body-sm text-primary-fixed-dim mt-6 opacity-70">Nessun contratto annuale · Setup incluso · Rimborso garantito nei 14 giorni</p>
+      </div>
+    </div>
+  </section>
+
 </main>
-<!-- Footer -->
+
+<!-- FOOTER -->
 <footer class="bg-surface-container-high dark:bg-inverse-surface font-body-md text-body-md w-full border-t border-outline-variant dark:border-outline">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
-<div class="flex flex-col gap-4 items-center text-center">
-<a href="index.html" class="hover:opacity-90 transition-all duration-200"><img src="logo.svg" alt="Zero Messaggi Persi" class="h-[40px] w-auto"></a>
-<p class="font-body-md text-body-md font-semibold text-on-surface-variant dark:text-surface-variant">Zero messaggi persi.<br>Più tempo per l'ospitalità.</p>
-</div>
-<div class="flex flex-col gap-3">
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="index.html">Home</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="come-funziona.html">Come funziona</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="servizi.html">Servizi</a>
-</div>
-<div class="flex flex-col gap-3">
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="prezzi.html">Piani e prezzi</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="contatti.html">Contatti</a>
-</div>
-</div>
-<div class="w-full border-t border-outline-variant py-4 text-center font-body-sm text-body-sm text-on-surface-variant">© 2026 Zero Messaggi Persi | Tutti i diritti riservati. | P.Iva ESY3328229M | <a href="privacy.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Privacy Policy</a> | <a href="cookie-policy.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Cookie Policy</a></div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+    <div class="flex flex-col gap-4 items-center text-center">
+      <a href="index.html" class="hover:opacity-90 transition-all duration-200"><img src="logo.svg" alt="Zero Messaggi Persi" class="h-[40px] w-auto"></a>
+      <p class="font-body-md text-body-md font-semibold text-on-surface-variant dark:text-surface-variant">Zero messaggi persi.<br>Più tempo per l'ospitalità.</p>
+    </div>
+    <div class="flex flex-col gap-3">
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="index.html">Home</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="come-funziona.html">Come funziona</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="servizi.html">Servizi</a>
+    </div>
+    <div class="flex flex-col gap-3">
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="prezzi.html">Piani e prezzi</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="contatti.html">Contatti</a>
+    </div>
+  </div>
+  <div class="w-full border-t border-outline-variant py-4 text-center font-body-sm text-body-sm text-on-surface-variant">© 2026 Zero Messaggi Persi | Tutti i diritti riservati. | P.Iva ESY3328229M | <a href="privacy.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Privacy Policy</a></div>
 </footer>
+
 </body></html>

@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-
 <html lang="it"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Servizi - Zero Messaggi Persi</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
@@ -98,10 +96,6 @@
                         "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
                         "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
                         "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }]
-                    },
-                    "boxShadow": {
-                        "ambient": "0 4px 24px -4px rgba(41, 66, 86, 0.06)",
-                        "ambient-hover": "0 12px 32px -8px rgba(41, 66, 86, 0.1)"
                     }
                 }
             }
@@ -112,173 +106,474 @@
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
         body {
-            background-color: theme('colors.surface-bright');
+            background-color: theme('colors.surface-container-low');
             color: theme('colors.on-surface');
         }
+        .ambient-shadow { box-shadow: 0 10px 40px -10px rgba(41, 66, 86, 0.07); }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(41, 66, 86, 0.11); }
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 28px;
+            top: 56px;
+            bottom: 0;
+            width: 2px;
+            background: theme('colors.surface-variant');
+        }
     </style>
-<meta content="Static export organized for Netlify from Stitch pages" name="generator-note"/></head>
+<meta content="Static export organized for Netlify from Stitch pages" name="generator-note"/>
+</head>
 <body class="antialiased min-h-screen flex flex-col pt-[80px]">
-<!-- TopNavBar -->
+
+<!-- NAV -->
 <nav class="bg-surface/90 dark:bg-surface-container-highest/90 font-body-md text-body-md fixed top-0 w-full z-50 bg-surface-container-low/80 backdrop-blur-md shadow-sm">
-<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-<a class="hover:opacity-90 transition-all duration-200" href="index.html"><img src="logo.svg" alt="Zero Messaggi Persi" class="h-[48px] w-auto"></a>
-<div class="hidden md:flex gap-8 items-center">
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="come-funziona.html">Come funziona</a>
-<a class="text-primary dark:text-inverse-primary border-b-2 border-primary font-bold pb-1 hover:opacity-90 transition-all duration-200" href="servizi.html">Servizi</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="prezzi.html">Piani e prezzi</a>
-</div>
-<a class="hidden md:block bg-primary-container text-surface-bright font-label-md text-label-md px-6 py-3 rounded-lg hover:opacity-90 transition-all duration-200 shadow-ambient" href="https://tally.so/r/rj2ELR" target="_blank" rel="noopener" role="button">
-                Contattaci
-            </a>
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined text-3xl">menu</span>
-</button>
-</div>
+  <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+    <a class="hover:opacity-90 transition-all duration-200" href="index.html"><img src="logo.svg" alt="Zero Messaggi Persi" class="h-[48px] w-auto"></a>
+    <div class="hidden md:flex gap-8 items-center">
+      <a class="text-on-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="come-funziona.html">Come funziona</a>
+      <a class="text-on-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="index.html#per-chi-e">Per chi è</a>
+      <a class="text-on-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="prezzi.html">Piani e prezzi</a>
+      <a class="text-secondary font-semibold hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="prova-gratuita.html">Pilot gratuito</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <a class="hidden md:block bg-primary-container text-surface-container-low font-label-md text-label-md px-6 py-2 rounded-lg hover:opacity-90 transition-all duration-200" href="prova-gratuita.html">
+        Prova 14 giorni →
+      </a>
+      <button class="md:hidden text-primary">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+  </div>
 </nav>
+
 <main class="flex-grow">
-<!-- Hero Section -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap text-center">
-<div class="max-w-3xl mx-auto space-y-6">
-<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary">
-                    Tutto sotto controllo, dalla prenotazione alla recensione.
-                </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant mt-6">
-                    Non ti vendiamo software a pezzi. Ti offriamo un unico servizio chiavi in mano che accompagna il tuo ospite in ogni momento del soggiorno, rispondendo sempre al posto tuo in modo impeccabile.
-                </p>
-</div>
-</section>
-<!-- Sezione Comparativa -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-section-gap">
-<div class="text-center mb-12">
-<h2 class="font-headline-md text-headline-md text-primary mb-4">Non un semplice risponditore.<br>Il tuo assistente di comunicazione.</h2>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Ecco la differenza concreta tra quello che trovi in giro e quello che facciamo noi.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<!-- Bot generico -->
-<div class="bg-surface-container-lowest rounded-card p-8 border border-surface-container shadow-ambient">
-<h3 class="font-headline-sm text-headline-sm text-primary mb-6">❌ Un bot generico</h3>
-<ul class="space-y-4">
-<li class="flex items-start gap-3 font-body-md text-body-md text-on-surface-variant"><span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">close</span> Risponde solo a domande prestabilite</li>
-<li class="flex items-start gap-3 font-body-md text-body-md text-on-surface-variant"><span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">close</span> Non conosce la tua struttura</li>
-<li class="flex items-start gap-3 font-body-md text-body-md text-on-surface-variant"><span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">close</span> Tono freddo e robotico</li>
-<li class="flex items-start gap-3 font-body-md text-body-md text-on-surface-variant"><span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">close</span> Funziona solo su un canale</li>
-</ul>
-</div>
-<!-- Zero Messaggi Persi (evidenziata) -->
-<div class="bg-primary-container rounded-card p-8 border border-primary-container shadow-ambient relative">
-<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-surface-bright text-primary-container px-4 py-1 rounded-full font-label-sm text-label-sm shadow-sm border border-surface-variant whitespace-nowrap">ZERO MESSAGGI PERSI</div>
-<h3 class="font-headline-sm text-headline-sm text-on-primary mb-6">✅ Il tuo assistente</h3>
-<ul class="space-y-4">
-<li class="flex items-start gap-3 font-body-md text-body-md text-on-primary"><span class="material-symbols-outlined text-inverse-primary text-[20px] shrink-0 mt-0.5">check_circle</span> Addestrato sulle regole della tua casa</li>
-<li class="flex items-start gap-3 font-body-md text-body-md text-on-primary"><span class="material-symbols-outlined text-inverse-primary text-[20px] shrink-0 mt-0.5">check_circle</span> Gestisce l'intero soggiorno, dall'arrivo alla partenza</li>
-<li class="flex items-start gap-3 font-body-md text-body-md text-on-primary"><span class="material-symbols-outlined text-inverse-primary text-[20px] shrink-0 mt-0.5">check_circle</span> Tono caldo, nel tuo stile</li>
-<li class="flex items-start gap-3 font-body-md text-body-md text-on-primary"><span class="material-symbols-outlined text-inverse-primary text-[20px] shrink-0 mt-0.5">check_circle</span> Si adatta a ogni ospite in qualsiasi lingua</li>
-</ul>
-</div>
-<!-- Assistente umano -->
-<div class="bg-surface-container-lowest rounded-card p-8 border border-surface-container shadow-ambient">
-<h3 class="font-headline-sm text-headline-sm text-primary mb-6">💸 Un assistente umano</h3>
-<ul class="space-y-4">
-<li class="flex items-start gap-3 font-body-md text-body-md text-on-surface-variant"><span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">close</span> Costa tra 500€ e 800€ al mese</li>
-<li class="flex items-start gap-3 font-body-md text-body-md text-on-surface-variant"><span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">close</span> Non risponde la notte e nei weekend</li>
-<li class="flex items-start gap-3 font-body-md text-body-md text-on-surface-variant"><span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">close</span> Parla 1 o 2 lingue</li>
-<li class="flex items-start gap-3 font-body-md text-body-md text-on-surface-variant"><span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">close</span> Va in ferie, si ammala, cambia lavoro</li>
-</ul>
-</div>
-</div>
-</section>
 
-<!-- 4 Pillars of Support -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-section-gap space-y-8">
-<!-- Pillar 1: Arrival -->
-<div class="bg-surface-container-lowest rounded-card p-8 border border-surface-container shadow-ambient">
-<div class="flex items-start gap-6">
-<div class="w-16 h-16 bg-surface-container rounded-lg flex items-center justify-center text-primary-container shrink-0">
-<span class="material-symbols-outlined text-[32px]">luggage</span>
-</div>
-<div>
-<h3 class="font-headline-sm text-headline-sm text-primary mb-3">1. Il Pre-Arrivo e le Istruzioni</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">A che ora è il check-in? Come trovo la casa? C'è parcheggio? L'assistente risponde in pochi secondi fornendo l'indirizzo esatto, le indicazioni per il cancello e i codici d'ingresso, proprio come faresti tu, ma senza farti interrompere la cena.</p>
-</div>
-</div>
-</div>
-<!-- Pillar 2: During Stay -->
-<div class="bg-surface-container-lowest rounded-card p-8 border border-surface-container shadow-ambient">
-<div class="flex items-start gap-6">
-<div class="w-16 h-16 bg-surface-container rounded-lg flex items-center justify-center text-primary-container shrink-0">
-<span class="material-symbols-outlined text-[32px]">hotel</span>
-</div>
-<div>
-<h3 class="font-headline-sm text-headline-sm text-primary mb-3">2. L'Assistenza durante il soggiorno</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">La password del Wi-Fi, dove si butta la plastica, come si accende l'aria condizionata. Le stesse domande, ogni giorno, ogni settimana, ad ogni ospite. Il tuo assistente le conosce tutte a memoria perché siamo stati noi a insegnarglielo. Tu non devi spiegare nulla, lui non sbaglia mai.</p>
-</div>
-</div>
-</div>
-<!-- Pillar 3: Emergencies -->
-<div class="bg-surface-container-lowest rounded-card p-8 border border-surface-container shadow-ambient">
-<div class="flex items-start gap-6">
-<div class="w-16 h-16 bg-surface-container rounded-lg flex items-center justify-center text-primary-container shrink-0">
-<span class="material-symbols-outlined text-[32px]">emergency_share</span>
-</div>
-<div>
-<h3 class="font-headline-sm text-headline-sm text-primary mb-3">3. La protezione per i veri problemi</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Se manca la luce o c'è un tubo rotto, l'assistente sa che non deve scherzare. In caso di emergenze vere o lamentele serie, il sistema si mette in pausa e ti manda un messaggio istantaneo. Tu intervieni solo quando serve per davvero.</p>
-</div>
-</div>
-</div>
-<!-- Pillar 4: Departure -->
-<div class="bg-surface-container-lowest rounded-card p-8 border border-surface-container shadow-ambient">
-<div class="flex items-start gap-6">
-<div class="w-16 h-16 bg-surface-container rounded-lg flex items-center justify-center text-primary-container shrink-0">
-<span class="material-symbols-outlined text-[32px]">star_rate</span>
-</div>
-<div>
-<h3 class="font-headline-sm text-headline-sm text-primary mb-3">4. I saluti e le recensioni</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Poche ore dopo il check-out, il tuo assistente invia automaticamente un messaggio di ringraziamento all'ospite, a nome della tua struttura. Se il soggiorno è andato bene, lo invita con delicatezza a lasciare una recensione a 5 stelle. Nessun imbarazzo nel chiederlo di persona: ci pensa lui. E se durante il soggiorno c'è stato un problema segnalato, il messaggio non parte. Mai.</p>
-</div>
-</div>
-</div>
-</section>
+  <!-- HERO -->
+  <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap text-center">
+    <div class="max-w-3xl mx-auto">
+      <p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-4">Il servizio</p>
+      <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary mb-6">
+        Un sistema completo. Ogni ospite curato, dalla prenotazione all'ultima recensione.
+      </h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant">
+        Non ti vendiamo uno strumento da imparare. Ti offriamo un sistema già configurato che segue ogni tuo ospite in ogni momento del soggiorno — rispondendo al posto tuo, nel tuo stile, nella sua lingua, su tutti i canali che già usi.
+      </p>
+    </div>
+  </section>
 
-<!-- Multilingual Section -->
-<section class="bg-surface-container-low py-section-gap px-margin-mobile md:px-margin-desktop">
-<div class="max-w-container-max mx-auto">
-<div class="max-w-2xl">
-<h2 class="font-headline-md text-headline-md text-primary mb-4">Parla sempre la lingua giusta.</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">Che tu ospiti turisti inglesi, tedeschi, francesi o spagnoli, non dovrai più usare Google Translate. Il sistema capisce la lingua del messaggio e risponde perfettamente in modo naturale, abbattendo ogni barriera.</p>
-</div>
-</div>
-</section>
-<!-- Final CTA Section -->
-<section class="bg-surface-container-low border-y border-surface-container py-section-gap px-margin-mobile md:px-margin-desktop text-center">
-<div class="max-w-2xl mx-auto">
-<h2 class="font-headline-md text-headline-md text-primary mb-6">Pronto a farti aiutare?</h2>
-<p class="font-body-md text-body-md text-on-surface-variant mb-8">
-Scopri in pochi secondi quanto tempo puoi recuperare ogni settimana.
-                </p>
-<a class="inline-block bg-primary-container text-surface-bright font-label-md text-label-md px-8 py-4 rounded-lg hover:opacity-90 transition-all duration-200 shadow-ambient" href="https://tally.so/r/rj2ELR" target="_blank" rel="noopener" role="button">
-Fai il test gratuito
-                </a>
-</div>
-</section>
+  <!-- COMPARATIVA: BOT vs ZMP vs UMANO -->
+  <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-section-gap">
+    <div class="text-center mb-12">
+      <h2 class="font-headline-md text-headline-md text-primary mb-4">Non un semplice risponditore.<br>Il tuo sistema di comunicazione.</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Ecco la differenza concreta tra quello che trovi in giro e quello che facciamo noi.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Bot generico -->
+      <div class="bg-surface-container-lowest rounded-card p-8 border border-surface-variant ambient-shadow">
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-6">❌ Un bot generico</h3>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface-variant">
+            <span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">close</span>
+            Risponde solo a domande prestabilite
+          </li>
+          <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface-variant">
+            <span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">close</span>
+            Non conosce la tua struttura specifica
+          </li>
+          <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface-variant">
+            <span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">close</span>
+            Tono freddo e robotico
+          </li>
+          <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface-variant">
+            <span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">close</span>
+            Devi configurarlo e mantenerlo tu
+          </li>
+          <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface-variant">
+            <span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">close</span>
+            Non gestisce l'intero percorso ospite
+          </li>
+        </ul>
+      </div>
+
+      <!-- Zero Messaggi Persi -->
+      <div class="bg-primary-container rounded-card p-8 border border-primary-container ambient-shadow relative">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-surface-bright text-primary-container px-4 py-1 rounded-full font-label-sm text-label-sm border border-surface-variant whitespace-nowrap">ZERO MESSAGGI PERSI</div>
+        <h3 class="font-headline-sm text-headline-sm text-on-primary mb-6 mt-2">✅ Il tuo sistema</h3>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3 font-body-md text-body-md text-on-primary">
+            <span class="material-symbols-outlined text-inverse-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+            Addestrato sulle regole esatte della tua struttura
+          </li>
+          <li class="flex items-start gap-3 font-body-md text-body-md text-on-primary">
+            <span class="material-symbols-outlined text-inverse-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+            Segue l'ospite dalla prenotazione alla recensione
+          </li>
+          <li class="flex items-start gap-3 font-body-md text-body-md text-on-primary">
+            <span class="material-symbols-outlined text-inverse-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+            Tono caldo, nel tuo stile personale
+          </li>
+          <li class="flex items-start gap-3 font-body-md text-body-md text-on-primary">
+            <span class="material-symbols-outlined text-inverse-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+            Noi configuriamo e manteniamo tutto
+          </li>
+          <li class="flex items-start gap-3 font-body-md text-body-md text-on-primary">
+            <span class="material-symbols-outlined text-inverse-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+            Multilingua automatico — 5 lingue incluse
+          </li>
+          <li class="flex items-start gap-3 font-body-md text-body-md text-on-primary">
+            <span class="material-symbols-outlined text-inverse-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+            Attivo 24 ore su 24, 365 giorni l'anno
+          </li>
+        </ul>
+      </div>
+
+      <!-- Assistente umano -->
+      <div class="bg-surface-container-lowest rounded-card p-8 border border-surface-variant ambient-shadow">
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-6">💸 Un assistente umano</h3>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface-variant">
+            <span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">close</span>
+            Costa tra €500 e €800 al mese
+          </li>
+          <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface-variant">
+            <span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">close</span>
+            Non risponde di notte, nei weekend, ad agosto
+          </li>
+          <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface-variant">
+            <span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">close</span>
+            Parla 1 o 2 lingue
+          </li>
+          <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface-variant">
+            <span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">close</span>
+            Va in ferie, si ammala, cambia lavoro
+          </li>
+          <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface-variant">
+            <span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">close</span>
+            Non scala se hai più strutture
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- I 5 MOMENTI DEL SOGGIORNO — TIMELINE -->
+  <section class="bg-surface-container-low py-section-gap">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="text-center mb-16">
+        <p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-3">Come funziona nella pratica</p>
+        <h2 class="font-headline-md text-headline-md text-primary mb-4">I 5 momenti in cui il tuo sistema lavora per te.</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Dal primo contatto dopo la prenotazione all'invito a lasciare una recensione: ogni comunicazione è automatica, personalizzata e inviata al momento giusto.</p>
+      </div>
+
+      <div class="max-w-3xl mx-auto flex flex-col gap-6">
+
+        <!-- Momento 1 -->
+        <div class="bg-surface-container-lowest rounded-card p-8 border border-surface-variant ambient-shadow hover-lift">
+          <div class="flex items-start gap-6">
+            <div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-on-secondary-container text-[28px]">calendar_add_on</span>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Subito dopo la prenotazione</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-primary mb-3">Messaggio di benvenuto personalizzato</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-4">L'ospite riceve un messaggio di benvenuto nel giro di pochi minuti dalla conferma della prenotazione. Contiene il suo nome, la data di arrivo e un tono caldo che rispecchia la tua struttura. Non un "grazie per aver prenotato" generico — un messaggio che fa già sentire l'ospite atteso.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-surface-container rounded-full font-label-sm text-label-sm text-on-surface-variant">WhatsApp</span>
+                <span class="px-3 py-1 bg-surface-container rounded-full font-label-sm text-label-sm text-on-surface-variant">Email</span>
+                <span class="px-3 py-1 bg-surface-container rounded-full font-label-sm text-label-sm text-on-surface-variant">Booking.com</span>
+                <span class="px-3 py-1 bg-surface-container rounded-full font-label-sm text-label-sm text-on-surface-variant">Airbnb</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Momento 2 -->
+        <div class="bg-surface-container-lowest rounded-card p-8 border border-surface-variant ambient-shadow hover-lift">
+          <div class="flex items-start gap-6">
+            <div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-on-secondary-container text-[28px]">key</span>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">2–3 giorni prima dell'arrivo</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-primary mb-3">Istruzioni complete pre-arrivo</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-4">Come arrivare, dove parcheggiare, il codice di accesso, la password WiFi, l'orario esatto di check-in. Tutto quello che ogni ospite ti chiede — ogni volta, senza eccezioni — viene inviato automaticamente 2-3 giorni prima dell'arrivo, nella lingua madre dell'ospite. Zero domande ripetute, zero messaggi dell'ultima ora.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-surface-container rounded-full font-label-sm text-label-sm text-on-surface-variant">WhatsApp</span>
+                <span class="px-3 py-1 bg-surface-container rounded-full font-label-sm text-label-sm text-on-surface-variant">Email</span>
+                <span class="px-3 py-1 bg-surface-container rounded-full font-label-sm text-label-sm text-on-surface-variant">Multilingua automatico</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Momento 3 -->
+        <div class="bg-surface-container-lowest rounded-card p-8 border border-surface-variant ambient-shadow hover-lift">
+          <div class="flex items-start gap-6">
+            <div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-on-secondary-container text-[28px]">chat</span>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Durante il soggiorno — H24</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-primary mb-3">Assistenza continua, senza disturbarti</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-3">La password del WiFi, dove si butta la spazzatura, come funziona il condizionatore, il ristorante più vicino. Le stesse domande, ogni giorno, ad ogni ospite. Il tuo sistema le conosce tutte a memoria perché le abbiamo insegnate noi — e risponde in pochi secondi, alle 14 come alle 2 di notte.</p>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-4">Se arriva una domanda fuori dall'ordinario, il sistema gestisce comunque con buon senso. Se invece si tratta di un'emergenza vera — un guasto, un problema serio — si ferma e ti invia una notifica immediata su WhatsApp. Tu intervieni solo quando serve davvero.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-surface-container rounded-full font-label-sm text-label-sm text-on-surface-variant">WhatsApp</span>
+                <span class="px-3 py-1 bg-surface-container rounded-full font-label-sm text-label-sm text-on-surface-variant">Email</span>
+                <span class="px-3 py-1 bg-surface-container rounded-full font-label-sm text-label-sm text-on-surface-variant">Escalation emergenze</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Momento 4 -->
+        <div class="bg-surface-container-lowest rounded-card p-8 border border-surface-variant ambient-shadow hover-lift">
+          <div class="flex items-start gap-6">
+            <div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-on-secondary-container text-[28px]">luggage</span>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">La mattina del check-out</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-primary mb-3">Reminder check-out senza stress</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-4">La mattina della partenza, l'ospite riceve un reminder gentile con l'orario di uscita e le istruzioni finali: dove lasciare le chiavi, come smaltire i rifiuti, cosa fare con gli asciugamani. Meno incomprensioni, partenze più fluide, e nessun ospite che se ne va senza sapere cosa fare.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-surface-container rounded-full font-label-sm text-label-sm text-on-surface-variant">WhatsApp</span>
+                <span class="px-3 py-1 bg-surface-container rounded-full font-label-sm text-label-sm text-on-surface-variant">Automatico</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Momento 5 -->
+        <div class="bg-surface-container-lowest rounded-card p-8 border border-surface-variant ambient-shadow hover-lift">
+          <div class="flex items-start gap-6">
+            <div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-on-secondary-container text-[28px]">star</span>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">24–48 ore dopo la partenza</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-primary mb-3">Richiesta recensione — al momento giusto</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-4">Il tuo sistema invia un messaggio di ringraziamento personalizzato e invita l'ospite a lasciare una recensione — con il link diretto a Booking.com o Google, già pronto. Nessuna imbarazzo nel chiederlo di persona: ci pensa il sistema. E se durante il soggiorno c'è stato un problema segnalato, il messaggio non parte. Mai.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-surface-container rounded-full font-label-sm text-label-sm text-on-surface-variant">WhatsApp</span>
+                <span class="px-3 py-1 bg-surface-container rounded-full font-label-sm text-label-sm text-on-surface-variant">Link Booking.com / Google</span>
+                <span class="px-3 py-1 bg-surface-container rounded-full font-label-sm text-label-sm text-on-surface-variant">Smart — solo se il soggiorno è andato bene</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MULTILINGUA -->
+  <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-3">Nessuna barriera linguistica</p>
+        <h2 class="font-headline-md text-headline-md text-primary mb-6">L'ospite tedesco riceve risposta in tedesco. Subito.</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-6">Il tuo sistema riconosce automaticamente la lingua in cui scrive l'ospite e risponde nella sua lingua madre — senza che tu faccia nulla, senza che tu abbia Google Translate aperto sul telefono alle 23:00.</p>
+        <p class="font-body-lg text-body-lg text-on-surface-variant">Ogni risposta è naturale, precisa e nel tono giusto. Non una traduzione meccanica — una comunicazione vera, nella lingua di chi legge.</p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        <div class="bg-surface-container-lowest rounded-2xl p-5 border border-surface-variant ambient-shadow flex flex-col items-center gap-2 text-center hover-lift">
+          <span class="text-3xl">🇮🇹</span>
+          <span class="font-label-md text-label-md text-primary">Italiano</span>
+          <span class="font-body-sm text-body-sm text-on-surface-variant">Lingua base</span>
+        </div>
+        <div class="bg-surface-container-lowest rounded-2xl p-5 border border-surface-variant ambient-shadow flex flex-col items-center gap-2 text-center hover-lift">
+          <span class="text-3xl">🇬🇧</span>
+          <span class="font-label-md text-label-md text-primary">Inglese</span>
+          <span class="font-body-sm text-body-sm text-on-surface-variant">Incluso</span>
+        </div>
+        <div class="bg-surface-container-lowest rounded-2xl p-5 border border-surface-variant ambient-shadow flex flex-col items-center gap-2 text-center hover-lift">
+          <span class="text-3xl">🇩🇪</span>
+          <span class="font-label-md text-label-md text-primary">Tedesco</span>
+          <span class="font-body-sm text-body-sm text-on-surface-variant">Incluso</span>
+        </div>
+        <div class="bg-surface-container-lowest rounded-2xl p-5 border border-surface-variant ambient-shadow flex flex-col items-center gap-2 text-center hover-lift">
+          <span class="text-3xl">🇫🇷</span>
+          <span class="font-label-md text-label-md text-primary">Francese</span>
+          <span class="font-body-sm text-body-sm text-on-surface-variant">Incluso</span>
+        </div>
+        <div class="bg-surface-container-lowest rounded-2xl p-5 border border-surface-variant ambient-shadow flex flex-col items-center gap-2 text-center hover-lift">
+          <span class="text-3xl">🇪🇸</span>
+          <span class="font-label-md text-label-md text-primary">Spagnolo</span>
+          <span class="font-body-sm text-body-sm text-on-surface-variant">Incluso</span>
+        </div>
+        <div class="bg-surface-container-lowest rounded-2xl p-5 border border-surface-variant ambient-shadow flex flex-col items-center gap-2 text-center hover-lift">
+          <span class="text-3xl">🇳🇱</span>
+          <span class="font-label-md text-label-md text-primary">Olandese</span>
+          <span class="font-body-sm text-body-sm text-on-surface-variant">Incluso</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CANALI COPERTI -->
+  <section class="bg-surface-container-low py-section-gap">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="text-center mb-12">
+        <p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-3">Canali</p>
+        <h2 class="font-headline-md text-headline-md text-primary mb-4">Funziona dove lavorano già i tuoi ospiti.</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">Colleghiamo tutto noi. Tu non impari nessuno strumento nuovo, non accedi a nessun pannello tecnico.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow flex flex-col gap-3">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-[28px] text-[#25D366]">forum</span>
+            <span class="font-label-md text-label-md text-primary">WhatsApp</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Il canale principale. Tutti e 5 i workflow automatici girano su WhatsApp. Risposta in tempo reale, 24 ore su 24.</p>
+        </div>
+        <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow flex flex-col gap-3">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-[28px] text-primary">mail</span>
+            <span class="font-label-md text-label-md text-primary">Email</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Le prenotazioni e i messaggi via email vengono rilevati e gestiti automaticamente, senza che tu debba aprire la casella di posta.</p>
+        </div>
+        <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow flex flex-col gap-3">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-[28px] text-on-surface-variant">hotel_class</span>
+            <span class="font-label-md text-label-md text-primary">Booking.com</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Le prenotazioni da Booking vengono importate e il flusso di comunicazione parte automaticamente, dall'arrivo alla recensione.</p>
+        </div>
+        <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow flex flex-col gap-3">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-[28px] text-on-surface-variant">cottage</span>
+            <span class="font-label-md text-label-md text-primary">Airbnb</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Il sistema raccoglie i dati dell'ospite Airbnb tramite la messaggistica interna e attiva automaticamente la comunicazione WhatsApp.</p>
+        </div>
+        <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow flex flex-col gap-3">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-[28px] text-on-surface-variant">apartment</span>
+            <span class="font-label-md text-label-md text-primary">Smoobu</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Integrazione con il channel manager per sincronizzare le prenotazioni e attivare i workflow in automatico.</p>
+        </div>
+        <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow flex flex-col gap-3">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-[28px] text-on-surface-variant">tune</span>
+            <span class="font-label-md text-label-md text-primary">Lodgify</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Compatibile con Lodgify per la gestione delle prenotazioni e l'automazione della comunicazione multicanale.</p>
+        </div>
+        <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow flex flex-col gap-3">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-[28px] text-on-surface-variant">calendar_today</span>
+            <span class="font-label-md text-label-md text-primary">beds24</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Integrazione con beds24 per importare le prenotazioni e mantenere sincronizzati tutti i flussi di comunicazione.</p>
+        </div>
+        <div class="bg-surface-container rounded-2xl p-6 border border-dashed border-outline-variant flex flex-col gap-3 items-center justify-center text-center">
+          <span class="material-symbols-outlined text-[28px] text-outline">add_circle</span>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Usi un altro gestionale? <a href="contatti.html" class="text-primary-container underline">Scrivici</a> — valutiamo l'integrazione insieme.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- I BENEFICI CONCRETI -->
+  <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap">
+    <div class="text-center mb-12">
+      <h2 class="font-headline-md text-headline-md text-primary mb-4">Cosa cambia nella tua giornata.</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">I benefici non sono astratti. Sono cose concrete che smetti di fare — e risultati concreti che cominci a vedere.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-surface-container-lowest rounded-2xl p-7 border border-surface-variant ambient-shadow hover-lift flex flex-col gap-4">
+        <span class="material-symbols-outlined text-primary-container text-[36px]">schedule</span>
+        <h3 class="font-headline-sm text-headline-sm text-primary">Tempo recuperato ogni giorno</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">Le domande ripetitive — "a che ora è il check-in?", "dov'è il WiFi?", "posso lasciare i bagagli?" — vengono gestite in automatico. Stima media: 1-3 ore al giorno restituite a te.</p>
+      </div>
+      <div class="bg-surface-container-lowest rounded-2xl p-7 border border-surface-variant ambient-shadow hover-lift flex flex-col gap-4">
+        <span class="material-symbols-outlined text-primary-container text-[36px]">star</span>
+        <h3 class="font-headline-sm text-headline-sm text-primary">Più recensioni, più positive</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">La richiesta recensione automatica, inviata nel momento giusto e con il link diretto, aumenta significativamente il tasso di risposta. Nessuna recensione persa per dimenticanza.</p>
+      </div>
+      <div class="bg-surface-container-lowest rounded-2xl p-7 border border-surface-variant ambient-shadow hover-lift flex flex-col gap-4">
+        <span class="material-symbols-outlined text-primary-container text-[36px]">sentiment_very_satisfied</span>
+        <h3 class="font-headline-sm text-headline-sm text-primary">Ospiti più soddisfatti</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">Una risposta in 2 minuti — anche alle 2 di notte, anche in tedesco — crea un'impressione di professionalità e cura che si traduce direttamente in soddisfazione e fidelizzazione.</p>
+      </div>
+      <div class="bg-surface-container-lowest rounded-2xl p-7 border border-surface-variant ambient-shadow hover-lift flex flex-col gap-4">
+        <span class="material-symbols-outlined text-primary-container text-[36px]">nights_stay</span>
+        <h3 class="font-headline-sm text-headline-sm text-primary">Serate libere, davvero</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">Niente più telefono sul tavolo durante la cena. Niente più messaggi alle 23:00 da gestire prima di dormire. Il sistema lavora mentre tu riposi.</p>
+      </div>
+      <div class="bg-surface-container-lowest rounded-2xl p-7 border border-surface-variant ambient-shadow hover-lift flex flex-col gap-4">
+        <span class="material-symbols-outlined text-primary-container text-[36px]">savings</span>
+        <h3 class="font-headline-sm text-headline-sm text-primary">Costi ridotti, margini migliori</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">Rispetto a un assistente umano (€500-800/mese), risparmi fino a €600 al mese. Il sistema scala con te senza costi aggiuntivi per ogni messaggio in più.</p>
+      </div>
+      <div class="bg-surface-container-lowest rounded-2xl p-7 border border-surface-variant ambient-shadow hover-lift flex flex-col gap-4">
+        <span class="material-symbols-outlined text-primary-container text-[36px]">admin_panel_settings</span>
+        <h3 class="font-headline-sm text-headline-sm text-primary">Controllo totale, sempre</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">Puoi leggere ogni conversazione nella dashboard. Puoi intervenire in qualsiasi momento. Per le emergenze vere, ricevi una notifica immediata su WhatsApp. Il controllo non lo perdi mai.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINALE -->
+  <section class="px-margin-mobile md:px-margin-desktop pb-section-gap max-w-container-max mx-auto">
+    <div class="bg-primary rounded-[32px] p-10 md:p-16 text-center relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
+        <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-secondary-fixed blur-3xl"></div>
+        <div class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-tertiary-fixed blur-3xl"></div>
+      </div>
+      <div class="relative z-10 max-w-2xl mx-auto">
+        <h2 class="font-headline-md text-headline-md text-on-primary mb-4">Prova il servizio sulla tua struttura reale.</h2>
+        <p class="font-body-lg text-body-lg text-primary-fixed-dim mb-8 max-w-xl mx-auto">
+          14 giorni con il piano Pilot a €29. Irene configura tutto in 7 giorni. Se non sei soddisfatto, ti rimborsiamo senza fare domande.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+          <a class="bg-surface-container-lowest text-primary px-8 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all text-center" href="prova-gratuita.html">Inizia il Pilot — €29 →</a>
+          <a class="border border-white/30 text-white px-8 py-3 rounded-lg font-label-md text-label-md hover:bg-white/10 transition-all text-center" href="prezzi.html">Vedi tutti i piani</a>
+        </div>
+        <a class="inline-flex items-center gap-1 text-primary-fixed-dim font-body-md text-body-md hover:text-white transition-all" href="https://wa.me/393425259174" target="_blank" rel="noopener noreferrer">
+          Hai domande? Scrivimi su WhatsApp →
+        </a>
+        <p class="font-body-sm text-body-sm text-primary-fixed-dim mt-6 opacity-70">Nessun contratto annuale · Setup incluso · Rimborso garantito nei 14 giorni</p>
+      </div>
+    </div>
+  </section>
+
 </main>
-<!-- Footer -->
+
+<!-- FOOTER -->
 <footer class="bg-surface-container-high dark:bg-inverse-surface font-body-md text-body-md w-full border-t border-outline-variant dark:border-outline">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
-<div class="flex flex-col gap-4 items-center text-center">
-<a href="index.html" class="hover:opacity-90 transition-all duration-200"><img src="logo.svg" alt="Zero Messaggi Persi" class="h-[40px] w-auto"></a>
-<p class="font-body-md text-body-md font-semibold text-on-surface-variant dark:text-surface-variant">Zero messaggi persi.<br>Più tempo per l'ospitalità.</p>
-</div>
-<div class="flex flex-col gap-3">
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="index.html">Home</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="come-funziona.html">Come funziona</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="servizi.html">Servizi</a>
-</div>
-<div class="flex flex-col gap-3">
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="prezzi.html">Piani e prezzi</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="contatti.html">Contatti</a>
-</div>
-</div>
-<div class="w-full border-t border-outline-variant py-4 text-center font-body-sm text-body-sm text-on-surface-variant">© 2026 Zero Messaggi Persi | Tutti i diritti riservati. | P.Iva ESY3328229M | <a href="privacy.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Privacy Policy</a> | <a href="cookie-policy.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Cookie Policy</a></div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+    <div class="flex flex-col gap-4 items-center text-center">
+      <a href="index.html" class="hover:opacity-90 transition-all duration-200"><img src="logo.svg" alt="Zero Messaggi Persi" class="h-[40px] w-auto"></a>
+      <p class="font-body-md text-body-md font-semibold text-on-surface-variant dark:text-surface-variant">Zero messaggi persi.<br>Più tempo per l'ospitalità.</p>
+    </div>
+    <div class="flex flex-col gap-3">
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="index.html">Home</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="come-funziona.html">Come funziona</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="servizi.html">Servizi</a>
+    </div>
+    <div class="flex flex-col gap-3">
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="prezzi.html">Piani e prezzi</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="contatti.html">Contatti</a>
+    </div>
+  </div>
+  <div class="w-full border-t border-outline-variant py-4 text-center font-body-sm text-body-sm text-on-surface-variant">© 2026 Zero Messaggi Persi | Tutti i diritti riservati. | P.Iva ESY3328229M | <a href="privacy.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Privacy Policy</a></div>
 </footer>
+
 </body></html>

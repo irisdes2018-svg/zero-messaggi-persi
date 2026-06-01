@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-
 <html class="light" lang="it"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Piani e prezzi - Zero Messaggi Persi</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
@@ -103,151 +101,347 @@
         }
     </script>
 <style>
+        body { background-color: theme('colors.surface-container-low'); color: theme('colors.on-surface'); }
         .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
-        .material-symbols-outlined[style*="FILL' 1"] {
-            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
+        .ambient-shadow { box-shadow: 0 10px 40px -10px rgba(41, 66, 86, 0.08); }
+        .pilot-gradient { background: linear-gradient(135deg, #112c3f 0%, #294256 60%, #35618d 100%); }
     </style>
-<meta content="Static export organized for Netlify from Stitch pages" name="generator-note"/></head>
+<meta content="Static export organized for Netlify from Stitch pages" name="generator-note"/>
+</head>
 <body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col pt-[80px]">
-<!-- TopNavBar -->
+
+<!-- NAV -->
 <nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface-container-highest/90 bg-surface-container-low/80 backdrop-blur-md shadow-sm">
-<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
-<a class="hover:opacity-90 transition-all duration-200" href="index.html"><img src="logo.svg" alt="Zero Messaggi Persi" class="h-[48px] w-auto"></a>
-<div class="hidden md:flex gap-gutter items-center">
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="come-funziona.html">Come funziona</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="servizi.html">Servizi</a>
-<a class="text-primary dark:text-inverse-primary border-b-2 border-primary font-bold pb-1 hover:opacity-90 transition-all duration-200" href="prezzi.html" style="transform-origin: center;">Piani e prezzi</a>
-</div>
-<a class="bg-primary-container text-surface-low px-6 py-2 rounded-lg font-label-md hover:-translate-y-[1px] hover:shadow-md transition-all text-on-primary" href="https://tally.so/r/rj2ELR" target="_blank" rel="noopener" role="button">
-                Contattaci
-            </a>
-</div>
+  <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+    <a class="hover:opacity-90 transition-all duration-200" href="index.html"><img src="logo.svg" alt="Zero Messaggi Persi" class="h-[48px] w-auto"></a>
+    <div class="hidden md:flex gap-8 items-center">
+      <a class="text-on-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="come-funziona.html">Come funziona</a>
+      <a class="text-on-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="index.html#per-chi-e">Per chi è</a>
+      <a class="text-primary border-b-2 border-primary font-bold pb-1 hover:opacity-90 transition-all duration-200 font-body-lg text-body-lg" href="prezzi.html">Piani e prezzi</a>
+      <a class="text-secondary font-semibold hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="prova-gratuita.html">Pilot gratuito</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <a class="hidden md:inline-flex bg-primary-container text-surface-container-low px-6 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all" href="prova-gratuita.html">
+        Prova 14 giorni →
+      </a>
+      <button class="md:hidden text-primary p-2">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
 </nav>
-<!-- Main Content -->
+
 <main class="flex-grow flex flex-col gap-section-gap pb-section-gap">
-<!-- Hero Section -->
-<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mt-16 md:mt-24 text-center">
-<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary mb-6">
-Un unico investimento. Notti tranquille garantite.
-            </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-Nessun software complicato da imparare. Ti offriamo un servizio chiavi in mano: tu ci racconti la tua struttura, noi creiamo e addestriamo il tuo assistente, che si occupa di tutta la comunicazione con i tuoi ospiti.
-            </p>
-</section>
-<!-- Pricing Cards -->
-<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
-<!-- Riquadro confronto -->
-<div class="mb-10 max-w-3xl mx-auto bg-[#EAF0F6] border-l-4 border-primary-container rounded-xl p-6 md:p-8">
-<p class="font-body-lg text-body-lg text-primary leading-relaxed">💡 Per avere qualcuno che risponda ai messaggi dei tuoi ospiti 24 ore su 24, 7 giorni su 7, in tutte le lingue, un assistente virtuale umano costa in media tra i 500€ e gli 800€ al mese — e non lavora di notte, nei weekend o ad agosto.<br><br><strong>Il nostro servizio parte da 199€, include il setup completo e non ha contratto annuale.</strong></p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-<!-- Host Indipendente (Recommended) -->
-<div class="bg-primary-container rounded-[24px] p-8 border border-primary-container shadow-[0_8px_32px_rgba(41,66,86,0.1)] hover:-translate-y-1 transition-all duration-300 relative h-full flex flex-col">
-<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-surface-bright text-primary-container px-3 py-1 rounded-full font-label-sm shadow-sm border border-surface-variant whitespace-nowrap">
-CONSIGLIATO
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-primary mb-3">Host Indipendente</h3>
-<div class="mb-1">
-<span class="font-headline-md text-headline-md text-on-primary">199€</span>
-<span class="font-body-sm text-body-sm text-on-primary-container">/ mese</span>
-</div>
-<div class="mb-6">
-<span class="font-body-sm text-body-sm text-on-primary-container">+ 150€ setup (una tantum per struttura)</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-primary-container mb-6 flex-grow">
-Il servizio chiavi in mano perfetto per chi gestisce da 1 a 3 strutture e vuole riprendersi il proprio tempo.
-</p>
-<ul class="space-y-4 mb-8">
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-inverse-primary text-[20px]" data-icon="check_circle">check_circle</span>
-<span class="font-body-sm text-body-sm text-on-primary">Gestione completa della comunicazione 24/7</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-inverse-primary text-[20px]" data-icon="check_circle">check_circle</span>
-<span class="font-body-sm text-body-sm text-on-primary">Lingue illimitate incluse (Rilevamento automatico)</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-inverse-primary text-[20px]" data-icon="check_circle">check_circle</span>
-<span class="font-body-sm text-body-sm text-on-primary">Setup e inserimento Regole/FAQ fatto da noi</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-inverse-primary text-[20px]" data-icon="check_circle">check_circle</span>
-<span class="font-body-sm text-body-sm text-on-primary">Automazione Check-in e Check-out</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-inverse-primary text-[20px]" data-icon="check_circle">check_circle</span>
-<span class="font-body-sm text-body-sm text-on-primary">Allerta "Emergenza" sul tuo telefono</span>
-</li>
-</ul>
-<a class="w-full py-3 px-4 bg-surface-bright text-primary-container rounded-lg font-label-md hover:bg-surface-container-low transition-colors mt-auto text-center" href="https://tally.so/r/rj2ELR" target="_blank" rel="noopener" role="button">
-Inizia da qui
-</a>
-</div>
-<!-- Property Manager -->
-<div class="bg-surface-container-lowest rounded-[24px] p-8 border border-surface-variant shadow-[0_4px_24px_rgba(41,66,86,0.04)] hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
-<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Property Manager</h3>
-<div class="mb-6">
-<span class="font-headline-md text-headline-md text-primary">Preventivo su misura</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 flex-grow">
-Per le agenzie o i professionisti che gestiscono più di 4 strutture e vogliono automatizzare i flussi e aumentare i margini.
-</p>
-<ul class="space-y-4 mb-8">
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="check_circle">check_circle</span>
-<span class="font-body-sm text-body-sm text-on-surface">Tutto quello incluso nel piano Host</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="check_circle">check_circle</span>
-<span class="font-body-sm text-body-sm text-on-surface">Costo scalabile per singolo appartamento</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="check_circle">check_circle</span>
-<span class="font-body-sm text-body-sm text-on-surface">Supporto prioritario dedicato</span>
-</li>
-</ul>
-<a class="w-full py-3 px-4 border border-primary-container text-primary-container rounded-lg font-label-md hover:bg-surface-container-low transition-colors mt-auto text-center" href="https://tally.so/r/rj2ELR" target="_blank" rel="noopener" role="button">
-Parla con un esperto
-</a>
-</div>
-</div>
-<div class="mt-8 text-center">
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-* Il costo di setup copre il nostro tempo per 'istruire' l'intelligenza artificiale. Studiamo i tuoi manuali, inseriamo le password, i codici del cancello e facciamo tutti i test necessari prima di attivare il numero.
-</p>
-</div>
-</section>
-<!-- Final CTA -->
-<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full text-center py-12">
-<h2 class="font-headline-md text-headline-md text-primary mb-4">Quanto vale un'ora del tuo tempo?</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl mx-auto">Rispondi a 4 brevi domande e scopri esattamente quante ore stai perdendo ogni settimana sui messaggi degli ospiti.</p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center">
-<a class="bg-primary-container text-surface-bright px-8 py-4 rounded-lg font-label-md text-lg hover:-translate-y-1 hover:shadow-lg transition-all shadow-sm" href="https://tally.so/r/rj2ELR" target="_blank" rel="noopener" role="button">
-Scopri il tuo risparmio
-</a>
-</div>
-</section>
+
+  <!-- HERO -->
+  <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mt-16 md:mt-20 text-center">
+    <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary mb-6">
+      Un investimento che si ripaga da solo.
+    </h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+      Nessun contratto annuale. Nessun software da imparare. Scegli il piano giusto per la tua struttura — e noi ci occupiamo di tutto, dalla configurazione alla gestione quotidiana.
+    </p>
+  </section>
+
+  <!-- BANNER CONFRONTO -->
+  <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+    <div class="max-w-3xl mx-auto bg-secondary-fixed/40 border-l-4 border-primary-container rounded-xl p-6 md:p-8">
+      <p class="font-body-lg text-body-lg text-primary leading-relaxed">
+        💡 Un assistente umano che gestisce i messaggi degli ospiti costa tra i <strong>500€ e gli 800€ al mese</strong> — e non lavora di notte, non parla tutte le lingue, e si ammala.<br><br>
+        Zero Messaggi Persi <strong>parte da 149€ al mese</strong>, include il setup completo, e lavora 24 ore su 24, 7 giorni su 7, in automatico. Vuoi provare prima? Il Pilot costa solo <strong>€29 per i primi 14 giorni</strong>, con rimborso garantito.
+      </p>
+    </div>
+  </section>
+
+  <!-- PIANO PILOT — CARD EVIDENZIATA -->
+  <section id="pilot" class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full scroll-mt-24">
+    <div class="pilot-gradient rounded-[28px] p-8 md:p-12 relative overflow-hidden ambient-shadow">
+      <!-- Decorative circles -->
+      <div class="absolute top-0 right-0 w-72 h-72 bg-white/5 rounded-full -mr-20 -mt-20 pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full -ml-10 -mb-10 pointer-events-none"></div>
+
+      <div class="relative z-10 flex flex-col lg:flex-row gap-8 items-start lg:items-center justify-between">
+        <!-- Testo sinistro -->
+        <div class="flex-1">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/15 text-white rounded-full font-label-sm text-label-sm mb-4">
+            🚀 Inizia da qui
+          </div>
+          <h2 class="font-headline-md text-headline-md text-white mb-2">Piano Pilot</h2>
+          <p class="font-body-lg text-body-lg text-white/80 mb-6 max-w-xl">
+            Il modo più semplice per scoprire cosa fa davvero Zero Messaggi Persi. Provi il servizio sulla tua struttura reale, con i tuoi ospiti reali, per 14 giorni. Se non sei soddisfatto al 100%, ti rimborsiamo senza fare domande.
+          </p>
+          <!-- Feature list -->
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+            <li class="flex items-center gap-2 text-white/90">
+              <span class="material-symbols-outlined text-[18px] text-secondary-fixed">check_circle</span>
+              <span class="font-body-sm text-body-sm">1 struttura</span>
+            </li>
+            <li class="flex items-center gap-2 text-white/90">
+              <span class="material-symbols-outlined text-[18px] text-secondary-fixed">check_circle</span>
+              <span class="font-body-sm text-body-sm">Setup completo incluso</span>
+            </li>
+            <li class="flex items-center gap-2 text-white/90">
+              <span class="material-symbols-outlined text-[18px] text-secondary-fixed">check_circle</span>
+              <span class="font-body-sm text-body-sm">WhatsApp automatico H24</span>
+            </li>
+            <li class="flex items-center gap-2 text-white/90">
+              <span class="material-symbols-outlined text-[18px] text-secondary-fixed">check_circle</span>
+              <span class="font-body-sm text-body-sm">5 workflow dalla prenotazione alla recensione</span>
+            </li>
+            <li class="flex items-center gap-2 text-white/90">
+              <span class="material-symbols-outlined text-[18px] text-secondary-fixed">check_circle</span>
+              <span class="font-body-sm text-body-sm">Multilingua incluso</span>
+            </li>
+            <li class="flex items-center gap-2 text-white/90">
+              <span class="material-symbols-outlined text-[18px] text-secondary-fixed">check_circle</span>
+              <span class="font-body-sm text-body-sm">Rimborso garantito entro 14 giorni</span>
+            </li>
+          </ul>
+          <p class="font-body-sm text-body-sm text-white/60">Dopo il Pilot, si converte automaticamente in piano Starter a €149/mese — solo se sei soddisfatto.</p>
+        </div>
+        <!-- Prezzo e CTA destro -->
+        <div class="flex flex-col items-center gap-4 bg-white/10 rounded-2xl p-8 min-w-[220px] text-center">
+          <p class="font-body-sm text-body-sm text-white/70">Solo per i primi 14 giorni</p>
+          <div>
+            <span class="font-display-lg text-display-lg text-white">€29</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-white/70">poi €149/mese se continui</p>
+          <a class="w-full bg-white text-primary-container px-6 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all text-center" href="prova-gratuita.html">
+            Attiva il Pilot →
+          </a>
+          <p class="font-body-sm text-body-sm text-white/50 text-center">Nessun contratto · Rimborso garantito</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 PIANI -->
+  <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+    <div class="text-center mb-10">
+      <h2 class="font-headline-md text-headline-md text-primary mb-3">I piani a regime</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">Dopo il Pilot, scegli il piano che si adatta alla dimensione della tua struttura.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+
+      <!-- STARTER -->
+      <div class="bg-surface-container-lowest rounded-[24px] p-8 border-2 border-primary-container shadow-[0_8px_32px_rgba(41,66,86,0.10)] hover:-translate-y-1 transition-all duration-300 relative h-full flex flex-col">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary-container text-white px-4 py-1 rounded-full font-label-sm text-label-sm whitespace-nowrap">
+          PIÙ SCELTO
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-1 mt-2">Starter</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Per B&amp;B e case vacanza che vogliono finalmente smettere di rispondere a mano.</p>
+        <div class="mb-1">
+          <span class="font-headline-md text-headline-md text-primary">€149</span>
+          <span class="font-body-sm text-body-sm text-on-surface-variant"> / mese</span>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mb-6">+ €299 setup una tantum</p>
+
+        <ul class="space-y-3 mb-8 flex-grow">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary-container text-[18px] mt-0.5">check_circle</span>
+            <span class="font-body-sm text-body-sm text-on-surface">1–4 unità</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary-container text-[18px] mt-0.5">check_circle</span>
+            <span class="font-body-sm text-body-sm text-on-surface">WhatsApp + Email automatici H24</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary-container text-[18px] mt-0.5">check_circle</span>
+            <span class="font-body-sm text-body-sm text-on-surface">5 workflow: prenotazione → pre-arrivo → soggiorno → check-out → recensione</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary-container text-[18px] mt-0.5">check_circle</span>
+            <span class="font-body-sm text-body-sm text-on-surface">Multilingua: EN, DE, FR, ES, NL</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary-container text-[18px] mt-0.5">check_circle</span>
+            <span class="font-body-sm text-body-sm text-on-surface">Notifica emergenze su WhatsApp</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary-container text-[18px] mt-0.5">check_circle</span>
+            <span class="font-body-sm text-body-sm text-on-surface">Report settimanale</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary-container text-[18px] mt-0.5">check_circle</span>
+            <span class="font-body-sm text-body-sm text-on-surface">Dashboard di monitoraggio</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary-container text-[18px] mt-0.5">check_circle</span>
+            <span class="font-body-sm text-body-sm text-on-surface">Assistenza via WhatsApp</span>
+          </li>
+        </ul>
+        <a class="w-full py-3 px-4 bg-primary-container text-white rounded-lg font-label-md hover:opacity-90 transition-colors mt-auto text-center" href="prova-gratuita.html" role="button">
+          Inizia con il Pilot →
+        </a>
+      </div>
+
+      <!-- PROFESSIONAL -->
+      <div class="bg-surface-container-lowest rounded-[24px] p-8 border border-surface-variant shadow-[0_4px_24px_rgba(41,66,86,0.05)] hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-1">Professional</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Per chi gestisce più strutture e vuole una copertura completa su tutti i canali.</p>
+        <div class="mb-1">
+          <span class="font-headline-md text-headline-md text-primary">€299</span>
+          <span class="font-body-sm text-body-sm text-on-surface-variant"> / mese</span>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mb-6">+ €399 setup una tantum</p>
+
+        <ul class="space-y-3 mb-8 flex-grow">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+            <span class="font-body-sm text-body-sm text-on-surface">4–12 unità</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+            <span class="font-body-sm text-body-sm text-on-surface">Tutto il piano Starter</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+            <span class="font-body-sm text-body-sm text-on-surface">Booking.com + Airbnb integrati</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+            <span class="font-body-sm text-body-sm text-on-surface">Channel Manager (Smoobu, Lodgify, beds24)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+            <span class="font-body-sm text-body-sm text-on-surface">Gestione multi-struttura unificata</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+            <span class="font-body-sm text-body-sm text-on-surface">Ottimizzazione mensile dei flussi</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+            <span class="font-body-sm text-body-sm text-on-surface">Supporto prioritario</span>
+          </li>
+        </ul>
+        <a class="w-full py-3 px-4 border-2 border-primary-container text-primary-container rounded-lg font-label-md hover:bg-surface-container-low transition-colors mt-auto text-center" href="https://wa.me/393425259174" target="_blank" rel="noopener noreferrer" role="button">
+          Parliamone →
+        </a>
+      </div>
+
+      <!-- ELITE -->
+      <div class="bg-surface-container-lowest rounded-[24px] p-8 border border-surface-variant shadow-[0_4px_24px_rgba(41,66,86,0.05)] hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-1">Elite</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Per property manager e piccoli hotel che gestiscono un portfolio articolato.</p>
+        <div class="mb-1">
+          <span class="font-headline-md text-headline-md text-primary">€499</span>
+          <span class="font-body-sm text-body-sm text-on-surface-variant"> / mese</span>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mb-6">+ €499 setup una tantum</p>
+
+        <ul class="space-y-3 mb-8 flex-grow">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+            <span class="font-body-sm text-body-sm text-on-surface">12–40 unità</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+            <span class="font-body-sm text-body-sm text-on-surface">Tutto il piano Professional</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+            <span class="font-body-sm text-body-sm text-on-surface">Integrazione PMS su misura</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+            <span class="font-body-sm text-body-sm text-on-surface">Multilingua avanzato (lingua per struttura)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+            <span class="font-body-sm text-body-sm text-on-surface">Account manager dedicato</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+            <span class="font-body-sm text-body-sm text-on-surface">Onboarding su misura</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+            <span class="font-body-sm text-body-sm text-on-surface">Reportistica avanzata con analisi ospiti</span>
+          </li>
+        </ul>
+        <a class="w-full py-3 px-4 border-2 border-primary-container text-primary-container rounded-lg font-label-md hover:bg-surface-container-low transition-colors mt-auto text-center" href="https://wa.me/393425259174" target="_blank" rel="noopener noreferrer" role="button">
+          Parliamone →
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Note -->
+    <div class="mt-8 text-center">
+      <p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl mx-auto">
+        Il costo di setup copre il lavoro di configurazione: studiamo la tua struttura, inseriamo le informazioni, colleghiamo i canali e testiamo tutto prima di andare live. È un costo una tantum per struttura — non si ripete ogni anno.
+      </p>
+    </div>
+  </section>
+
+  <!-- GARANZIE -->
+  <section class="bg-surface-container-low py-section-gap">
+    <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto text-center">
+        <div class="flex flex-col items-center gap-3">
+          <span class="material-symbols-outlined text-primary-container text-[40px]">shield</span>
+          <h3 class="font-label-md text-label-md text-primary">Rimborso garantito</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Entro 14 giorni dal Pilot, se non sei soddisfatto ti rimborsiamo senza domande.</p>
+        </div>
+        <div class="flex flex-col items-center gap-3">
+          <span class="material-symbols-outlined text-primary-container text-[40px]">cancel</span>
+          <h3 class="font-label-md text-label-md text-primary">Nessun contratto annuale</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Puoi disdire in qualsiasi momento, senza penali e senza burocrazia.</p>
+        </div>
+        <div class="flex flex-col items-center gap-3">
+          <span class="material-symbols-outlined text-primary-container text-[40px]">build</span>
+          <h3 class="font-label-md text-label-md text-primary">Setup incluso sempre</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Configuro tutto io. Tu non installi nulla, non impari nessun software, non tocchi nessun pannello.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINALE -->
+  <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+    <div class="bg-primary rounded-[32px] p-10 md:p-16 text-center relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
+        <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-secondary-fixed blur-3xl"></div>
+        <div class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-tertiary-fixed blur-3xl"></div>
+      </div>
+      <div class="relative z-10 max-w-2xl mx-auto">
+        <h2 class="font-headline-md text-headline-md text-on-primary mb-4">Non sai da dove iniziare?</h2>
+        <p class="font-body-lg text-body-lg text-primary-fixed-dim mb-8 max-w-xl mx-auto">
+          Inizia dal Pilot: 14 giorni reali sulla tua struttura, a €29. Se funziona, continui. Se non funziona, ti rimborso. Non c'è nessun rischio.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+          <a class="bg-surface-container-lowest text-primary px-8 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all text-center" href="prova-gratuita.html">Attiva il Pilot — €29 →</a>
+          <a class="border border-white/30 text-white px-8 py-3 rounded-lg font-label-md text-label-md hover:bg-white/10 transition-all text-center" href="https://wa.me/393425259174" target="_blank" rel="noopener noreferrer">Scrivimi su WhatsApp</a>
+        </div>
+        <p class="font-body-sm text-body-sm text-primary-fixed-dim opacity-70">Nessun contratto annuale · Setup incluso · Rimborso garantito nei 14 giorni</p>
+      </div>
+    </div>
+  </section>
+
 </main>
-<!-- Footer -->
+
+<!-- FOOTER -->
 <footer class="bg-surface-container-high dark:bg-inverse-surface font-body-md text-body-md w-full border-t border-outline-variant dark:border-outline">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
-<div class="flex flex-col gap-4 items-center text-center">
-<a href="index.html" class="hover:opacity-90 transition-all duration-200"><img src="logo.svg" alt="Zero Messaggi Persi" class="h-[40px] w-auto"></a>
-<p class="font-body-md text-body-md font-semibold text-on-surface-variant dark:text-surface-variant">Zero messaggi persi.<br>Più tempo per l'ospitalità.</p>
-</div>
-<div class="flex flex-col gap-3">
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="index.html">Home</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="come-funziona.html">Come funziona</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="servizi.html">Servizi</a>
-</div>
-<div class="flex flex-col gap-3">
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="prezzi.html">Piani e prezzi</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="contatti.html">Contatti</a>
-</div>
-</div>
-<div class="w-full border-t border-outline-variant py-4 text-center font-body-sm text-body-sm text-on-surface-variant">© 2026 Zero Messaggi Persi | Tutti i diritti riservati. | P.Iva ESY3328229M | <a href="privacy.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Privacy Policy</a> | <a href="cookie-policy.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Cookie Policy</a></div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+    <div class="flex flex-col gap-4 items-center text-center">
+      <a href="index.html" class="hover:opacity-90 transition-all duration-200"><img src="logo.svg" alt="Zero Messaggi Persi" class="h-[40px] w-auto"></a>
+      <p class="font-body-md text-body-md font-semibold text-on-surface-variant dark:text-surface-variant">Zero messaggi persi.<br>Più tempo per l'ospitalità.</p>
+    </div>
+    <div class="flex flex-col gap-3">
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="index.html">Home</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="come-funziona.html">Come funziona</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="servizi.html">Servizi</a>
+    </div>
+    <div class="flex flex-col gap-3">
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="prezzi.html">Piani e prezzi</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="contatti.html">Contatti</a>
+    </div>
+  </div>
+  <div class="w-full border-t border-outline-variant py-4 text-center font-body-sm text-body-sm text-on-surface-variant">© 2026 Zero Messaggi Persi | Tutti i diritti riservati. | P.Iva ESY3328229M | <a href="privacy.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Privacy Policy</a></div>
 </footer>
+
 </body></html>
