@@ -1,0 +1,155 @@
+{
+  "name": "ZMP — D5 Follow-Up Check-In (T+1)",
+  "nodes": [
+    {
+      "id": "d5-node-1",
+      "name": "Ogni Giorno alle 11:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 300],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 11 * * *"
+            }
+          ]
+        }
+      },
+      "notes": "Scatta ogni giorno alle 11:00 (giorno dopo il check-in, che di solito avviene alle 15:00)."
+    },
+    {
+      "id": "d5-node-2",
+      "name": "Supabase — Prenotazioni T+1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [240, 300],
+      "parameters": {
+        "method": "GET",
+        "url": "={{ $env.SUPABASE_URL }}/rest/v1/reservations",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "apikey", "value": "={{ $env.SUPABASE_SERVICE_KEY }}" },
+            { "name": "Authorization", "value": "=Bearer {{ $env.SUPABASE_SERVICE_KEY }}" }
+          ]
+        },
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "select",
+              "value": "*,properties(nome,whatsapp_number_id)"
+            },
+            {
+              "name": "checkin_date",
+              "value": "={{ 'eq.' + new Date(Date.now() - 24*60*60*1000).toISOString().split('T')[0] }}"
+            },
+            {
+              "name": "followup_sent",
+              "value": "eq.false"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "notes": "Recupera tutte le prenotazioni con check-in ieri e followup ancora non inviato.\n\nPREREQUISITO: la tabella reservations deve avere la colonna followup_sent (boolean, default false).\nEsegui nel SQL Editor di Supabase:\n  ALTER TABLE reservations ADD COLUMN IF NOT EXISTS followup_sent boolean DEFAULT false;"
+    },
+    {
+      "id": "d5-node-3",
+      "name": "Formatta Messaggi Follow-Up",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [480, 300],
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const response = $input.first().json;\nconst reservations = Array.isArray(response) ? response : [];\n\nreturn reservations.map(r => ({\n  json: {\n    reservation_id: r.id,\n    guest_phone: r.guest_phone,\n    whatsapp_number_id: r.properties?.whatsapp_number_id || '',\n    wa_payload: JSON.stringify({\n      messaging_product: 'whatsapp',\n      recipient_type: 'individual',\n      to: r.guest_phone,\n      type: 'template',\n      template: {\n        name: 'followup_checkin',\n        language: { code: 'it' },\n        components: [{\n          type: 'body',\n          parameters: [\n            { type: 'text', text: r.guest_name || 'Ospite' },\n            { type: 'text', text: r.properties?.nome || 'la struttura' }\n          ]\n        }]\n      }\n    })\n  }\n}));"
+      },
+      "notes": "Prepara un elemento per ogni prenotazione. I nodi successivi girano una volta per elemento.\n\nTEMPLATE WhatsApp da creare in Meta Business Suite → Gestione WhatsApp → Modelli:\n  Nome: followup_checkin\n  Lingua: Italiano\n  Testo suggerito:\n    \"Ciao {{1}}! Speriamo che il tuo arrivo a {{2}} sia andato bene 😊\n    Hai tutto quello che ti serve? Scrivici qui se hai bisogno di qualcosa!\"\n  Variabili: {{1}} = nome ospite, {{2}} = nome struttura"
+    },
+    {
+      "id": "d5-node-4",
+      "name": "WhatsApp — Invia Follow-Up",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [720, 300],
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v19.0/{{ $json.whatsapp_number_id || $env.WA_PHONE_NUMBER_ID }}/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "=Bearer {{ $env.WA_ACCESS_TOKEN }}" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "string",
+        "body": "={{ $json.wa_payload }}",
+        "options": {}
+      },
+      "notes": "Invia il template 'followup_checkin' via WhatsApp Cloud API (Meta).\nI messaggi template sono OBBLIGATORI perché l'ospite non ha scritto per primo nelle ultime 24h.\n\nCredenziali necessarie:\n  - WA_ACCESS_TOKEN (env var oppure header Auth)\n  - WA_PHONE_NUMBER_ID (env var fallback se properties.whatsapp_number_id è vuoto)"
+    },
+    {
+      "id": "d5-node-5",
+      "name": "Supabase — Segna followup_sent",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [960, 300],
+      "parameters": {
+        "method": "PATCH",
+        "url": "={{ $env.SUPABASE_URL }}/rest/v1/reservations",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "apikey", "value": "={{ $env.SUPABASE_SERVICE_KEY }}" },
+            { "name": "Authorization", "value": "=Bearer {{ $env.SUPABASE_SERVICE_KEY }}" },
+            { "name": "Content-Type", "value": "application/json" },
+            { "name": "Prefer", "value": "return=minimal" }
+          ]
+        },
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "id",
+              "value": "={{ 'eq.' + $('Formatta Messaggi Follow-Up').item.json.reservation_id }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "string",
+        "body": "{ \"followup_sent\": true }",
+        "options": {}
+      },
+      "notes": "Aggiorna followup_sent=true per evitare invii doppi in caso di ri-esecuzione del workflow."
+    }
+  ],
+  "connections": {
+    "Ogni Giorno alle 11:00": {
+      "main": [[{ "node": "Supabase — Prenotazioni T+1", "type": "main", "index": 0 }]]
+    },
+    "Supabase — Prenotazioni T+1": {
+      "main": [[{ "node": "Formatta Messaggi Follow-Up", "type": "main", "index": 0 }]]
+    },
+    "Formatta Messaggi Follow-Up": {
+      "main": [[{ "node": "WhatsApp — Invia Follow-Up", "type": "main", "index": 0 }]]
+    },
+    "WhatsApp — Invia Follow-Up": {
+      "main": [[{ "node": "Supabase — Segna followup_sent", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Rome"
+  },
+  "pinData": {},
+  "meta": {
+    "description": "Giorno dopo il check-in invia un messaggio WhatsApp per chiedere se va tutto bene. Filtra per followup_sent=false e aggiorna il flag dopo l'invio.",
+    "version": "1.0",
+    "author": "Zero Messaggi Persi — Irene De Santis",
+    "lastUpdated": "2026-06-07"
+  }
+}
