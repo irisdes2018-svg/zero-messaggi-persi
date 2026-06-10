@@ -133,13 +133,19 @@ incrementa `attempts` (max 3, poi `failed` + notifica al gestore). Vantaggi:
   richiede certificazione come partner di connettività con requisiti (volumi, audit)
   fuori portata per una startup al lancio. *Non risolvibile per via diretta.*
 - **Soluzione A (consigliata): passare da un channel manager** già certificato (§4.4).
-- **Soluzione B: parsing delle email di conferma** che Booking invia al gestore.
-  Contengono nome, date, e nella maggior parte dei casi il **telefono reale**
-  dell'ospite. L'email dell'ospite è invece un alias relay (`@guest.booking.com`) —
-  va bene comunque, perché il canale di contatto è WhatsApp.
-- **Punto critico:** alcune prenotazioni Booking arrivano senza telefono o con numero
-  errato. **Soluzione:** fallback = messaggio via canale Booking (manuale o via CM) con
-  link al form di web check-in che raccoglie il numero WhatsApp.
+- **Soluzione B: parsing delle email** che Booking invia al gestore.
+- **Punto critico (VERIFICATO sulle email reali, giu 2026):** la notifica standard di
+  Booking è **minimale**: contiene solo n. prenotazione, struttura e data di arrivo
+  (nell'oggetto) + link all'extranet. **Niente nome, telefono, né data di partenza.**
+  Gestione implementata: la prenotazione entra in dashboard con stato
+  **`da_completare`** (nessun messaggio parte); il gestore apre il link extranet
+  contenuto nell'email, copia telefono/nome/partenza (1 minuto) e porta lo stato a
+  `confermata` → la sequenza si genera da sola. Possibili miglioramenti:
+  1) attivare nell'extranet le **email di prenotazione dettagliate** (Account →
+  Notifiche email), se disponibili per la struttura: contengono nome e spesso telefono;
+  2) channel manager (risolve alla radice).
+- Anche col telefono, alcuni numeri Booking sono errati. Fallback: messaggio via
+  canale Booking con link al form di web check-in che raccoglie il numero WhatsApp.
 
 ### 4.3 Airbnb — ✅ FATTIBILE via "messaggio programmato + email" (flusso a 2 email)
 Premesse:

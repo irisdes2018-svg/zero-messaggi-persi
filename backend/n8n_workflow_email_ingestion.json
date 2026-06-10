@@ -1,0 +1,78 @@
+{
+  "name": "ZMP — Ingestione Email (Airbnb + Booking)",
+  "nodes": [
+    {
+      "id": "ing-node-1",
+      "name": "Email in arrivo (IMAP)",
+      "type": "n8n-nodes-base.emailReadImap",
+      "typeVersion": 2,
+      "position": [0, 300],
+      "parameters": {
+        "mailbox": "INBOX",
+        "postProcessAction": "read",
+        "options": { "allowUnauthorizedCerts": false }
+      },
+      "notes": "DA CONFIGURARE: credenziale IMAP della casella che riceve le email di Airbnb e Booking.\nGmail: host imap.gmail.com, porta 993, SSL, password per le app (myaccount.google.com/apppasswords).\nIn alternativa si può sostituire questo nodo con il Gmail Trigger (OAuth)."
+    },
+    {
+      "id": "ing-node-2",
+      "name": "Classifica ed Estrai",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [260, 300],
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// ============================================================\n// ZMP — Parser email Airbnb / Booking.com\n// Basato sui formati reali (giugno 2026):\n//  A) Airbnb  'Prenotazione confermata - <Nome> arriverà il <g> <mese>'\n//  B) Airbnb  '<Nome> ha inviato un messaggio' (qui arriva il telefono)\n//  C) Booking 'Booking.com - ¡Nueva reserva! (<ref>, <giorno>, <g> de <mese> de <anno>)'\n// Output: payload per POST /api/webhooks/bookings, oppure niente.\n// ============================================================\n\n// MAPPA STRUTTURE: aggiungi una riga per ogni struttura/cliente.\n// 'match' = pezzo del nome annuncio come appare nelle email.\nconst PROPERTY_MAP = [\n  { match: 'Vista Oceano', property_id: 'e617be48-865a-4745-9695-8ae542471e98' },\n];\nconst DEFAULT_PROPERTY_ID = 'e617be48-865a-4745-9695-8ae542471e98';\n\nconst j = $json;\nconst subject = String(j.subject || '');\nconst fromRaw = JSON.stringify(j.from || '') + ' ' + String(j.sender || '');\nconst html = String(j.textHtml || j.html || '');\nconst text = (String(j.textPlain || j.text || '') || html.replace(/<style[\\s\\S]*?<\\/style>/gi, ' ').replace(/<[^>]+>/g, ' '))\n  .replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').replace(/\\s+/g, ' ');\n\nconst MESI = {\n  gen:1,gennaio:1,ene:1,enero:1,jan:1,january:1,\n  feb:2,febbraio:2,febrero:2,february:2,\n  mar:3,marzo:3,march:3,\n  apr:4,aprile:4,abr:4,abril:4,april:4,\n  mag:5,maggio:5,may:5,mayo:5,\n  giu:6,giugno:6,jun:6,junio:6,june:6,\n  lug:7,luglio:7,jul:7,julio:7,july:7,\n  ago:8,agosto:8,aug:8,august:8,\n  set:9,settembre:9,sep:9,septiembre:9,september:9,\n  ott:10,ottobre:10,oct:10,octubre:10,october:10,\n  nov:11,novembre:11,noviembre:11,november:11,\n  dic:12,dicembre:12,diciembre:12,dec:12,december:12,\n};\n\nfunction mese(nome) {\n  const k = String(nome || '').toLowerCase().slice(0, 9);\n  for (const [key, val] of Object.entries(MESI)) {\n    if (k.startsWith(key) || key.startsWith(k.slice(0, 3))) { if (k.slice(0,3) === key.slice(0,3)) return val; }\n  }\n  return null;\n}\n\nfunction dataISO(giorno, nomeMese, anno) {\n  const m = mese(nomeMese);\n  if (!m) return null;\n  const oggi = new Date();\n  let y = anno ? Number(anno) : oggi.getFullYear();\n  if (!anno) {\n    // inferenza anno: la data deve cadere tra -60 giorni e +18 mesi\n    const tenta = new Date(y, m - 1, Number(giorno));\n    if (tenta.getTime() < oggi.getTime() - 60 * 86400000) y += 1;\n  }\n  return `${y}-${String(m).padStart(2, '0')}-${String(giorno).padStart(2, '0')}`;\n}\n\nfunction trovaProperty(testo) {\n  for (const r of PROPERTY_MAP) {\n    if (testo.toLowerCase().includes(r.match.toLowerCase())) return r.property_id;\n  }\n  return DEFAULT_PROPERTY_ID;\n}\n\nfunction trovaTelefono(testo) {\n  const candidati = testo.match(/(?:\\+|00)?[0-9][0-9\\s().\\-]{6,18}[0-9]/g) || [];\n  for (const c of candidati) {\n    const cifre = c.replace(/\\D/g, '');\n    if (cifre.length >= 8 && cifre.length <= 15 && !/^(19|20)\\d{2}$/.test(cifre.slice(0, 4))) {\n      return c.trim();\n    }\n  }\n  return null;\n}\n\nconst daAirbnb = /airbnb/i.test(fromRaw) || /airbnb/i.test(subject);\nconst daBooking = /booking\\.com/i.test(fromRaw) || /booking\\.com/i.test(subject);\nlet payload = null;\n\n// ── A) AIRBNB: nuova prenotazione confermata ──\nlet m = subject.match(/(?:Prenotazione confermata|Reservation confirmed|Nuova prenotazione confermata)[!\\s\\-–:]*(.+?)\\s+(?:arriver|arrives|llega)/iu);\nif (daAirbnb && m) {\n  const nome = m[1].trim();\n  const codice = (text.match(/\\b(HM[A-Z0-9]{8})\\b/) || text.match(/[Cc]odice di conferma\\s*:?\\s*([A-Z0-9]{10})/) || [])[1] || null;\n  const ci = text.match(/Check-?in[^0-9]{0,30}?(\\d{1,2})\\s+([a-zà-ù]{3,10})\\.?\\s*(\\d{4})?/i);\n  const co = text.match(/Check-?out[^0-9]{0,30}?(\\d{1,2})\\s+([a-zà-ù]{3,10})\\.?\\s*(\\d{4})?/i);\n  const adulti = Number((text.match(/(\\d+)\\s+adult/i) || [])[1] || 0);\n  const bambini = Number((text.match(/(\\d+)\\s+bambin/i) || text.match(/(\\d+)\\s+child/i) || [])[1] || 0);\n  if (ci && co) {\n    let checkin = dataISO(ci[1], ci[2], ci[3]);\n    let checkout = dataISO(co[1], co[2], co[3]);\n    if (checkin && checkout && checkout <= checkin) {\n      const d = new Date(checkout); d.setFullYear(d.getFullYear() + 1);\n      checkout = d.toISOString().slice(0, 10);\n    }\n    if (checkin && checkout) {\n      payload = {\n        property_id: trovaProperty(text),\n        channel: 'airbnb',\n        external_id: codice,\n        guest_name: nome,\n        checkin_date: checkin,\n        checkout_date: checkout,\n        num_guests: (adulti + bambini) || undefined,\n        status: 'confermata',\n        notes: 'Importata da email Airbnb. Telefono in arrivo dalla chat (messaggio programmato).',\n      };\n    }\n  }\n}\n\n// ── B) AIRBNB: l'ospite ha risposto in chat (cerca il telefono) ──\nif (!payload && daAirbnb) {\n  const mm = subject.match(/^(?:Re:\\s*)?([\\p{L}][\\p{L}\\s'’.\\-]{1,40}?)\\s+(?:ti\\s+)?(?:ha inviato un messaggio|sent you a message|ha risposto)/iu);\n  if (mm) {\n    const tel = trovaTelefono(text);\n    if (tel) {\n      payload = {\n        property_id: trovaProperty(text),\n        channel: 'airbnb',\n        guest_name: mm[1].trim(),\n        guest_phone: tel,\n        match_by_name: true,\n      };\n    }\n  }\n}\n\n// ── C) BOOKING.COM: nuova prenotazione (notifica minimale) ──\nif (!payload && daBooking && /nueva reserva|nuova prenotazione|new booking|new reservation/i.test(subject)) {\n  const ref = (subject.match(/\\((\\d{6,12})/) || text.match(/(?:confirmation|conferma|confirmación)\\s*[—\\-:]*\\s*(\\d{6,12})/i) || [])[1];\n  const dm = subject.match(/(\\d{1,2})\\s+(?:de\\s+)?([a-zà-ùñ]{3,12})(?:\\s+(?:de\\s+)?(\\d{4}))?/i);\n  if (ref && dm) {\n    const checkin = dataISO(dm[1], dm[2], dm[3]);\n    if (checkin) {\n      const co = new Date(checkin); co.setDate(co.getDate() + 1);\n      payload = {\n        property_id: trovaProperty(text + ' ' + subject),\n        channel: 'booking',\n        external_id: ref,\n        guest_name: 'Ospite Booking ' + ref,\n        checkin_date: checkin,\n        checkout_date: co.toISOString().slice(0, 10),\n        status: 'da_completare',\n        notes: 'Notifica minimale Booking.com: completare nome, telefono e data di partenza dall\\'extranet (admin.booking.com).',\n      };\n    }\n  }\n}\n\n// ── D) BOOKING.COM: cancellazione ──\nif (!payload && daBooking && /cancelad|cancellat|cancelled/i.test(subject)) {\n  const ref = (subject.match(/\\((\\d{6,12})/) || text.match(/(\\d{8,12})/) || [])[1];\n  if (ref) {\n    payload = { property_id: trovaProperty(text + ' ' + subject), channel: 'booking', external_id: ref, status: 'cancellata' };\n  }\n}\n\nif (!payload) {\n  return { json: { skip: true, motivo: 'email non riconosciuta', subject } };\n}\nreturn { json: { skip: false, payload } };"
+      }
+    },
+    {
+      "id": "ing-node-3",
+      "name": "È una prenotazione?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [520, 300],
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "loose" },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.skip }}",
+              "rightValue": false,
+              "operator": { "type": "boolean", "operation": "equals" }
+            }
+          ],
+          "combinator": "and"
+        }
+      }
+    },
+    {
+      "id": "ing-node-4",
+      "name": "Invia alla Dashboard",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [780, 200],
+      "parameters": {
+        "method": "POST",
+        "url": "https://app.zeromessaggipersi.it/api/webhooks/bookings",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "x-zmp-secret", "value": "={{ $env.ZMP_WEBHOOK_SECRET }}" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.payload) }}",
+        "options": {}
+      },
+      "notes": "Manda la prenotazione (o l'aggiornamento) all'endpoint di ingestione.\nImpostare la env var ZMP_WEBHOOK_SECRET su n8n (Settings > Variables),\noppure sostituire {{ $env.ZMP_WEBHOOK_SECRET }} con il valore del segreto."
+    }
+  ],
+  "connections": {
+    "Email in arrivo (IMAP)": { "main": [[{ "node": "Classifica ed Estrai", "type": "main", "index": 0 }]] },
+    "Classifica ed Estrai": { "main": [[{ "node": "È una prenotazione?", "type": "main", "index": 0 }]] },
+    "È una prenotazione?": { "main": [[{ "node": "Invia alla Dashboard", "type": "main", "index": 0 }], []] }
+  },
+  "settings": { "executionOrder": "v1" }
+}
