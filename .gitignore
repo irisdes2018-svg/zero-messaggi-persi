@@ -1,0 +1,22 @@
+# ─────────────────────────────────────────────────────────────
+# Su GitHub vanno SOLO i file che l'utente finale vede nel sito.
+# Tutto ciò che segue è contesto di lavoro: resta in locale.
+# ─────────────────────────────────────────────────────────────
+
+# Brief, design system e configurazione di lavoro
+CLAUDE.md
+DESIGN.md
+.claude/
+
+# Materiali interni / tecnici / di riferimento
+backend/
+docs/
+stitch-reference/
+*.pdf
+
+# Sorgenti logo non usati dal sito (il sito pubblico usa logo.svg)
+logo Zmp/
+
+# OS / editor
+.DS_Store
+Thumbs.db
