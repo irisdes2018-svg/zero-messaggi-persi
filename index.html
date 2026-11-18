@@ -4,9 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Zero Messaggi Persi - Gestione automatica delle comunicazioni per strutture ricettive</title>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="fonts/fonts.css" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
       tailwind.config = {
@@ -123,7 +121,7 @@
             background: linear-gradient(135deg, #294256 0%, #35618d 100%);
         }
     </style>
-<meta content="Static export organized for Netlify from Stitch pages" name="generator-note"/></head>
+</head>
 <body class="antialiased min-h-screen flex flex-col pt-[80px]">
 
 <!-- NAV -->
@@ -226,7 +224,7 @@
     <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow flex flex-col gap-3">
       <div class="w-10 h-10 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-label-md text-label-md shrink-0">3</div>
       <h3 class="font-label-md text-label-md text-primary">Configuriamo tutto noi — tu non tocchi niente</h3>
-      <p class="font-body-sm text-body-sm text-on-surface-variant">Colleghiamo WhatsApp, email, Booking.com e Airbnb. Attiviamo i 5 flussi automatici: benvenuto, pre-arrivo, soggiorno, check-out, recensione. Tu non installi nulla.</p>
+      <p class="font-body-sm text-body-sm text-on-surface-variant">Colleghiamo WhatsApp e la tua email, dove arrivano anche le notifiche di Booking.com e Airbnb. Attiviamo i 5 flussi automatici: benvenuto, pre-arrivo, soggiorno, check-out, recensione. Tu non installi nulla.</p>
     </div>
     <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow flex flex-col gap-3">
       <div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-label-md text-label-md shrink-0">4</div>
@@ -350,7 +348,7 @@
 <section class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto w-full">
   <div class="text-center mb-12">
     <h2 class="font-headline-md text-headline-md text-primary mb-3">Funziona sui canali che già usi. Nessuna installazione.</h2>
-    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">Colleghiamo tutto noi. Tu non accedi a nessun pannello tecnico e non devi imparare nessuno strumento nuovo.</p>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">WhatsApp ed email sono attivi da subito. Booking.com e Airbnb li gestiamo a partire dalle notifiche email che già ricevi. Le integrazioni dirette con i channel manager sono in arrivo.</p>
   </div>
   <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 mb-6">
     <div class="bg-surface-container-lowest rounded-2xl p-5 border border-surface-variant flex flex-col items-center gap-2 text-center">
@@ -372,18 +370,21 @@
     <div class="bg-surface-container-lowest rounded-2xl p-5 border border-surface-variant flex flex-col items-center gap-2 text-center">
       <span class="material-symbols-outlined text-[32px] text-on-surface-variant">apartment</span>
       <span class="font-label-sm text-label-sm text-on-surface-variant">Smoobu</span>
+      <span class="font-label-sm text-[11px] uppercase tracking-wide text-on-surface-variant/70">in arrivo</span>
     </div>
     <div class="bg-surface-container-lowest rounded-2xl p-5 border border-surface-variant flex flex-col items-center gap-2 text-center">
       <span class="material-symbols-outlined text-[32px] text-on-surface-variant">tune</span>
       <span class="font-label-sm text-label-sm text-on-surface-variant">Lodgify</span>
+      <span class="font-label-sm text-[11px] uppercase tracking-wide text-on-surface-variant/70">in arrivo</span>
     </div>
     <div class="bg-surface-container-lowest rounded-2xl p-5 border border-surface-variant flex flex-col items-center gap-2 text-center">
       <span class="material-symbols-outlined text-[32px] text-on-surface-variant">calendar_today</span>
       <span class="font-label-sm text-label-sm text-on-surface-variant">beds24</span>
+      <span class="font-label-sm text-[11px] uppercase tracking-wide text-on-surface-variant/70">in arrivo</span>
     </div>
   </div>
   <div class="text-center mb-10">
-    <p class="font-body-md text-body-md text-on-surface-variant">Usi un gestionale diverso? <a href="contatti.html" class="text-primary-container underline hover:opacity-80 transition-all">Scrivici — valutiamo l'integrazione insieme.</a></p>
+    <p class="font-body-md text-body-md text-on-surface-variant">Usi Smoobu, Lodgify, beds24 o un altro gestionale? <a href="contatti.html" class="text-primary-container underline hover:opacity-80 transition-all">Scrivici quale: lo mettiamo in lista prioritaria.</a></p>
   </div>
   <div class="text-center">
     <a class="inline-flex items-center gap-2 text-primary-container font-body-md text-body-md no-underline hover:text-primary hover:scale-110 transition-all duration-200" href="come-funziona.html">Vedi come si connette alla tua struttura <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
@@ -442,7 +443,7 @@
               <td class="py-4 px-4 font-label-md text-label-md text-primary">Portfolio</td>
               <td class="py-4 px-4 font-body-md text-body-md text-on-surface-variant">12–40 unità</td>
               <td class="py-4 px-4 font-label-md text-label-md text-primary">€499</td>
-              <td class="py-4 px-4 font-body-sm text-body-sm text-on-surface-variant hidden md:table-cell">PMS integrato, multilingua avanzato</td>
+              <td class="py-4 px-4 font-body-sm text-body-sm text-on-surface-variant hidden md:table-cell">Integrazione PMS da valutare, multilingua avanzato</td>
             </tr>
           </tbody>
         </table>
@@ -493,7 +494,7 @@
       <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="contatti.html">Contatti</a>
     </div>
   </div>
-  <div class="w-full border-t border-outline-variant py-4 text-center font-body-sm text-body-sm text-on-surface-variant">© 2026 Zero Messaggi Persi | Tutti i diritti riservati. | P.Iva ESY3328229M | <a href="privacy.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Privacy Policy</a></div>
+  <div class="w-full border-t border-outline-variant py-4 text-center font-body-sm text-body-sm text-on-surface-variant">© 2026 Zero Messaggi Persi | Tutti i diritti riservati. | P.Iva ESY3328229M | <a href="privacy.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Privacy Policy</a> | <a href="termini.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Condizioni d'uso</a> | <a href="eliminazione-dati.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Eliminazione dati</a></div>
 </footer>
 
 </body></html>

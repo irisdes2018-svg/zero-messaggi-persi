@@ -4,8 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Grazie - Zero Messaggi Persi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="fonts/fonts.css" rel="stylesheet"/>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script id="tailwind-config">
     tailwind.config = {
@@ -115,8 +114,16 @@
 
     <div class="w-full max-w-3xl mx-auto bg-surface-container-lowest rounded-[24px] border border-surface-variant ambient-shadow overflow-hidden" style="min-height:600px;">
       <!-- Cal inline embed code begins -->
-      <div style="width:100%;height:100%;overflow:scroll;min-height:600px;" id="my-cal-inline-20min"></div>
+      <div style="width:100%;height:100%;overflow:scroll;min-height:600px;" id="my-cal-inline-20min">
+        <div id="cal-consent" class="flex flex-col items-center justify-center text-center gap-4 p-8" style="min-height:600px;">
+          <span class="material-symbols-outlined text-[40px] text-primary">calendar_month</span>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-md">Il calendario è fornito da Cal.com e si carica solo se lo apri. <a href="privacy.html" class="underline text-primary-container">Privacy Policy</a></p>
+          <button type="button" id="cal-load" class="bg-primary-container text-surface-container-low px-6 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all">Mostra il calendario</button>
+        </div>
+      </div>
       <script type="text/javascript">
+        document.getElementById("cal-load").addEventListener("click", function () {
+          document.getElementById("cal-consent").remove();
         (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
         Cal("init", "20min", {origin:"https://app.cal.com"});
         Cal.ns["20min"]("inline", {
@@ -125,6 +132,7 @@
           calLink: "zero-messaggi-persi/20min",
         });
         Cal.ns["20min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+        });
       </script>
       <!-- Cal inline embed code ends -->
     </div>
@@ -149,7 +157,7 @@
 <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="contatti.html">Contatti</a>
 </div>
 </div>
-<div class="w-full border-t border-outline-variant py-4 text-center font-body-sm text-body-sm text-on-surface-variant">© 2026 Zero Messaggi Persi | Tutti i diritti riservati. | P.Iva ESY3328229M | <a href="privacy.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Privacy Policy</a></div>
+<div class="w-full border-t border-outline-variant py-4 text-center font-body-sm text-body-sm text-on-surface-variant">© 2026 Zero Messaggi Persi | Tutti i diritti riservati. | P.Iva ESY3328229M | <a href="privacy.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Privacy Policy</a> | <a href="termini.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Condizioni d'uso</a> | <a href="eliminazione-dati.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Eliminazione dati</a></div>
 </footer>
 
 </body>

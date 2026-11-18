@@ -1,81 +1,51 @@
-# Zero Messaggi Persi — Sito statico pronto per Netlify
+# Zero Messaggi Persi — sito marketing
 
-Sito statico HTML/CSS esportato da Stitch e completato con pagine aggiuntive, form Netlify e configurazione di deploy.
+Sito statico in HTML (Tailwind via CDN) pubblicato su **Vercel** all'indirizzo **https://zeromessaggipersi.it**.
+Questo repository contiene solo i file visibili agli utenti: brief, documenti tecnici e backend restano in locale (vedi `.gitignore`).
 
----
+## Pagine
 
-## Struttura delle pagine
+| File | Contenuto |
+|---|---|
+| `index.html` | Home |
+| `come-funziona.html` | Come funziona, passo per passo |
+| `servizi.html` | Servizi e canali supportati |
+| `prezzi.html` | Piani e prezzi |
+| `prova-gratuita.html` | Analisi gratuita e attivazione Prova (form Tally) |
+| `contatti.html` | Contatti, WhatsApp e calendario Cal.com |
+| `grazie.html` | Conferma dopo l'invio del form |
+| `privacy.html` | Privacy Policy |
+| `termini.html` | Condizioni d'uso |
+| `eliminazione-dati.html` | Istruzioni per la cancellazione dei dati (richiesta anche da Meta) |
 
-| File | Contenuto | Stato |
-|---|---|---|
-| `index.html` | Home — hero, pitch, dashboard mockup | Stitch |
-| `come-funziona.html` | Come funziona il servizio, step by step | Stitch |
-| `piattaforma.html` | Panoramica della piattaforma AI Concierge | Stitch |
-| `servizi.html` | Elenco dei servizi offerti | Stitch |
-| `integrazioni.html` | Integrazioni con canali e PMS | Stitch |
-| `guest-content-kit.html` | Il Guest Content Kit | Stitch |
-| `prezzi.html` | Piani e prezzi, tabella comparativa | Stitch |
-| `prova-gratuita.html` | Form richiesta accesso gratuito 7 giorni | Completata |
-| `contatti.html` | Form contatto, demo, Audit, WhatsApp | Completata |
-| `privacy.html` | Privacy Policy — titolare: Irene De Santis | Completata |
-| `grazie.html` | Pagina di conferma dopo invio form | Completata |
+## Servizi esterni
 
----
+- **Tally** — form `rj2ELR` (analisi gratuita / Prova), incorporato in `prova-gratuita.html`.
+- **Cal.com** — evento `zero-messaggi-persi/20min` in `contatti.html` e `grazie.html`. Si carica **solo al clic** su "Mostra il calendario", così il sito non contatta Cal.com senza un'azione del visitatore.
+- **WhatsApp** — link `wa.me/393425259174`.
+- **Tailwind CSS** — caricato da `cdn.tailwindcss.com`.
 
-## Come pubblicare su Netlify
+Se aggiungi un nuovo servizio esterno, aggiornalo anche in `privacy.html`.
 
-### Opzione A — Netlify Drop (più veloce)
+## Font e icone
 
-1. Vai su [app.netlify.com/drop](https://app.netlify.com/drop)
-2. Trascina l'intera cartella del progetto nella finestra del browser
-3. Netlify pubblica il sito e restituisce un URL
-4. Dal pannello puoi collegare un dominio personalizzato
+I font (Libre Caslon Text, Manrope) e le icone Material Symbols sono ospitati in `fonts/` e caricati da `fonts/fonts.css`: nessuna richiesta a Google Fonts.
 
-### Opzione B — Da repository GitHub
+Il file delle icone contiene **solo le icone usate oggi** nel sito. Se ne aggiungi una nuova, rigenera `fonts/MaterialSymbolsOutlined-subset.woff2` da
+`https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&icon_names=<elenco,alfabetico,separato,da,virgole>`.
 
-1. Carica la cartella su un repository GitHub
-2. Vai su [app.netlify.com](https://app.netlify.com) → **Add new site** → **Import an existing project**
-3. Seleziona GitHub e scegli il repository
-4. Impostazioni di build:
-   - **Build command:** *(lascia vuoto)*
-   - **Publish directory:** `.`
-5. Clicca **Deploy site**
+## Privacy e cookie
 
-### Opzione C — Netlify CLI
+- Il sito **non usa** analytics, pixel o cookie di profilazione, quindi non serve un banner cookie.
+- Se aggiungi Google Analytics, Meta Pixel o simili, serve un banner di consenso **prima** di caricarli (Plausible senza cookie non lo richiede) e va aggiornata la Privacy Policy.
+- Autorità di controllo competente: AEPD (Spagna).
 
-```bash
-npm install -g netlify-cli
-netlify login
-netlify deploy --dir . --prod
-```
+## URL per l'app Meta (Impostazioni app → Di base)
 
----
+- URL dell'informativa sulla privacy: `https://zeromessaggipersi.it/privacy.html`
+- URL dei Termini di servizio: `https://zeromessaggipersi.it/termini.html`
+- URL per l'eliminazione dei dati: `https://zeromessaggipersi.it/eliminazione-dati.html`
 
-## Form Netlify
+## Pubblicazione
 
-Le pagine `prova-gratuita.html` e `contatti.html` usano **Netlify Forms** (`netlify` + `data-netlify="true"` sul tag `<form>`). Dopo il submit, l'utente viene reindirizzato a `grazie.html`.
-
-Netlify rileva i form automaticamente al primo deploy e li raccoglie nella sezione **Forms** del pannello.
-
-> **Nota:** Netlify Forms è gratuito fino a 100 invii/mese. Per volumi maggiori valuta Netlify Forms Pro, Tally o Typeform.
-
----
-
-## WhatsApp
-
-Il pulsante WhatsApp in `contatti.html` punta a `+39 342 525 9174` e si apre in una nuova finestra (`target="_blank"`).
-
----
-
-## Privacy Policy
-
-Titolare: **Irene De Santis** — smmirenedesantis@gmail.com — Las Palmas.
-
----
-
-## Prossimi step consigliati
-
-- [ ] Collegare Cal.com nella sezione "Prenota una demo" di `contatti.html`
-- [ ] Aggiungere cookie banner se si usano strumenti di tracking
-- [ ] Dominio personalizzato — configurabile da Netlify > Domain management
-- [ ] Analytics — aggiungere Plausible o Google Analytics nella sezione `<head>`
+Ogni push su `main` viene pubblicato da Vercel. Non c'è build: la cartella pubblicata è la radice del repository.
