@@ -109,22 +109,31 @@
     .prose strong { color: #112c3f; font-weight: 600; }
     .prose a { color: #294256; text-decoration: underline; }
     .prose a:hover { opacity: 0.8; }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
   </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col pt-[80px]">
 
 <!-- NAV -->
-<nav class="fixed top-0 w-full z-50 bg-surface-container-low/80 backdrop-blur-md shadow-sm">
+<nav class="fixed top-0 w-full z-50 bg-surface-container-low/90 backdrop-blur-md shadow-sm">
   <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
-    <a class="hover:opacity-90 transition-all duration-200" href="index.html"><img src="logo.svg" alt="Zero Messaggi Persi" class="h-[48px] w-auto"></a>
-    <div class="hidden md:flex gap-gutter items-center">
-      <a class="text-on-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="come-funziona.html">Come funziona</a>
-      <a class="text-on-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="servizi.html">Servizi</a>
-      <a class="text-on-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="prezzi.html">Piani e prezzi</a>
+    <a href="index.html" class="hover:opacity-90 transition-all duration-200"><img src="logo.svg" alt="Zero Messaggi Persi" class="h-[48px] w-auto"></a>
+    <div class="hidden md:flex gap-8 items-center">
+      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 font-body-lg text-body-lg" href="come-funziona.html">Come funziona</a>
+      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 font-body-lg text-body-lg" href="prezzi.html">Prezzi</a>
+      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 font-body-lg text-body-lg" href="contatti.html">Contatti</a>
+      <a class="bg-primary-container text-surface-container-low px-6 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all duration-200" href="contatti.html#calendario" role="button">Prenota una chiamata</a>
     </div>
-    <a class="bg-primary-container text-surface-container-low px-6 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all duration-200" href="https://tally.so/r/rj2ELR" target="_blank" rel="noopener" role="button">
-      Contattaci
-    </a>
+    <details class="md:hidden relative">
+      <summary class="cursor-pointer text-primary p-2" aria-label="Apri il menu"><span class="material-symbols-outlined">menu</span></summary>
+      <div class="absolute right-0 mt-3 w-64 bg-surface-container-lowest rounded-xl shadow-lg border border-surface-variant p-4 flex flex-col">
+        <a class="py-3 border-b border-surface-variant text-primary font-body-lg text-body-lg" href="come-funziona.html">Come funziona</a>
+        <a class="py-3 border-b border-surface-variant text-primary font-body-lg text-body-lg" href="prezzi.html">Prezzi</a>
+        <a class="py-3 border-b border-surface-variant text-primary font-body-lg text-body-lg" href="contatti.html">Contatti</a>
+        <a class="mt-4 bg-primary-container text-surface-container-low px-4 py-3 rounded-lg font-label-md text-label-md text-center" href="contatti.html#calendario">Prenota una chiamata</a>
+      </div>
+    </details>
   </div>
 </nav>
 
@@ -189,22 +198,21 @@
 
 <!-- Footer -->
 <footer class="bg-surface-container-high dark:bg-inverse-surface font-body-md text-body-md w-full border-t border-outline-variant dark:border-outline">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
-<div class="flex flex-col gap-4 items-center text-center">
-<a href="index.html" class="hover:opacity-90 transition-all duration-200"><img src="logo.svg" alt="Zero Messaggi Persi" class="h-[40px] w-auto"></a>
-<p class="font-body-md text-body-md font-semibold text-on-surface-variant dark:text-surface-variant">Zero messaggi persi.<br>Più tempo per l'ospitalità.</p>
-</div>
-<div class="flex flex-col gap-3">
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="index.html">Home</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="come-funziona.html">Come funziona</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="servizi.html">Servizi</a>
-</div>
-<div class="flex flex-col gap-3">
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="prezzi.html">Piani e prezzi</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="contatti.html">Contatti</a>
-</div>
-</div>
-<div class="w-full border-t border-outline-variant py-4 text-center font-body-sm text-body-sm text-on-surface-variant">© 2026 Zero Messaggi Persi è un servizio di Irene De Santis | NIF Y3328229M | Calle Montaña Tisalaya 2, Pta. IZ, 35510 Puerto del Carmen, Tías (Las Palmas), España | Tutti i diritti riservati. | <a href="privacy.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Privacy Policy</a> | <a href="termini.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Condizioni d'uso</a> | <a href="eliminazione-dati.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Eliminazione dati</a></div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+    <div class="flex flex-col gap-4 items-center text-center">
+      <a href="index.html" class="hover:opacity-90 transition-all duration-200"><img src="logo.svg" alt="Zero Messaggi Persi" class="h-[40px] w-auto"></a>
+      <p class="font-body-md text-body-md font-semibold text-on-surface-variant dark:text-surface-variant">Zero messaggi persi.<br>Più tempo per l'ospitalità.</p>
+    </div>
+    <div class="flex flex-col gap-3">
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container transition-all duration-200" href="index.html">Home</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container transition-all duration-200" href="come-funziona.html">Come funziona</a>
+    </div>
+    <div class="flex flex-col gap-3">
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container transition-all duration-200" href="prezzi.html">Prezzi</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container transition-all duration-200" href="contatti.html">Contatti</a>
+    </div>
+  </div>
+  <div class="w-full border-t border-outline-variant py-4 px-margin-mobile text-center font-body-sm text-body-sm text-on-surface-variant">© 2026 Zero Messaggi Persi è un servizio di Irene De Santis | NIF Y3328229M | Calle Montaña Tisalaya 2, Pta. IZ, 35510 Puerto del Carmen, Tías (Las Palmas), España | Tutti i diritti riservati. | <a href="privacy.html" class="hover:text-primary-container">Privacy Policy</a> | <a href="termini.html" class="hover:text-primary-container">Condizioni d'uso</a> | <a href="eliminazione-dati.html" class="hover:text-primary-container">Eliminazione dati</a></div>
 </footer>
 
 </body>

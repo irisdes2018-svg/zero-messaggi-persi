@@ -8,19 +8,20 @@ Questo repository contiene solo i file visibili agli utenti: brief, documenti te
 | File | Contenuto |
 |---|---|
 | `index.html` | Home |
-| `come-funziona.html` | Come funziona, passo per passo |
-| `servizi.html` | Servizi e canali supportati |
-| `prezzi.html` | Piani e prezzi |
-| `prova-gratuita.html` | Analisi gratuita e attivazione Prova (form Tally) |
+| `come-funziona.html` | Avvio, messaggi, assistente, gestionali, caso Booking, pannello, privacy, FAQ |
+| `prezzi.html` | Prezzi per i proprietari (€15/appartamento, minimo €49, primo mese gratis) |
 | `contatti.html` | Contatti, WhatsApp e calendario Cal.com |
-| `grazie.html` | Conferma dopo l'invio del form |
+| `grazie.html` | Pagina di conferma (non più collegata a un form) |
+
+`servizi.html` e `prova-gratuita.html` non esistono più: `vercel.json` reindirizza i vecchi indirizzi a `come-funziona.html` e `prezzi.html`.
+
+I prezzi per le agenzie sono accordi privati e **non** vanno sul sito.
 | `privacy.html` | Privacy Policy |
 | `termini.html` | Condizioni d'uso |
 | `eliminazione-dati.html` | Istruzioni per la cancellazione dei dati (richiesta anche da Meta) |
 
 ## Servizi esterni
 
-- **Tally** — form `rj2ELR` (analisi gratuita / Prova), incorporato in `prova-gratuita.html`.
 - **Cal.com** — evento `zero-messaggi-persi/20min` in `contatti.html` e `grazie.html`. Si carica **solo al clic** su "Mostra il calendario", così il sito non contatta Cal.com senza un'azione del visitatore.
 - **WhatsApp** — link `wa.me/393425259174`.
 - **Tailwind CSS** — caricato da `cdn.tailwindcss.com`.

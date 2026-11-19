@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    { "source": "/servizi.html", "destination": "/come-funziona.html", "permanent": true },
+    { "source": "/servizi", "destination": "/come-funziona.html", "permanent": true },
+    { "source": "/prova-gratuita.html", "destination": "/prezzi.html", "permanent": true },
+    { "source": "/prova-gratuita", "destination": "/prezzi.html", "permanent": true }
+  ]
+}
