@@ -136,7 +136,7 @@
     <a href="index.html" class="hover:opacity-90 transition-all duration-200"><img src="logo.svg" alt="Zero Messaggi Persi" class="h-[48px] w-auto"></a>
     <div class="hidden md:flex gap-8 items-center">
       <a data-nav="come-funziona" class=" text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-lg text-body-lg" href="index.html#come-funziona">Come funziona</a>
-      <a data-nav="prezzi" class=" text-on-surface-variant font-bold hover:text-primary transition-colors duration-200 font-body-lg text-body-lg" href="prezzi.html" aria-current="page">Prezzi</a>
+      <a data-nav="prezzi" class=" text-on-surface-variant font-bold hover:text-primary transition-colors duration-200 font-body-lg text-body-lg" href="prezzi.html" aria-current="page" style="color:#b0664e">Prezzi</a>
       <a data-nav="agenzie" class=" text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-lg text-body-lg" href="index.html#agenzie">Agenzie</a>
       <a data-nav="contatti" class=" text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-lg text-body-lg" href="contatti.html">Contatti</a>
       <a class="bg-primary-container text-surface-container-low px-6 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all duration-200" href="contatti.html#calendario" role="button">Prenota una chiamata</a>
@@ -145,7 +145,7 @@
       <summary class="cursor-pointer text-primary p-2" aria-label="Apri il menu"><span class="material-symbols-outlined">menu</span></summary>
       <div class="absolute right-0 mt-3 w-64 bg-surface-container-lowest rounded-xl shadow-lg border border-surface-variant p-4 flex flex-col">
         <a data-nav="come-funziona" class="py-3 border-b border-surface-variant text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-lg text-body-lg" href="index.html#come-funziona">Come funziona</a>
-        <a data-nav="prezzi" class="py-3 border-b border-surface-variant text-on-surface-variant font-bold hover:text-primary transition-colors duration-200 font-body-lg text-body-lg" href="prezzi.html" aria-current="page">Prezzi</a>
+        <a data-nav="prezzi" class="py-3 border-b border-surface-variant text-on-surface-variant font-bold hover:text-primary transition-colors duration-200 font-body-lg text-body-lg" href="prezzi.html" aria-current="page" style="color:#b0664e">Prezzi</a>
         <a data-nav="agenzie" class="py-3 border-b border-surface-variant text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-lg text-body-lg" href="index.html#agenzie">Agenzie</a>
         <a data-nav="contatti" class="py-3 border-b border-surface-variant text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-lg text-body-lg" href="contatti.html">Contatti</a>
         <a class="mt-4 bg-primary-container text-surface-container-low px-4 py-3 rounded-lg font-label-md text-label-md text-center" href="contatti.html#calendario">Prenota una chiamata</a>
@@ -154,13 +154,14 @@
   </div>
 </nav>
 <script>
-  /* Menu: la voce della pagina o della sezione in cui ti trovi è sempre in grassetto */
+  /* Menu: la voce della pagina o della sezione in cui ti trovi è sempre in grassetto, nel marrone del logo */
   document.addEventListener('DOMContentLoaded', function () {
     var links = document.querySelectorAll('[data-nav]');
     function set(key) {
       links.forEach(function (a) {
         var on = a.getAttribute('data-nav') === key;
         a.classList.toggle('font-bold', on);
+        a.style.color = on ? '#b0664e' : '';
         if (on) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
       });
     }

@@ -155,13 +155,14 @@
   </div>
 </nav>
 <script>
-  /* Menu: la voce della pagina o della sezione in cui ti trovi è sempre in grassetto */
+  /* Menu: la voce della pagina o della sezione in cui ti trovi è sempre in grassetto, nel marrone del logo */
   document.addEventListener('DOMContentLoaded', function () {
     var links = document.querySelectorAll('[data-nav]');
     function set(key) {
       links.forEach(function (a) {
         var on = a.getAttribute('data-nav') === key;
         a.classList.toggle('font-bold', on);
+        a.style.color = on ? '#b0664e' : '';
         if (on) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
       });
     }
