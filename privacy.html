@@ -166,66 +166,6 @@
     update();
   });
 </script>
-<script>
-  /* Menu: la voce della pagina o della sezione in cui ti trovi è sempre in grassetto */
-  document.addEventListener('DOMContentLoaded', function () {
-    var links = document.querySelectorAll('[data-nav]');
-    function set(key) {
-      links.forEach(function (a) {
-        var on = a.getAttribute('data-nav') === key;
-        a.classList.toggle('font-bold', on);
-        a.classList.toggle('text-primary', on);
-        a.classList.toggle('text-on-surface-variant', !on);
-        if (on) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
-      });
-    }
-    links.forEach(function (a) {
-      a.addEventListener('click', function () { var d = a.closest('details'); if (d) d.removeAttribute('open'); });
-    });
-    var home = document.getElementById('come-funziona');
-    if (!home) return;
-    var marks = [['come-funziona', 'come-funziona'], ['prezzo-breve', ''], ['agenzie', 'agenzie']];
-    function update() {
-      var y = window.scrollY + 140, key = '';
-      marks.forEach(function (m) { var el = document.getElementById(m[0]); if (el && el.getBoundingClientRect().top + window.scrollY <= y) key = m[1]; });
-      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) key = 'agenzie';
-      set(key);
-    }
-    window.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('hashchange', update);
-    update();
-  });
-</script>
-<script>
-  /* Menu: la voce della pagina o della sezione in cui ti trovi è sempre in grassetto */
-  (function () {
-    var links = document.querySelectorAll('[data-nav]');
-    function set(key) {
-      links.forEach(function (a) {
-        var on = a.getAttribute('data-nav') === key;
-        a.classList.toggle('font-bold', on);
-        a.classList.toggle('text-primary', on);
-        a.classList.toggle('text-on-surface-variant', !on);
-        if (on) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
-      });
-    }
-    links.forEach(function (a) {
-      a.addEventListener('click', function () { var d = a.closest('details'); if (d) d.removeAttribute('open'); });
-    });
-    var home = document.getElementById('come-funziona');
-    if (!home) return;
-    var marks = [['come-funziona', 'come-funziona'], ['prezzo-breve', ''], ['agenzie', 'agenzie']];
-    function update() {
-      var y = window.scrollY + 140, key = '';
-      marks.forEach(function (m) { var el = document.getElementById(m[0]); if (el && el.getBoundingClientRect().top + window.scrollY <= y) key = m[1]; });
-      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) key = 'agenzie';
-      set(key);
-    }
-    window.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('hashchange', update);
-    update();
-  })();
-</script>
 
 <!-- MAIN -->
 <main class="flex-grow flex flex-col pb-section-gap">
