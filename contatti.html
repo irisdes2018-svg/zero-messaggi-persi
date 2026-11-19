@@ -126,6 +126,12 @@
         details[open] .faq-icon { transform: rotate(45deg); }
         .faq-icon { transition: transform 0.25s ease; }
         details[open] summary { color: theme('colors.primary'); }
+            /* FAQ Accordion e menu mobile */
+        details summary { list-style: none; cursor: pointer; }
+        details summary::-webkit-details-marker { display: none; }
+        details[open] .faq-icon { transform: rotate(45deg); }
+        .faq-icon { transition: transform 0.25s ease; }
+        details[open] summary { color: theme('colors.primary'); }
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col pt-[80px]">
@@ -135,16 +141,18 @@
   <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
     <a href="index.html" class="hover:opacity-90 transition-all duration-200"><img src="logo.svg" alt="Zero Messaggi Persi" class="h-[48px] w-auto"></a>
     <div class="hidden md:flex gap-8 items-center">
-      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 font-body-lg text-body-lg" href="come-funziona.html">Come funziona</a>
+      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 font-body-lg text-body-lg" href="index.html#come-funziona">Come funziona</a>
       <a class="text-on-surface-variant hover:text-primary transition-all duration-200 font-body-lg text-body-lg" href="prezzi.html">Prezzi</a>
+      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 font-body-lg text-body-lg" href="index.html#agenzie">Agenzie</a>
       <a class="text-on-surface-variant hover:text-primary transition-all duration-200 font-body-lg text-body-lg text-primary font-semibold" href="contatti.html">Contatti</a>
       <a class="bg-primary-container text-surface-container-low px-6 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all duration-200" href="contatti.html#calendario" role="button">Prenota una chiamata</a>
     </div>
     <details class="md:hidden relative">
       <summary class="cursor-pointer text-primary p-2" aria-label="Apri il menu"><span class="material-symbols-outlined">menu</span></summary>
       <div class="absolute right-0 mt-3 w-64 bg-surface-container-lowest rounded-xl shadow-lg border border-surface-variant p-4 flex flex-col">
-        <a class="py-3 border-b border-surface-variant text-primary font-body-lg text-body-lg" href="come-funziona.html">Come funziona</a>
+        <a class="py-3 border-b border-surface-variant text-primary font-body-lg text-body-lg" href="index.html#come-funziona">Come funziona</a>
         <a class="py-3 border-b border-surface-variant text-primary font-body-lg text-body-lg" href="prezzi.html">Prezzi</a>
+        <a class="py-3 border-b border-surface-variant text-primary font-body-lg text-body-lg" href="index.html#agenzie">Agenzie</a>
         <a class="py-3 border-b border-surface-variant text-primary font-body-lg text-body-lg" href="contatti.html">Contatti</a>
         <a class="mt-4 bg-primary-container text-surface-container-low px-4 py-3 rounded-lg font-label-md text-label-md text-center" href="contatti.html#calendario">Prenota una chiamata</a>
       </div>
@@ -174,19 +182,13 @@
 
 <!-- CALENDARIO PRENOTA CHIAMATA -->
 <section id="calendario" class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto w-full !pt-0 scroll-mt-24">
-  <div class="text-center mb-12"><p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-3">Prenota</p><h2 class="font-headline-md text-headline-md text-primary mb-4">Scegli giorno e orario</h2><p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Una chiamata di 20 minuti, online, gratis e senza impegno.</p></div>
+  <div class="text-center mb-12"><p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-3">Prenota</p><h2 class="font-headline-md text-headline-md text-primary mb-4">Scegli giorno e orario</h2><p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Una chiamata di 20 minuti, online, gratis e senza impegno. Il calendario è fornito da Cal.com (<a class='underline' href='privacy.html'>Privacy Policy</a>).</p></div>
   <div class="max-w-4xl mx-auto bg-surface-container-lowest rounded-[24px] border border-surface-variant ambient-shadow overflow-hidden" style="min-height:600px;">
       <!-- Cal inline embed code begins -->
       <div style="width:100%;height:100%;overflow:scroll;min-height:600px;" id="my-cal-inline-20min">
-        <div id="cal-consent" class="flex flex-col items-center justify-center text-center gap-4 p-8" style="min-height:600px;">
-          <span class="material-symbols-outlined text-[40px] text-primary">calendar_month</span>
-          <p class="font-body-md text-body-md text-on-surface-variant max-w-md">Il calendario è fornito da Cal.com e si carica solo se lo apri. <a href="privacy.html" class="underline text-primary-container">Privacy Policy</a></p>
-          <button type="button" id="cal-load" class="bg-primary-container text-surface-container-low px-6 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all">Mostra il calendario</button>
         </div>
-      </div>
       <script type="text/javascript">
-        document.getElementById("cal-load").addEventListener("click", function () {
-          document.getElementById("cal-consent").remove();
+        (function () {
         (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
         Cal("init", "20min", {origin:"https://app.cal.com"});
         Cal.ns["20min"]("inline", {
@@ -195,9 +197,9 @@
           calLink: "zero-messaggi-persi/20min",
         });
         Cal.ns["20min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-        });
+        })();
       </script>
-      <!-- Cal inline embed code ends -->
+<!-- Cal inline embed code ends -->
   </div>
 </section>
 
@@ -218,7 +220,8 @@
     </div>
     <div class="flex flex-col gap-3">
       <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container transition-all duration-200" href="index.html">Home</a>
-      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container transition-all duration-200" href="come-funziona.html">Come funziona</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container transition-all duration-200" href="index.html#come-funziona">Come funziona</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container transition-all duration-200" href="index.html#agenzie">Agenzie</a>
     </div>
     <div class="flex flex-col gap-3">
       <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container transition-all duration-200" href="prezzi.html">Prezzi</a>
