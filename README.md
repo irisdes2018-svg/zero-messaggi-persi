@@ -7,13 +7,12 @@ Questo repository contiene solo i file visibili agli utenti: brief, documenti te
 
 | File | Contenuto |
 |---|---|
-| `index.html` | Home |
-| `come-funziona.html` | Avvio, messaggi, assistente, gestionali, caso Booking, pannello, privacy, FAQ |
+| `index.html` | Home: tutte le sezioni, con ancore `#come-funziona`, `#gestionali` e `#agenzie` (usate dal menu) |
 | `prezzi.html` | Prezzi per i proprietari (€15/appartamento, minimo €49, primo mese gratis) |
 | `contatti.html` | Contatti, WhatsApp e calendario Cal.com |
 | `grazie.html` | Pagina di conferma (non più collegata a un form) |
 
-`servizi.html` e `prova-gratuita.html` non esistono più: `vercel.json` reindirizza i vecchi indirizzi a `come-funziona.html` e `prezzi.html`.
+`come-funziona.html`, `servizi.html` e `prova-gratuita.html` non esistono più: `vercel.json` reindirizza i vecchi indirizzi a `/#come-funziona` e `prezzi.html`.
 
 I prezzi per le agenzie sono accordi privati e **non** vanno sul sito.
 | `privacy.html` | Privacy Policy |
@@ -22,7 +21,7 @@ I prezzi per le agenzie sono accordi privati e **non** vanno sul sito.
 
 ## Servizi esterni
 
-- **Cal.com** — evento `zero-messaggi-persi/20min` in `contatti.html` e `grazie.html`. Si carica **solo al clic** su "Mostra il calendario", così il sito non contatta Cal.com senza un'azione del visitatore.
+- **Cal.com** — evento `zero-messaggi-persi/20min` in `contatti.html` e `grazie.html`. In `contatti.html` si carica **subito all'apertura della pagina** (scelta di Irene, 19/11/2026); in `grazie.html` solo al clic. Le altre pagine non contattano Cal.com.
 - **WhatsApp** — link `wa.me/393425259174`.
 - **Tailwind CSS** — caricato da `cdn.tailwindcss.com`.
 
