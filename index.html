@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-
 <html class="light" lang="it"><head>
 <meta charset="utf-8"/>
 <meta name="facebook-domain-verification" content="evg6n7ujdpij0phw0qbxjd2acbqag4" />
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Zero Messaggi Persi - Gestione automatica delle comunicazioni per strutture ricettive</title>
+<title>Zero Messaggi Persi - I tuoi ospiti seguiti su WhatsApp, senza scrivere a mano</title>
+<meta name="description" content="Messaggi automatici e assistente WhatsApp per case vacanza e appartamenti in Italia e alle Canarie. Lo configuriamo noi. Primo mese gratis."/>
 <link href="fonts/fonts.css" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
@@ -121,338 +121,153 @@
         .pilot-highlight {
             background: linear-gradient(135deg, #294256 0%, #35618d 100%);
         }
+            /* FAQ Accordion e menu mobile */
+        details summary { list-style: none; cursor: pointer; }
+        details summary::-webkit-details-marker { display: none; }
+        details[open] .faq-icon { transform: rotate(45deg); }
+        .faq-icon { transition: transform 0.25s ease; }
+        details[open] summary { color: theme('colors.primary'); }
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col pt-[80px]">
 
 <!-- NAV -->
-<nav class="bg-surface/90 dark:bg-surface-container-highest/90 text-primary dark:text-inverse-primary font-body-md text-body-md fixed top-0 w-full z-50 bg-surface-container-low/80 backdrop-blur-md shadow-sm">
+<nav class="fixed top-0 w-full z-50 bg-surface-container-low/90 backdrop-blur-md shadow-sm">
   <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
     <a href="index.html" class="hover:opacity-90 transition-all duration-200"><img src="logo.svg" alt="Zero Messaggi Persi" class="h-[48px] w-auto"></a>
     <div class="hidden md:flex gap-8 items-center">
-      <a class="text-on-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="come-funziona.html">Come funziona</a>      <a class="text-on-surface-variant hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="prezzi.html">Piani e prezzi</a>
-      <a class="text-secondary font-semibold hover:text-primary hover:scale-105 transition-all duration-200 font-body-lg text-body-lg" href="prova-gratuita.html">Prova €29</a>
+      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 font-body-lg text-body-lg" href="come-funziona.html">Come funziona</a>
+      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 font-body-lg text-body-lg" href="prezzi.html">Prezzi</a>
+      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 font-body-lg text-body-lg" href="contatti.html">Contatti</a>
+      <a class="bg-primary-container text-surface-container-low px-6 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all duration-200" href="contatti.html#calendario" role="button">Prenota una chiamata</a>
     </div>
-    <div class="hidden md:block">
-      <a class="bg-primary-container text-surface-container-low px-6 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all duration-200" href="prova-gratuita.html" role="button">
-        Prova 14 giorni →
-      </a>
-    </div>
-    <button class="md:hidden text-primary">
-      <span class="material-symbols-outlined">menu</span>
-    </button>
+    <details class="md:hidden relative">
+      <summary class="cursor-pointer text-primary p-2" aria-label="Apri il menu"><span class="material-symbols-outlined">menu</span></summary>
+      <div class="absolute right-0 mt-3 w-64 bg-surface-container-lowest rounded-xl shadow-lg border border-surface-variant p-4 flex flex-col">
+        <a class="py-3 border-b border-surface-variant text-primary font-body-lg text-body-lg" href="come-funziona.html">Come funziona</a>
+        <a class="py-3 border-b border-surface-variant text-primary font-body-lg text-body-lg" href="prezzi.html">Prezzi</a>
+        <a class="py-3 border-b border-surface-variant text-primary font-body-lg text-body-lg" href="contatti.html">Contatti</a>
+        <a class="mt-4 bg-primary-container text-surface-container-low px-4 py-3 rounded-lg font-label-md text-label-md text-center" href="contatti.html#calendario">Prenota una chiamata</a>
+      </div>
+    </details>
   </div>
 </nav>
+
+<main class="flex-grow flex flex-col">
 
 <!-- HERO -->
 <section class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto w-full flex flex-col lg:flex-row items-center gap-12">
   <div class="flex-1 flex flex-col gap-6">
-    <!-- Badge -->
-    <div class="inline-flex items-center gap-2 px-4 py-2 bg-surface-variant text-on-surface-variant rounded-full font-label-sm text-label-sm w-fit">
-      <span class="text-secondary">✦</span>
-      <span>Sistema completo</span>
-      <span class="text-outline-variant">·</span>
-      <span>Done-for-you</span>
-      <span class="text-outline-variant">·</span>
-      <span>Attivo in 7 giorni</span>
+    <p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Case vacanza e appartamenti · Italia e Canarie</p>
+    <h1 class="font-display-lg-mobile text-display-lg-mobile lg:font-display-lg lg:text-display-lg text-primary">I tuoi ospiti ricevono tutto su WhatsApp, senza che tu debba scrivere a mano.</h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Zero Messaggi Persi manda a ogni ospite le informazioni giuste al momento giusto e risponde alle sue domande, giorno e notte, nella sua lingua. Lo configuriamo e lo seguiamo noi: a te basta un'ora all'inizio.</p>
+    <div class="flex flex-col sm:flex-row gap-4 mt-2">
+      <a class="bg-primary-container text-surface-container-low px-8 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all text-center" href="contatti.html#calendario" role="button">Prenota una chiamata di 20 minuti</a>
+      <a class="border border-primary-container text-primary-container px-8 py-3 rounded-lg font-label-md text-label-md hover:bg-surface-variant transition-all text-center" href="come-funziona.html" role="button">Come funziona</a>
     </div>
-    <!-- H1 -->
-    <h1 class="font-display-lg-mobile text-display-lg-mobile lg:font-display-lg lg:text-display-lg text-primary">
-      Non rispondi più tu agli ospiti alle 23:00.
-    </h1>
-    <!-- Sottotitolo -->
-    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-      Affidi a noi i messaggi dei tuoi ospiti e li seguiamo uno per uno — in pochi minuti, nella loro lingua, con la cura di un hotel di lusso. Ospiti seguiti, recensioni a 5 stelle, le tue serate libere. È un servizio, non un software: non configuri niente.
-    </p>
-    <!-- CTA -->
-    <div class="flex flex-col sm:flex-row gap-4 mt-4">
-      <a class="bg-primary-container text-surface-container-low px-8 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all text-center" href="prova-gratuita.html" role="button">
-        Inizia la Prova a €29 →
-      </a>
-      <a class="border border-primary-container text-primary-container px-8 py-3 rounded-lg font-label-md text-label-md hover:bg-surface-variant transition-all text-center" href="come-funziona.html" role="button">
-        Come funziona in 2 minuti
-      </a>
-    </div>
+    <p class="font-body-sm text-body-sm text-on-surface-variant">Primo mese gratis · Mensile, senza vincolo annuale</p>
   </div>
-  <!-- Immagine + Widget -->
   <div class="flex-1 relative w-full aspect-square md:aspect-[4/3] rounded-[24px] overflow-hidden ambient-shadow">
-    <img class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaDVVrb7fKNhn8mCtG4IorC26REf6K9mBKqNMBq9pu_-7nNK4rbqoj567CmDeQquR9YE35UP-oz1qnca7WUJP9wCdlsj01bEnSrRrbJ5nZynDM1CllwPLti2Wen_nerqHgc42z8s0LjwwhQyLCOHMvo1LLaiaXskkL5m_pNaTVf6jeldUqsKODt5Zjhd_T_OlGd7Hs7ZwcmK47k_gJHlZrL8PPjQSty7pkwijEBwb8D_K1hcoyuyLBEwUzIZyqg8tPSNLuDoEHHDk" alt="Camera di un B&B accogliente con luce naturale" />
-    <!-- Widget mockup -->
-    <div class="absolute bottom-6 right-6 left-6 md:left-auto md:w-[300px] glass-card rounded-[16px] p-5 shadow-lg">
+    <img class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaDVVrb7fKNhn8mCtG4IorC26REf6K9mBKqNMBq9pu_-7nNK4rbqoj567CmDeQquR9YE35UP-oz1qnca7WUJP9wCdlsj01bEnSrRrbJ5nZynDM1CllwPLti2Wen_nerqHgc42z8s0LjwwhQyLCOHMvo1LLaiaXskkL5m_pNaTVf6jeldUqsKODt5Zjhd_T_OlGd7Hs7ZwcmK47k_gJHlZrL8PPjQSty7pkwijEBwb8D_K1hcoyuyLBEwUzIZyqg8tPSNLuDoEHHDk" alt="Camera di una casa vacanza accogliente con luce naturale" />
+    <div class="absolute bottom-6 right-6 left-6 md:left-auto md:w-[320px] glass-card rounded-[16px] p-5 shadow-lg">
       <div class="flex items-center justify-between mb-4">
         <div class="flex items-center gap-2">
           <span class="material-symbols-outlined text-secondary text-[20px]">forum</span>
-          <span class="font-label-md text-label-md text-primary">Concierge attivo</span>
+          <span class="font-label-md text-label-md text-primary">Assistente attivo</span>
         </div>
         <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
       </div>
-      <p class="font-body-sm text-body-sm text-on-surface-variant mb-3">La Mia Casetta, Siracusa</p>
       <div class="space-y-2">
-        <div class="flex justify-between items-center bg-surface-container-lowest p-3 rounded-lg border border-surface-variant">
-          <span class="font-body-sm text-body-sm text-on-surface-variant">Messaggi gestiti oggi</span>
-          <span class="font-headline-sm text-headline-sm text-primary">37</span>
-        </div>
-        <div class="flex justify-between items-center bg-surface-container-lowest p-3 rounded-lg border border-surface-variant">
-          <span class="font-body-sm text-body-sm text-on-surface-variant">Tempo risparmiato</span>
-          <span class="font-label-md text-label-md text-secondary">4h 45m</span>
-        </div>
-        <div class="flex justify-between items-center bg-surface-container-lowest p-3 rounded-lg border border-surface-variant">
-          <span class="font-body-sm text-body-sm text-on-surface-variant">Ultima risposta</span>
-          <span class="font-label-sm text-label-sm text-on-surface-variant">2 min fa · 🇩🇪 Tedesco</span>
-        </div>
+        <div class="bg-surface-container-lowest p-3 rounded-lg border border-surface-variant font-body-sm text-body-sm text-on-surface-variant">🇩🇪 „Wir kommen um 22 Uhr an. Wie kommen wir rein?“</div>
+        <div class="bg-surface-variant p-3 rounded-lg font-body-sm text-body-sm text-primary">„Gerne! Der Türcode ist 4821, das WLAN heißt CasaMare. Gute Reise!“</div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant pt-1">Esempio · risposta in tedesco, alle 21:40</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COME FUNZIONA -->
+<!-- IL COMPITO IN PIÙ -->
+<section class="bg-surface-container-lowest border-y border-surface-variant w-full">
+  <div class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto w-full">
+    <div class="text-center mb-12"><p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-3">Il compito che mancava</p><h2 class="font-headline-md text-headline-md text-primary mb-4">Il gestionale pensa alle prenotazioni. Agli ospiti pensiamo noi.</h2><p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Chi ha case vacanza lo sa: a ogni ospite vanno mandate le stesse informazioni, come arrivare, il codice della porta, il WiFi, l'orario di uscita, e poi c'è da rispondere alle sue domande. Gestionali e portali si occupano di prenotazioni e pagamenti. Zero Messaggi Persi aggiunge la parte che parla con gli ospiti, con le informazioni esatte del tuo appartamento.</p></div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="bg-surface-container-lowest rounded-2xl p-7 border border-surface-variant ambient-shadow flex flex-col gap-3"><span class="material-symbols-outlined text-secondary text-[32px]">schedule</span><h3 class="font-headline-sm text-headline-sm text-primary">Tempo restituito a te</h3><p class="font-body-md text-body-md text-on-surface-variant">Le risposte di tutti i giorni (come entrare, WiFi, parcheggio, orario di uscita) partono da sole. Tu ti dedichi al resto.</p></div><div class="bg-surface-container-lowest rounded-2xl p-7 border border-surface-variant ambient-shadow flex flex-col gap-3"><span class="material-symbols-outlined text-secondary text-[32px]">nights_stay</span><h3 class="font-headline-sm text-headline-sm text-primary">Ospiti accolti anche la sera</h3><p class="font-body-md text-body-md text-on-surface-variant">Chi atterra di notte o scrive nel weekend riceve subito la risposta giusta. Arriva sereno, e si vede nelle recensioni.</p></div><div class="bg-surface-container-lowest rounded-2xl p-7 border border-surface-variant ambient-shadow flex flex-col gap-3"><span class="material-symbols-outlined text-secondary text-[32px]">language</span><h3 class="font-headline-sm text-headline-sm text-primary">Ogni ospite nella sua lingua</h3><p class="font-body-md text-body-md text-on-surface-variant">Italiano, inglese, spagnolo, francese, tedesco e olandese: ognuno riceve messaggi e risposte nella propria lingua.</p></div></div>
+  </div>
+</section>
+
+<!-- COSA FA -->
 <section class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto w-full">
-  <div class="text-center mb-12">
-    <h2 class="font-headline-md text-headline-md text-primary mb-3">Come funziona</h2>
-    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">In 7 giorni sei operativo. Noi facciamo tutto — tu approvi e vai live.</p>
-  </div>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-10">
-    <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow flex flex-col gap-3">
-      <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md shrink-0">1</div>
-      <h3 class="font-label-md text-label-md text-primary">Una chiamata con Irene</h3>
-      <p class="font-body-sm text-body-sm text-on-surface-variant">Racconti come funziona la tua struttura: i canali che usi, i messaggi che ricevi di più, le situazioni che ti stressano. Niente moduli lunghi — bastano pochi minuti.</p>
-    </div>
-    <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow flex flex-col gap-3">
-      <div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-md text-label-md shrink-0">2</div>
-      <h3 class="font-label-md text-label-md text-primary">Costruiamo il "cervello" della tua struttura</h3>
-      <p class="font-body-sm text-body-sm text-on-surface-variant">Raccogliamo le tue regole, gli orari, i codici, i consigli locali. Tutto quello che scrivi ogni giorno a mano — lo insegniamo una volta sola, e il sistema lo usa per sempre.</p>
-    </div>
-    <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow flex flex-col gap-3">
-      <div class="w-10 h-10 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-label-md text-label-md shrink-0">3</div>
-      <h3 class="font-label-md text-label-md text-primary">Configuriamo tutto noi — tu non tocchi niente</h3>
-      <p class="font-body-sm text-body-sm text-on-surface-variant">Colleghiamo WhatsApp e la tua email, dove arrivano anche le notifiche di Booking.com e Airbnb. Attiviamo i 5 flussi automatici: benvenuto, pre-arrivo, soggiorno, check-out, recensione. Tu non installi nulla.</p>
-    </div>
-    <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow flex flex-col gap-3">
-      <div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-label-md text-label-md shrink-0">4</div>
-      <h3 class="font-label-md text-label-md text-primary">Leggi le risposte, dai il via libera</h3>
-      <p class="font-body-sm text-body-sm text-on-surface-variant">Prima di andare live, ti mostriamo come risponde il sistema ai messaggi reali. Se qualcosa non ti convince, lo correggiamo subito. Solo tu puoi dare il via libera finale.</p>
-    </div>
-    <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant ambient-shadow flex flex-col gap-3">
-      <div class="w-10 h-10 rounded-full bg-surface-tint text-on-primary flex items-center justify-center font-label-md text-label-md shrink-0">5</div>
-      <h3 class="font-label-md text-label-md text-primary">Spegni il telefono dopo cena. Sul serio.</h3>
-      <p class="font-body-sm text-body-sm text-on-surface-variant">Dal giorno del go-live, il sistema gestisce i messaggi 24 ore su 24. Ricevi un report settimanale con i numeri. Noi monitoriamo, ottimizziamo e ti avvisiamo solo se serve davvero la tua voce.</p>
-    </div>
-  </div>
-  <div class="text-center">
-    <a class="inline-flex items-center gap-2 bg-primary-container text-surface-container-low px-8 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all" href="prova-gratuita.html" role="button">Inizia la Prova — 14 giorni a €29</a>
+  <div class="text-center mb-12"><p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-3">Cosa fa</p><h2 class="font-headline-md text-headline-md text-primary mb-4">Tre lavori che oggi fai tu. Da domani li facciamo noi.</h2></div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="bg-surface-container-lowest rounded-2xl p-7 border border-surface-variant ambient-shadow flex flex-col gap-3"><div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center text-xl font-bold shrink-0">1</div><h3 class="font-headline-sm text-headline-sm text-primary">Messaggi automatici</h3><p class="font-body-md text-body-md text-on-surface-variant">Benvenuto, istruzioni di arrivo, controllo dopo l'arrivo, promemoria di partenza e richiesta di recensione, con i dati di ogni appartamento.</p></div><div class="bg-surface-container-lowest rounded-2xl p-7 border border-surface-variant ambient-shadow flex flex-col gap-3"><div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center text-xl font-bold shrink-0">2</div><h3 class="font-headline-sm text-headline-sm text-primary">Un assistente che risponde</h3><p class="font-body-md text-body-md text-on-surface-variant">Risponde in pochi secondi, giorno e notte, nella lingua dell'ospite, usando solo le informazioni che ci dai tu.</p></div><div class="bg-surface-container-lowest rounded-2xl p-7 border border-surface-variant ambient-shadow flex flex-col gap-3"><div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center text-xl font-bold shrink-0">3</div><h3 class="font-headline-sm text-headline-sm text-primary">Ti passa la parola</h3><p class="font-body-md text-body-md text-on-surface-variant">Quando un ospite ha bisogno di una persona o vuole prenotare, ti arriva un avviso su WhatsApp. Quando rispondi tu, l'assistente si mette in pausa su quella chat.</p></div></div>
+  <p class="font-body-lg text-body-lg text-on-surface-variant text-center max-w-3xl mx-auto mt-10">Prezzi, disponibilità e conferme di prenotazione restano sempre a te: l'assistente non inventa, e le domande nuove te le gira.</p>
+</section>
+
+<!-- VIAGGIO OSPITE -->
+<section class="bg-surface-container-lowest border-y border-surface-variant w-full">
+  <div class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto w-full">
+    <div class="text-center mb-12"><p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-3">Il viaggio dell'ospite</p><h2 class="font-headline-md text-headline-md text-primary mb-4">Cinque messaggi, ognuno al suo momento.</h2><p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Gli orari seguono il fuso dell'appartamento, Italia o Canarie. Chi prenota all'ultimo minuto riceve subito le istruzioni. Se l'ospite scrive STOP, i messaggi automatici si fermano.</p></div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"><div class="bg-surface-container-lowest rounded-2xl p-7 border border-surface-variant ambient-shadow flex flex-col gap-3">
+  <div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold shrink-0">1</span><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Subito</span></div>
+  <h3 class="font-headline-sm text-headline-sm text-primary">Benvenuto</h3>
+  <p class="font-body-md text-body-md text-on-surface-variant">Grazie per la prenotazione, con la data e l'orario di arrivo.</p>
+</div><div class="bg-surface-container-lowest rounded-2xl p-7 border border-surface-variant ambient-shadow flex flex-col gap-3">
+  <div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold shrink-0">2</span><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">48 ore prima</span></div>
+  <h3 class="font-headline-sm text-headline-sm text-primary">Istruzioni di arrivo</h3>
+  <p class="font-body-md text-body-md text-on-surface-variant">Come entrare, codice di accesso, WiFi e parcheggio.</p>
+</div><div class="bg-surface-container-lowest rounded-2xl p-7 border border-surface-variant ambient-shadow flex flex-col gap-3">
+  <div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold shrink-0">3</span><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Il giorno dopo l'arrivo</span></div>
+  <h3 class="font-headline-sm text-headline-sm text-primary">Tutto bene?</h3>
+  <p class="font-body-md text-body-md text-on-surface-variant">Un controllo per assicurarsi che l'ospite abbia tutto.</p>
+</div><div class="bg-surface-container-lowest rounded-2xl p-7 border border-surface-variant ambient-shadow flex flex-col gap-3">
+  <div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold shrink-0">4</span><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Giorno di partenza</span></div>
+  <h3 class="font-headline-sm text-headline-sm text-primary">Promemoria di uscita</h3>
+  <p class="font-body-md text-body-md text-on-surface-variant">Orario di uscita e cosa fare con le chiavi.</p>
+</div><div class="bg-surface-container-lowest rounded-2xl p-7 border border-surface-variant ambient-shadow flex flex-col gap-3">
+  <div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold shrink-0">5</span><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Il giorno dopo</span></div>
+  <h3 class="font-headline-sm text-headline-sm text-primary">Recensione</h3>
+  <p class="font-body-md text-body-md text-on-surface-variant">Il link alla tua recensione Google, solo se il soggiorno è andato bene.</p>
+</div></div>
   </div>
 </section>
 
-<!-- PER CHI È -->
-<section id="per-chi-e" class="bg-surface-container-low py-section-gap">
-  <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-    <div class="max-w-3xl mx-auto">
-      <p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-3">Per chi è</p>
-      <h2 class="font-headline-md text-headline-md text-primary mb-4">Perfetto per te se...</h2>
-      <p class="font-body-lg text-body-lg text-on-surface-variant mb-10">Zero Messaggi Persi non è per tutti. È per chi gestisce strutture ricettive indipendenti, ci tiene a ogni ospite, e quando arriva l'alta stagione vuole ordine al posto del caos — non serate intere a rispondere su WhatsApp.</p>
-      <div class="flex flex-col gap-5 mb-10">
-        <div class="flex items-start gap-4">
-          <span class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5 font-label-md text-label-md">✓</span>
-          <p class="font-body-lg text-body-lg text-on-surface">Gestisci da 1 a 40 unità tra B&amp;B, case vacanza, appartamenti o piccoli hotel indipendenti.</p>
-        </div>
-        <div class="flex items-start gap-4">
-          <span class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5 font-label-md text-label-md">✓</span>
-          <p class="font-body-lg text-body-lg text-on-surface">WhatsApp è il tuo canale principale con gli ospiti — e in alta stagione, con la struttura piena, rispondere a tutti ogni sera ti sta logorando.</p>
-        </div>
-        <div class="flex items-start gap-4">
-          <span class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5 font-label-md text-label-md">✓</span>
-          <p class="font-body-lg text-body-lg text-on-surface">Hai ospiti stranieri che scrivono in inglese, tedesco o spagnolo, e ogni risposta ti costa 10 minuti e Google Translate.</p>
-        </div>
-        <div class="flex items-start gap-4">
-          <span class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5 font-label-md text-label-md">✓</span>
-          <p class="font-body-lg text-body-lg text-on-surface">Hai già sentito parlare di chatbot ma non ti fidi — hai paura che rispondano male e facciano brutta figura con i tuoi ospiti.</p>
-        </div>
-        <div class="flex items-start gap-4">
-          <span class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5 font-label-md text-label-md">✓</span>
-          <p class="font-body-lg text-body-lg text-on-surface">Non vuoi imparare un software nuovo. Vuoi una soluzione che qualcuno installa per te e funziona dal primo giorno.</p>
-        </div>
-      </div>
-      <div class="bg-surface-container rounded-2xl p-6 border border-surface-variant mb-10">
-        <p class="font-body-md text-body-md text-on-surface-variant italic">Non fa per te se gestisci una grande catena alberghiera, se hai già un team dedicato alla comunicazione con gli ospiti, o se preferisci avere il controllo totale su ogni singola risposta.</p>
-      </div>
-      <div class="text-center">
-        <a class="inline-block bg-primary-container text-surface-container-low px-8 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all" href="prova-gratuita.html" role="button">Questo fa per me — Inizia la Prova</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- NON È UN CHATBOT — 3 BENEFICI -->
+<!-- GESTIONALI -->
 <section class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto w-full">
-  <div class="max-w-3xl mb-12">
-    <h2 class="font-headline-md text-headline-md text-primary mb-4">Non è un chatbot. È il tuo concierge personale.</h2>
-    <p class="font-body-lg text-body-lg text-on-surface-variant">I chatbot generici rispondono male, inventano informazioni e fanno fare brutta figura davanti ai tuoi ospiti. Zero Messaggi Persi è un'altra cosa: lo addestriamo sulle regole esatte della tua struttura — i tuoi codici, i tuoi orari, il tuo tono. L'ospite si sente seguito da una persona attenta, non gestito da una macchina, e questa cura a fine soggiorno diventa una recensione a 5 stelle. È un'estensione di te, disponibile 24 ore su 24.</p>
+  <div class="text-center mb-12"><p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-3">Si collega a quello che usi già</p><h2 class="font-headline-md text-headline-md text-primary mb-4">Le prenotazioni entrano da sole dal tuo gestionale.</h2><p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Ci dai una volta la chiave di accesso (ti diciamo noi dove trovarla) e colleghiamo tutto: nuove prenotazioni, cambi di data e cancellazioni, da tutti i portali.</p></div>
+  <div class="flex flex-wrap justify-center gap-3"><span class="inline-flex items-center gap-2 bg-surface-container-lowest border border-surface-variant rounded-full px-5 py-3 font-label-md text-label-md text-primary"><span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>Smoobu</span><span class="inline-flex items-center gap-2 bg-surface-container-lowest border border-surface-variant rounded-full px-5 py-3 font-label-md text-label-md text-primary"><span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>Beds24</span><span class="inline-flex items-center gap-2 bg-surface-container-lowest border border-surface-variant rounded-full px-5 py-3 font-label-md text-label-md text-primary"><span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>Hostaway</span><span class="inline-flex items-center gap-2 bg-surface-container-lowest border border-surface-variant rounded-full px-5 py-3 font-label-md text-label-md text-primary"><span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>Lodgify</span><span class="inline-flex items-center gap-2 bg-surface-container-lowest border border-surface-variant rounded-full px-5 py-3 font-label-md text-label-md text-primary"><span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>Calendario iCal</span></div>
+  <p class="font-body-lg text-body-lg text-on-surface-variant text-center max-w-2xl mx-auto mt-8">Usi un altro gestionale? <a class="text-primary-container font-semibold underline" href="https://wa.me/393425259174?text=Ciao%20Irene%2C%20vorrei%20saperne%20di%20pi%C3%B9%20su%20Zero%20Messaggi%20Persi" target="_blank" rel="noopener noreferrer">Dimmi quale</a>: lo valutiamo per il tuo caso. <a class="text-primary-container font-semibold underline" href="come-funziona.html#gestionali">Vedi come si collega</a></p>
+</section>
+
+<!-- CHI FA COSA -->
+<section class="bg-surface-container-lowest border-y border-surface-variant w-full">
+  <div class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto w-full">
+    <div class="text-center mb-12"><p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-3">Chi fa cosa</p><h2 class="font-headline-md text-headline-md text-primary mb-4">Tu ci dai le informazioni una volta. Tutto il resto è nostro.</h2></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div class="bg-surface-container-lowest rounded-2xl p-7 border border-surface-variant ambient-shadow flex flex-col gap-3"><h3 class="font-headline-sm text-headline-sm text-primary">Tu, solo all'inizio: circa un'ora</h3><ul class="flex flex-col gap-3"><li class="flex gap-3 font-body-md text-body-md text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-[2px]">check_circle</span><span>Una chiamata in cui ci racconti gli appartamenti: accesso, WiFi, parcheggio, regole di uscita</span></li><li class="flex gap-3 font-body-md text-body-md text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-[2px]">check_circle</span><span>Le domande che gli ospiti ti fanno più spesso e come rispondi</span></li><li class="flex gap-3 font-body-md text-body-md text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-[2px]">check_circle</span><span>La chiave di accesso al gestionale e il link per le recensioni Google</span></li></ul></div>
+      <div class="bg-surface-container-lowest rounded-2xl p-7 border border-surface-variant ambient-shadow flex flex-col gap-3"><h3 class="font-headline-sm text-headline-sm text-primary">Noi, sempre</h3><ul class="flex flex-col gap-3"><li class="flex gap-3 font-body-md text-body-md text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-[2px]">check_circle</span><span>Colleghiamo il gestionale e carichiamo i dati di ogni appartamento</span></li><li class="flex gap-3 font-body-md text-body-md text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-[2px]">check_circle</span><span>Scriviamo i messaggi e le risposte dell'assistente con il tuo tono</span></li><li class="flex gap-3 font-body-md text-body-md text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-[2px]">check_circle</span><span>Facciamo una prova completa prima del primo ospite vero</span></li><li class="flex gap-3 font-body-md text-body-md text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-[2px]">check_circle</span><span>Aggiorniamo dati e testi quando ce lo chiedi</span></li></ul></div>
+    </div>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-    <div class="bg-surface-container-lowest rounded-2xl p-8 border border-surface-variant ambient-shadow hover-lift flex flex-col gap-4">
-      <span class="material-symbols-outlined text-primary-container text-[40px]">home</span>
-      <h3 class="font-headline-sm text-headline-sm text-primary">Sa esattamente cosa rispondere — sempre</h3>
-      <p class="font-body-md text-body-md text-on-surface-variant">Codici di accesso, orari del check-in, dove si parcheggia, dove si butta la spazzatura, cosa vedere in zona. Tutte le informazioni che scrivi ogni giorno a mano, le conosce a memoria. E non inventa mai nulla — se non sa qualcosa, ti avvisa.</p>
-    </div>
-    <div class="bg-surface-container-lowest rounded-2xl p-8 border border-surface-variant ambient-shadow hover-lift flex flex-col gap-4">
-      <span class="material-symbols-outlined text-primary-container text-[40px]">language</span>
-      <h3 class="font-headline-sm text-headline-sm text-primary">L'ospite tedesco riceve risposta in tedesco. Subito.</h3>
-      <p class="font-body-md text-body-md text-on-surface-variant">Non devi più usare Google Translate o sperare che l'ospite capisca il tuo inglese. Il sistema riconosce automaticamente la lingua di chi scrive e risponde nella sua: italiano, inglese, spagnolo e francese sono sempre incluse, e a chi scrive in un'altra lingua — come il tedesco — l'assistente risponde comunque nella sua. In pochi secondi, a qualsiasi ora.</p>
-    </div>
-    <div class="bg-surface-container-lowest rounded-2xl p-8 border border-surface-variant ambient-shadow hover-lift flex flex-col gap-4">
-      <span class="material-symbols-outlined text-primary-container text-[40px]">admin_panel_settings</span>
-      <h3 class="font-headline-sm text-headline-sm text-primary">Per le emergenze vere, ci sei sempre tu</h3>
-      <p class="font-body-md text-body-md text-on-surface-variant">Il concierge gestisce le domande di routine — quelle che ti fanno perdere ore ogni giorno. Per i problemi reali (guasti, imprevisti, situazioni delicate), si ferma e ti avvisa immediatamente su WhatsApp. Il controllo non lo perdi mai.</p>
-    </div>
+</section>
+
+<!-- PREZZO IN BREVE -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto w-full">
+  <div class="max-w-3xl mx-auto bg-surface-container-lowest rounded-2xl p-7 border border-surface-variant ambient-shadow flex flex-col gap-3 items-center text-center !p-10">
+    <p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Prezzo</p>
+    <p class="font-display-lg-mobile text-display-lg-mobile text-primary">€15 <span class="font-body-lg text-body-lg text-on-surface-variant">per appartamento al mese</span></p>
+    <p class="font-body-lg text-body-lg text-on-surface-variant">Minimo €49 al mese. Configurazione, WhatsApp e assistente compresi. IVA esclusa.</p>
+    <p class="font-label-md text-label-md text-secondary">Il primo mese è gratis</p>
+    <a class="border border-primary-container text-primary-container px-8 py-3 rounded-lg font-label-md text-label-md hover:bg-surface-variant transition-all text-center mt-2" href="prezzi.html">Vedi i prezzi</a>
   </div>
 </section>
 
 <!-- CHI C'È DIETRO -->
-<section id="la-fondatrice" class="bg-surface-container-low py-section-gap">
-  <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-      <!-- Iniziali + firma (foto in arrivo) -->
-      <div class="rounded-[24px] overflow-hidden aspect-[4/5] bg-primary flex flex-col items-center justify-center ambient-shadow relative">
-        <div class="absolute inset-0 opacity-10 pointer-events-none">
-          <div class="absolute -top-10 -right-10 w-60 h-60 rounded-full bg-secondary-fixed blur-3xl"></div>
-          <div class="absolute -bottom-10 -left-10 w-48 h-48 rounded-full bg-tertiary-fixed blur-3xl"></div>
-        </div>
-        <div class="relative z-10 text-center px-10">
-          <div class="w-28 h-28 mx-auto rounded-full border border-white/30 flex items-center justify-center mb-6">
-            <span class="font-display-lg text-display-lg text-white">ID</span>
-          </div>
-          <p class="font-headline-sm text-headline-sm text-white">Irene De Santis</p>
-          <p class="font-body-sm text-body-sm text-primary-fixed-dim mt-1">Fondatrice · Lanzarote</p>
-        </div>
-      </div>
-      <!-- Testo -->
-      <div class="flex flex-col gap-8">
-        <div>
-          <p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-3">Chi c'è dietro</p>
-          <h2 class="font-headline-md text-headline-md text-primary mb-6">Chi c'è dietro Zero Messaggi Persi</h2>
-          <div class="flex flex-col gap-4">
-            <p class="font-body-lg text-body-lg text-on-surface-variant">Mi chiamo Irene De Santis. Sono una digital marketer e consulente, e gestisco strutture ricettive a Lanzarote. So esattamente cosa significa rispondere a un messaggio WhatsApp alle 23:00 mentre stai cenando — perché l'ho fatto anch'io per anni.</p>
-            <p class="font-body-lg text-body-lg text-on-surface-variant">Ho costruito Zero Messaggi Persi perché non esiste nessun altro servizio che faccia davvero tutto per te. Gli altri ti consegnano un software da imparare. Io mi prendo in carico i tuoi ospiti come se la struttura fosse mia, con la cura che ho imparato nell'ospitalità di alta gamma — perché so che dietro ogni appartamento ci sono il tuo lavoro e la tua reputazione. E se qualcosa non va, non parli con un'assistenza qualsiasi: ci sono io.</p>
-            <p class="font-body-lg text-body-lg text-on-surface font-semibold">Non vendo tecnologia. Vendo serenità a te e cura ai tuoi ospiti.</p>
-          </div>
-          <div class="mt-6">
-            <p class="font-label-md text-label-md text-primary">Irene De Santis</p>
-            <p class="font-body-sm text-body-sm text-on-surface-variant">Fondatrice, Zero Messaggi Persi · Lanzarote · Italia</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- INTEGRAZIONI -->
-<section class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto w-full">
-  <div class="text-center mb-12">
-    <h2 class="font-headline-md text-headline-md text-primary mb-3">Funziona sui canali che già usi. Nessuna installazione.</h2>
-    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">WhatsApp ed email sono attivi da subito. Booking.com e Airbnb li gestiamo a partire dalle notifiche email che già ricevi. Le integrazioni dirette con i channel manager sono in arrivo.</p>
-  </div>
-  <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 mb-6">
-    <div class="bg-surface-container-lowest rounded-2xl p-5 border border-surface-variant flex flex-col items-center gap-2 text-center">
-      <span class="material-symbols-outlined text-[32px] text-[#25D366]">forum</span>
-      <span class="font-label-sm text-label-sm text-on-surface-variant">WhatsApp</span>
-    </div>
-    <div class="bg-surface-container-lowest rounded-2xl p-5 border border-surface-variant flex flex-col items-center gap-2 text-center">
-      <span class="material-symbols-outlined text-[32px] text-primary">mail</span>
-      <span class="font-label-sm text-label-sm text-on-surface-variant">Email</span>
-    </div>
-    <div class="bg-surface-container-lowest rounded-2xl p-5 border border-surface-variant flex flex-col items-center gap-2 text-center">
-      <span class="material-symbols-outlined text-[32px] text-on-surface-variant">hotel_class</span>
-      <span class="font-label-sm text-label-sm text-on-surface-variant">Booking.com</span>
-    </div>
-    <div class="bg-surface-container-lowest rounded-2xl p-5 border border-surface-variant flex flex-col items-center gap-2 text-center">
-      <span class="material-symbols-outlined text-[32px] text-on-surface-variant">cottage</span>
-      <span class="font-label-sm text-label-sm text-on-surface-variant">Airbnb</span>
-    </div>
-    <div class="bg-surface-container-lowest rounded-2xl p-5 border border-surface-variant flex flex-col items-center gap-2 text-center">
-      <span class="material-symbols-outlined text-[32px] text-on-surface-variant">apartment</span>
-      <span class="font-label-sm text-label-sm text-on-surface-variant">Smoobu</span>
-      <span class="font-label-sm text-[11px] uppercase tracking-wide text-on-surface-variant/70">in arrivo</span>
-    </div>
-    <div class="bg-surface-container-lowest rounded-2xl p-5 border border-surface-variant flex flex-col items-center gap-2 text-center">
-      <span class="material-symbols-outlined text-[32px] text-on-surface-variant">tune</span>
-      <span class="font-label-sm text-label-sm text-on-surface-variant">Lodgify</span>
-      <span class="font-label-sm text-[11px] uppercase tracking-wide text-on-surface-variant/70">in arrivo</span>
-    </div>
-    <div class="bg-surface-container-lowest rounded-2xl p-5 border border-surface-variant flex flex-col items-center gap-2 text-center">
-      <span class="material-symbols-outlined text-[32px] text-on-surface-variant">calendar_today</span>
-      <span class="font-label-sm text-label-sm text-on-surface-variant">beds24</span>
-      <span class="font-label-sm text-[11px] uppercase tracking-wide text-on-surface-variant/70">in arrivo</span>
-    </div>
-  </div>
-  <div class="text-center mb-10">
-    <p class="font-body-md text-body-md text-on-surface-variant">Usi Smoobu, Lodgify, beds24 o un altro gestionale? <a href="contatti.html" class="text-primary-container underline hover:opacity-80 transition-all">Scrivici quale: lo mettiamo in lista prioritaria.</a></p>
-  </div>
-  <div class="text-center">
-    <a class="inline-flex items-center gap-2 text-primary-container font-body-md text-body-md no-underline hover:text-primary hover:scale-110 transition-all duration-200" href="come-funziona.html">Vedi come si connette alla tua struttura <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
-  </div>
-</section>
-
-<!-- PRICING TEASER -->
-<section class="bg-surface-container-low py-section-gap">
-  <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="font-headline-md text-headline-md text-primary mb-6 text-center">Un investimento che si ripaga da solo.</h2>
-      <p class="font-body-lg text-body-lg text-on-surface-variant mb-4">Pensa a quanto vale una recensione a 5 stelle in più — e a quanto ti costa una negativa, nata da un messaggio rimasto senza risposta. La comunicazione con gli ospiti non è un dettaglio: è la tua reputazione, ed è da lì che arrivano le prossime prenotazioni.</p>
-      <p class="font-body-lg text-body-lg text-on-surface-variant mb-4">Un assistente umano che la gestisce per te costa tra i 500€ e gli 800€ al mese, non lavora di notte e non parla tutte le lingue. Zero Messaggi Persi parte da 149€ al mese, include tutto il setup e segue i tuoi ospiti 24 ore su 24, in 4 lingue.</p>
-      <p class="font-body-lg text-body-lg text-on-surface-variant mb-10">Vuoi provare prima di decidere? La Prova ti permette di testare il servizio sulla tua struttura reale per 14 giorni a soli €29. Se non sei soddisfatto, ti rimborsiamo.</p>
-
-      <!-- Tabella pricing -->
-      <div class="overflow-x-auto mb-8">
-        <table class="w-full border-collapse">
-          <thead>
-            <tr class="border-b border-surface-variant">
-              <th class="text-left py-3 px-4 font-label-md text-label-md text-on-surface-variant">Piano</th>
-              <th class="text-left py-3 px-4 font-label-md text-label-md text-on-surface-variant">Unità</th>
-              <th class="text-left py-3 px-4 font-label-md text-label-md text-on-surface-variant">Prezzo/mese</th>
-              <th class="text-left py-3 px-4 font-label-md text-label-md text-on-surface-variant hidden md:table-cell">Ideale per</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Pilot row - highlighted -->
-            <tr class="pilot-highlight rounded-xl">
-              <td class="py-4 px-4 rounded-l-xl">
-                <div class="flex items-center gap-2">
-                  <span class="font-label-md text-label-md text-white">🚀 Prova</span>
-                  <span class="bg-white/20 text-white text-[11px] font-bold px-2 py-0.5 rounded-full">Inizia qui</span>
-                </div>
-              </td>
-              <td class="py-4 px-4 font-body-md text-body-md text-white/90">1 struttura</td>
-              <td class="py-4 px-4">
-                <span class="font-label-md text-label-md text-white">€29</span>
-                <span class="font-body-sm text-body-sm text-white/70 block">primo mese · rimborso garantito</span>
-              </td>
-              <td class="py-4 px-4 font-body-sm text-body-sm text-white/80 rounded-r-xl hidden md:table-cell">Prova 14 giorni senza rischio</td>
-            </tr>
-            <tr class="border-b border-surface-variant">
-              <td class="py-4 px-4 font-label-md text-label-md text-primary">Host</td>
-              <td class="py-4 px-4 font-body-md text-body-md text-on-surface-variant">1–4 unità</td>
-              <td class="py-4 px-4 font-label-md text-label-md text-primary">€149</td>
-              <td class="py-4 px-4 font-body-sm text-body-sm text-on-surface-variant hidden md:table-cell">B&amp;B e appartamenti, WhatsApp</td>
-            </tr>
-            <tr class="border-b border-surface-variant">
-              <td class="py-4 px-4 font-label-md text-label-md text-primary">Multi-Struttura</td>
-              <td class="py-4 px-4 font-body-md text-body-md text-on-surface-variant">4–12 unità</td>
-              <td class="py-4 px-4 font-label-md text-label-md text-primary">€299</td>
-              <td class="py-4 px-4 font-body-sm text-body-sm text-on-surface-variant hidden md:table-cell">Multicanale, più strutture</td>
-            </tr>
-            <tr>
-              <td class="py-4 px-4 font-label-md text-label-md text-primary">Portfolio</td>
-              <td class="py-4 px-4 font-body-md text-body-md text-on-surface-variant">12–40 unità</td>
-              <td class="py-4 px-4 font-label-md text-label-md text-primary">€499</td>
-              <td class="py-4 px-4 font-body-sm text-body-sm text-on-surface-variant hidden md:table-cell">Integrazione PMS da valutare, multilingua avanzato</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="text-center">
-        <a class="inline-flex items-center gap-2 text-primary-container font-body-md text-body-md no-underline hover:text-primary hover:scale-110 transition-all duration-200" href="prezzi.html">Vedi tutti i piani in dettaglio <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
-      </div>
+<section class="bg-surface-container-lowest border-y border-surface-variant w-full">
+  <div class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto w-full flex flex-col md:flex-row gap-10 items-center max-w-5xl">
+    <div class="w-40 h-40 rounded-full bg-primary-container text-surface-container-low flex items-center justify-center font-display-lg text-display-lg shrink-0">ID</div>
+    <div class="flex flex-col gap-4">
+      <p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Chi c'è dietro</p>
+      <h2 class="font-headline-md text-headline-md text-primary">Ciao, sono Irene De Santis.</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant">Vengo da 20 anni di accoglienza e turismo: lì ho imparato quanto conta rispondere in tempo a un ospite, e quanto tempo serve per farlo bene. Oggi mi occupo di marketing digitale e automazioni, e ho creato Zero Messaggi Persi per unire le due cose: ospiti seguiti con cura e proprietari con più tempo per sé.</p>
+      <p class="font-body-lg text-body-lg text-on-surface-variant">Quando hai bisogno, rispondo io.</p>
+      <a class="text-primary-container font-semibold underline w-fit" href="https://www.linkedin.com/in/digitalmarketerirenedesantis/" target="_blank" rel="noopener noreferrer">Il mio profilo LinkedIn</a>
     </div>
   </div>
 </section>
@@ -460,25 +275,19 @@
 <!-- CTA FINALE -->
 <section class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto w-full">
   <div class="bg-primary rounded-[32px] p-10 md:p-16 text-center">
-    <!-- Badge Pilot -->
-    <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 text-white rounded-full font-label-sm text-label-sm mb-6">
-      🚀 Prova — €29 / primo mese
-    </div>
-    <h2 class="font-headline-md text-headline-md text-on-primary mb-4">Pronto a smettere di rispondere alle 23:00?</h2>
-    <p class="font-body-lg text-body-lg text-primary-fixed-dim mb-8 max-w-xl mx-auto">
-      Inizia con la Prova: 14 giorni sulla tua struttura reale, a €29. Irene configura tutto in 7 giorni. Se non funziona, ti rimborsiamo senza fare domande.
-    </p>
+    <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 text-white rounded-full font-label-sm text-label-sm mb-6">✦ Primo mese gratis</div>
+    <h2 class="font-headline-md text-headline-md text-on-primary mb-4">Una chiamata di 20 minuti per vedere se fa per te.</h2>
+    <p class="font-body-lg text-body-lg text-primary-fixed-dim mb-8 max-w-xl mx-auto">Mi racconti quanti appartamenti hai e che gestionale usi. Ti mostro come funziona e, se ti convince, partiamo con il primo mese gratis.</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-      <a class="bg-surface-container-lowest text-primary px-8 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all text-center" href="prova-gratuita.html">Inizia la Prova a €29 →</a>
+      <a class="bg-surface-container-lowest text-primary px-8 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all text-center" href="contatti.html#calendario">Prenota una chiamata di 20 minuti →</a>
     </div>
-    <a class="inline-flex items-center gap-1 text-primary-fixed-dim font-body-md text-body-md hover:text-white transition-all" href="https://wa.me/393425259174" target="_blank" rel="noopener noreferrer">
-      Hai domande? Scrivimi su WhatsApp →
-    </a>
-    <p class="font-body-sm text-body-sm text-primary-fixed-dim mt-6 opacity-70">Nessun contratto annuale · Setup incluso · Rimborso garantito nei 14 giorni</p>
+    <a class="inline-flex items-center gap-1 text-primary-fixed-dim font-body-md text-body-md hover:text-white transition-all" href="https://wa.me/393425259174?text=Ciao%20Irene%2C%20vorrei%20saperne%20di%20pi%C3%B9%20su%20Zero%20Messaggi%20Persi" target="_blank" rel="noopener noreferrer">Hai domande? Scrivimi su WhatsApp →</a>
+    <p class="font-body-sm text-body-sm text-primary-fixed-dim mt-6 opacity-70">Primo mese gratis · Mensile, senza vincolo annuale · Configurazione compresa</p>
   </div>
 </section>
 
-<!-- FOOTER -->
+</main>
+
 <footer class="bg-surface-container-high dark:bg-inverse-surface font-body-md text-body-md w-full border-t border-outline-variant dark:border-outline">
   <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
     <div class="flex flex-col gap-4 items-center text-center">
@@ -486,16 +295,15 @@
       <p class="font-body-md text-body-md font-semibold text-on-surface-variant dark:text-surface-variant">Zero messaggi persi.<br>Più tempo per l'ospitalità.</p>
     </div>
     <div class="flex flex-col gap-3">
-      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="index.html">Home</a>
-      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="come-funziona.html">Come funziona</a>
-      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="servizi.html">Servizi</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container transition-all duration-200" href="index.html">Home</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container transition-all duration-200" href="come-funziona.html">Come funziona</a>
     </div>
     <div class="flex flex-col gap-3">
-      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="prezzi.html">Piani e prezzi</a>
-      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container hover:scale-105 transition-all duration-200" href="contatti.html">Contatti</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container transition-all duration-200" href="prezzi.html">Prezzi</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container transition-all duration-200" href="contatti.html">Contatti</a>
     </div>
   </div>
-  <div class="w-full border-t border-outline-variant py-4 text-center font-body-sm text-body-sm text-on-surface-variant">© 2026 Zero Messaggi Persi è un servizio di Irene De Santis | NIF Y3328229M | Calle Montaña Tisalaya 2, Pta. IZ, 35510 Puerto del Carmen, Tías (Las Palmas), España | Tutti i diritti riservati. | <a href="privacy.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Privacy Policy</a> | <a href="termini.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Condizioni d'uso</a> | <a href="eliminazione-dati.html" class="hover:text-primary-container hover:scale-105 transition-all duration-200">Eliminazione dati</a></div>
+  <div class="w-full border-t border-outline-variant py-4 px-margin-mobile text-center font-body-sm text-body-sm text-on-surface-variant">© 2026 Zero Messaggi Persi è un servizio di Irene De Santis | NIF Y3328229M | Calle Montaña Tisalaya 2, Pta. IZ, 35510 Puerto del Carmen, Tías (Las Palmas), España | Tutti i diritti riservati. | <a href="privacy.html" class="hover:text-primary-container">Privacy Policy</a> | <a href="termini.html" class="hover:text-primary-container">Condizioni d'uso</a> | <a href="eliminazione-dati.html" class="hover:text-primary-container">Eliminazione dati</a></div>
 </footer>
 
 </body></html>
